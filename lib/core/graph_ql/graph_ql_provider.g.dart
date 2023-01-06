@@ -29,7 +29,7 @@ class _SystemHash {
   }
 }
 
-String _$graphQlClientHash() => r'9b9ee76ce1caf7dc0f5e87702e2114535cd2cf5c';
+String _$graphQlClientHash() => r'24d0610aa1b0bf27ea1b6a68cf85e88af2a96337';
 
 /// See also [graphQlClient].
 final graphQlClientProvider = AutoDisposeProvider<GraphQLClient>(
