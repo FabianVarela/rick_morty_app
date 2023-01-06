@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:rick_morty_app/features/detail/view/rick_morty_detail_view.dart';
 import 'package:rick_morty_app/features/list/view/rick_morty_list_view.dart';
 
 final rickMortyRouter = GoRouter(
@@ -14,7 +15,17 @@ final rickMortyRouter = GoRouter(
         pageKey: state.pageKey,
         child: const RickMortyListView(),
       ),
-      routes: const <GoRoute>[],
+      routes: <GoRoute>[
+        GoRoute(
+          path: ':id',
+          pageBuilder: (_, state) => _setDefaultPageRoute<dynamic>(
+            pageKey: state.pageKey,
+            child: RickMortyDetailView(
+              id: int.parse(state.params['id']!),
+            ),
+          ),
+        ),
+      ],
     ),
   ],
   debugLogDiagnostics: kDebugMode,
