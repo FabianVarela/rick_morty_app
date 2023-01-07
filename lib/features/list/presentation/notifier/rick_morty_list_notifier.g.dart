@@ -29,7 +29,7 @@ class _SystemHash {
   }
 }
 
-String _$RickMortyListHash() => r'e706b12605fbf1e729d2c4ab36dbc420336a23ab';
+String _$RickMortyListHash() => r'b47e51af309da4ef931bae7bd73f5652561ba058';
 
 /// See also [RickMortyList].
 final rickMortyListProvider =

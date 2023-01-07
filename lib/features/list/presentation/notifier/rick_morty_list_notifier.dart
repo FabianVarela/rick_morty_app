@@ -7,25 +7,22 @@ part 'rick_morty_list_notifier.g.dart';
 @riverpod
 class RickMortyList extends _$RickMortyList {
   @override
-  Future<RickMortyListData> build() async => _fetchData();
+  FutureOr<RickMortyListData> build() {
+    final rickMortyListRepository = ref.watch(rickMortyListRepoProvider);
+    return rickMortyListRepository.fetchListData();
+  }
 
   Future<void> fetchListData({
     int page = 1,
     Map<String, String>? filter,
   }) async {
     state = const AsyncLoading();
-    state = await AsyncValue.guard(
-      () => _fetchData(page: page, filter: filter),
-    );
-  }
 
-  Future<RickMortyListData> _fetchData({
-    int page = 1,
-    Map<String, String>? filter,
-  }) async {
     final rickMortyListRepository = ref.watch(rickMortyListRepoProvider);
-    return filter == null
+    final result = filter == null
         ? rickMortyListRepository.fetchListData(page: page)
         : rickMortyListRepository.fetchListData(page: page, filter: filter);
+
+    state = await AsyncValue.guard(() => result);
   }
 }
