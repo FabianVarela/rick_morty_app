@@ -7,7 +7,7 @@ import '../../factory/helpers.dart';
 void main() {
   test('Check if graphQl injected is correct', () {
     // arrange
-    final container = makeProviderContainer();
+    final container = setProviderContainer();
     final client = container.read(graphQlClientProvider);
 
     // assert
