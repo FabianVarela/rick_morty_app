@@ -1,7 +1,9 @@
 import 'package:graphql/client.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:rick_morty_app/features/detail/model/rick_morty_detail_model.dart';
+import 'package:rick_morty_app/features/detail/repository/rick_morty_detail_repository.dart';
 import 'package:rick_morty_app/features/list/model/rick_morty_list_model.dart';
+import 'package:rick_morty_app/features/list/repository/rick_morty_list_repository.dart';
 
 class MockGraphQlClient extends Mock implements GraphQLClient {}
 
@@ -90,3 +92,12 @@ final rickMortyDetailData = RickMortyDetailResult(
   origin: RickMortyOriginResult(id: '1', name: 'Earth (C-137)'),
   location: RickMortyLocationResult(id: '3', name: 'Citadel of Ricks'),
 );
+
+class MockListRepository extends Mock implements RickMortyListRepository {}
+
+class MockDetailRepository extends Mock implements RickMortyDetailRepository {}
+
+// A Listener class, used to keep track when a provider notifies listeners
+class Listener<T> extends Mock {
+  void call(T? previous, T next);
+}
