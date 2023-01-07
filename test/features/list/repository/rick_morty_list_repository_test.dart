@@ -3,7 +3,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:rick_morty_app/features/list/model/rick_morty_list_model.dart';
 import 'package:rick_morty_app/features/list/repository/rick_morty_list_repository.dart';
 
-import '../../factory/mocks.dart';
+import '../../../factory/mocks.dart';
 
 void main() {
   late MockGraphQlClient mockGraphQlClient;
