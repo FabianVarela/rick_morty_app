@@ -23,10 +23,10 @@ RickMortyDetailResult _$RickMortyDetailResultFromJson(
 mixin _$RickMortyDetailResult {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  Status get status => throw _privateConstructorUsedError;
+  DetailStatus get status => throw _privateConstructorUsedError;
   String get species => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
-  Gender get gender => throw _privateConstructorUsedError;
+  DetailGender get gender => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
   DateTime get created => throw _privateConstructorUsedError;
   RickMortyOriginResult get origin => throw _privateConstructorUsedError;
@@ -46,10 +46,10 @@ abstract class $RickMortyDetailResultCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      Status status,
+      DetailStatus status,
       String species,
       String type,
-      Gender gender,
+      DetailGender gender,
       String image,
       DateTime created,
       RickMortyOriginResult origin,
@@ -96,7 +96,7 @@ class _$RickMortyDetailResultCopyWithImpl<$Res,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as Status,
+              as DetailStatus,
       species: null == species
           ? _value.species
           : species // ignore: cast_nullable_to_non_nullable
@@ -108,7 +108,7 @@ class _$RickMortyDetailResultCopyWithImpl<$Res,
       gender: null == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
-              as Gender,
+              as DetailGender,
       image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
@@ -156,10 +156,10 @@ abstract class _$$_RickMortyDetailResultCopyWith<$Res>
   $Res call(
       {String id,
       String name,
-      Status status,
+      DetailStatus status,
       String species,
       String type,
-      Gender gender,
+      DetailGender gender,
       String image,
       DateTime created,
       RickMortyOriginResult origin,
@@ -205,7 +205,7 @@ class __$$_RickMortyDetailResultCopyWithImpl<$Res>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as Status,
+              as DetailStatus,
       species: null == species
           ? _value.species
           : species // ignore: cast_nullable_to_non_nullable
@@ -217,7 +217,7 @@ class __$$_RickMortyDetailResultCopyWithImpl<$Res>
       gender: null == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
-              as Gender,
+              as DetailGender,
       image: null == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
@@ -245,10 +245,10 @@ class _$_RickMortyDetailResult implements _RickMortyDetailResult {
   _$_RickMortyDetailResult(
       {required this.id,
       required this.name,
-      this.status = Status.unknown,
+      this.status = DetailStatus.unknown,
       required this.species,
       this.type = '',
-      this.gender = Gender.unknown,
+      this.gender = DetailGender.unknown,
       required this.image,
       required this.created,
       required this.origin,
@@ -263,7 +263,7 @@ class _$_RickMortyDetailResult implements _RickMortyDetailResult {
   final String name;
   @override
   @JsonKey()
-  final Status status;
+  final DetailStatus status;
   @override
   final String species;
   @override
@@ -271,7 +271,7 @@ class _$_RickMortyDetailResult implements _RickMortyDetailResult {
   final String type;
   @override
   @JsonKey()
-  final Gender gender;
+  final DetailGender gender;
   @override
   final String image;
   @override
@@ -321,10 +321,10 @@ abstract class _RickMortyDetailResult implements RickMortyDetailResult {
   factory _RickMortyDetailResult(
           {required final String id,
           required final String name,
-          final Status status,
+          final DetailStatus status,
           required final String species,
           final String type,
-          final Gender gender,
+          final DetailGender gender,
           required final String image,
           required final DateTime created,
           required final RickMortyOriginResult origin,
@@ -339,13 +339,13 @@ abstract class _RickMortyDetailResult implements RickMortyDetailResult {
   @override
   String get name;
   @override
-  Status get status;
+  DetailStatus get status;
   @override
   String get species;
   @override
   String get type;
   @override
-  Gender get gender;
+  DetailGender get gender;
   @override
   String get image;
   @override

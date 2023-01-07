@@ -26,21 +26,21 @@ _$_RickMortyListResult _$$_RickMortyListResultFromJson(
       id: json['id'] as String,
       name: json['name'] as String,
       image: json['image'] as String,
-      status: $enumDecodeNullable(_$StatusEnumMap, json['status']) ??
-          Status.unknown,
-      gender: $enumDecodeNullable(_$GenderEnumMap, json['gender']) ??
-          Gender.unknown,
+      status: $enumDecodeNullable(_$ListStatusEnumMap, json['status']) ??
+          ListStatus.unknown,
+      gender: $enumDecodeNullable(_$ListGenderEnumMap, json['gender']) ??
+          ListGender.unknown,
     );
 
-const _$StatusEnumMap = {
-  Status.alive: 'Alive',
-  Status.dead: 'Dead',
-  Status.unknown: 'unknown',
+const _$ListStatusEnumMap = {
+  ListStatus.alive: 'Alive',
+  ListStatus.dead: 'Dead',
+  ListStatus.unknown: 'unknown',
 };
 
-const _$GenderEnumMap = {
-  Gender.female: 'Female',
-  Gender.male: 'Male',
-  Gender.genderless: 'Genderless',
-  Gender.unknown: 'unknown',
+const _$ListGenderEnumMap = {
+  ListGender.female: 'Female',
+  ListGender.male: 'Male',
+  ListGender.genderless: 'Genderless',
+  ListGender.unknown: 'unknown',
 };

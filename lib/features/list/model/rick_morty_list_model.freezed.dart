@@ -361,8 +361,8 @@ mixin _$RickMortyListResult {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
-  Status get status => throw _privateConstructorUsedError;
-  Gender get gender => throw _privateConstructorUsedError;
+  ListStatus get status => throw _privateConstructorUsedError;
+  ListGender get gender => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $RickMortyListResultCopyWith<RickMortyListResult> get copyWith =>
@@ -376,7 +376,11 @@ abstract class $RickMortyListResultCopyWith<$Res> {
       _$RickMortyListResultCopyWithImpl<$Res, RickMortyListResult>;
   @useResult
   $Res call(
-      {String id, String name, String image, Status status, Gender gender});
+      {String id,
+      String name,
+      String image,
+      ListStatus status,
+      ListGender gender});
 }
 
 /// @nodoc
@@ -414,11 +418,11 @@ class _$RickMortyListResultCopyWithImpl<$Res, $Val extends RickMortyListResult>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as Status,
+              as ListStatus,
       gender: null == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
-              as Gender,
+              as ListGender,
     ) as $Val);
   }
 }
@@ -432,7 +436,11 @@ abstract class _$$_RickMortyListResultCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id, String name, String image, Status status, Gender gender});
+      {String id,
+      String name,
+      String image,
+      ListStatus status,
+      ListGender gender});
 }
 
 /// @nodoc
@@ -468,11 +476,11 @@ class __$$_RickMortyListResultCopyWithImpl<$Res>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as Status,
+              as ListStatus,
       gender: null == gender
           ? _value.gender
           : gender // ignore: cast_nullable_to_non_nullable
-              as Gender,
+              as ListGender,
     ));
   }
 }
@@ -487,8 +495,8 @@ class _$_RickMortyListResult
       {required this.id,
       required this.name,
       required this.image,
-      this.status = Status.unknown,
-      this.gender = Gender.unknown});
+      this.status = ListStatus.unknown,
+      this.gender = ListGender.unknown});
 
   factory _$_RickMortyListResult.fromJson(Map<String, dynamic> json) =>
       _$$_RickMortyListResultFromJson(json);
@@ -501,10 +509,10 @@ class _$_RickMortyListResult
   final String image;
   @override
   @JsonKey()
-  final Status status;
+  final ListStatus status;
   @override
   @JsonKey()
-  final Gender gender;
+  final ListGender gender;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -552,8 +560,8 @@ abstract class _RickMortyListResult implements RickMortyListResult {
       {required final String id,
       required final String name,
       required final String image,
-      final Status status,
-      final Gender gender}) = _$_RickMortyListResult;
+      final ListStatus status,
+      final ListGender gender}) = _$_RickMortyListResult;
 
   factory _RickMortyListResult.fromJson(Map<String, dynamic> json) =
       _$_RickMortyListResult.fromJson;
@@ -565,9 +573,9 @@ abstract class _RickMortyListResult implements RickMortyListResult {
   @override
   String get image;
   @override
-  Status get status;
+  ListStatus get status;
   @override
-  Gender get gender;
+  ListGender get gender;
   @override
   @JsonKey(ignore: true)
   _$$_RickMortyListResultCopyWith<_$_RickMortyListResult> get copyWith =>

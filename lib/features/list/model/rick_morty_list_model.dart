@@ -29,7 +29,7 @@ class RickMortyListInfo with _$RickMortyListInfo {
       _$RickMortyListInfoFromJson(json);
 }
 
-enum Status {
+enum ListStatus {
   @JsonValue('Alive')
   alive,
   @JsonValue('Dead')
@@ -38,7 +38,7 @@ enum Status {
   unknown,
 }
 
-enum Gender {
+enum ListGender {
   @JsonValue('Female')
   female,
   @JsonValue('Male')
@@ -56,8 +56,8 @@ class RickMortyListResult with _$RickMortyListResult {
     required String id,
     required String name,
     required String image,
-    @Default(Status.unknown) Status status,
-    @Default(Gender.unknown) Gender gender,
+    @Default(ListStatus.unknown) ListStatus status,
+    @Default(ListGender.unknown) ListGender gender,
   }) = _RickMortyListResult;
 
   factory RickMortyListResult.fromJson(Map<String, dynamic> json) =>

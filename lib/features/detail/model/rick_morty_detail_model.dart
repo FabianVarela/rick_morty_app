@@ -4,7 +4,7 @@ part 'rick_morty_detail_model.freezed.dart';
 
 part 'rick_morty_detail_model.g.dart';
 
-enum Status {
+enum DetailStatus {
   @JsonValue('Alive')
   alive,
   @JsonValue('Dead')
@@ -13,7 +13,7 @@ enum Status {
   unknown,
 }
 
-enum Gender {
+enum DetailGender {
   @JsonValue('Female')
   female,
   @JsonValue('Male')
@@ -30,10 +30,10 @@ class RickMortyDetailResult with _$RickMortyDetailResult {
   factory RickMortyDetailResult({
     required String id,
     required String name,
-    @Default(Status.unknown) Status status,
+    @Default(DetailStatus.unknown) DetailStatus status,
     required String species,
     @Default('') String type,
-    @Default(Gender.unknown) Gender gender,
+    @Default(DetailGender.unknown) DetailGender gender,
     required String image,
     required DateTime created,
     required RickMortyOriginResult origin,

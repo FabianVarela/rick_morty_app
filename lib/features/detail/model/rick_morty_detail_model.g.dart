@@ -11,12 +11,12 @@ _$_RickMortyDetailResult _$$_RickMortyDetailResultFromJson(
     _$_RickMortyDetailResult(
       id: json['id'] as String,
       name: json['name'] as String,
-      status: $enumDecodeNullable(_$StatusEnumMap, json['status']) ??
-          Status.unknown,
+      status: $enumDecodeNullable(_$DetailStatusEnumMap, json['status']) ??
+          DetailStatus.unknown,
       species: json['species'] as String,
       type: json['type'] as String? ?? '',
-      gender: $enumDecodeNullable(_$GenderEnumMap, json['gender']) ??
-          Gender.unknown,
+      gender: $enumDecodeNullable(_$DetailGenderEnumMap, json['gender']) ??
+          DetailGender.unknown,
       image: json['image'] as String,
       created: DateTime.parse(json['created'] as String),
       origin: RickMortyOriginResult.fromJson(
@@ -25,17 +25,17 @@ _$_RickMortyDetailResult _$$_RickMortyDetailResultFromJson(
           json['location'] as Map<String, dynamic>),
     );
 
-const _$StatusEnumMap = {
-  Status.alive: 'Alive',
-  Status.dead: 'Dead',
-  Status.unknown: 'unknown',
+const _$DetailStatusEnumMap = {
+  DetailStatus.alive: 'Alive',
+  DetailStatus.dead: 'Dead',
+  DetailStatus.unknown: 'unknown',
 };
 
-const _$GenderEnumMap = {
-  Gender.female: 'Female',
-  Gender.male: 'Male',
-  Gender.genderless: 'Genderless',
-  Gender.unknown: 'unknown',
+const _$DetailGenderEnumMap = {
+  DetailGender.female: 'Female',
+  DetailGender.male: 'Male',
+  DetailGender.genderless: 'Genderless',
+  DetailGender.unknown: 'unknown',
 };
 
 _$_RickMortyOriginResult _$$_RickMortyOriginResultFromJson(
