@@ -1,13 +1,14 @@
-import 'package:rick_morty_app/core/client/rick_morty_client.dart';
+import 'package:graphql/client.dart';
+import 'package:rick_morty_app/core/graph_ql/graph_ql_provider.dart';
 import 'package:rick_morty_app/features/detail/model/rick_morty_detail_model.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'rick_morty_detail_repository.g.dart';
 
 class RickMortyDetailRepository {
-  const RickMortyDetailRepository(this._client);
+  const RickMortyDetailRepository(this._graphQlClient);
 
-  final RickMortyClient _client;
+  final GraphQLClient _graphQlClient;
 
   Future<RickMortyDetailResult> fetchDetailData({required int id}) async {
     final queryBuilder = StringBuffer('query {')
@@ -17,8 +18,8 @@ class RickMortyDetailRepository {
       ..write('  }')
       ..write('}');
 
-    final rickMortyQueryResult = await _client.getFromQuery(
-      queryBuilder.toString(),
+    final rickMortyQueryResult = await _graphQlClient.query(
+      QueryOptions(document: gql(queryBuilder.toString())),
     );
 
     if (rickMortyQueryResult.hasException) {
@@ -33,7 +34,7 @@ class RickMortyDetailRepository {
 
 @riverpod
 RickMortyDetailRepository rickMortyDetailRepo(RickMortyDetailRepoRef ref) {
-  return RickMortyDetailRepository(ref.watch(rickMortyClientProvider));
+  return RickMortyDetailRepository(ref.watch(graphQlClientProvider));
 }
 
 @riverpod

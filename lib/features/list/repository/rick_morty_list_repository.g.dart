@@ -29,7 +29,7 @@ class _SystemHash {
   }
 }
 
-String _$rickMortyListRepoHash() => r'ed79cc86a3ae395007ebe17f3653f58f68ef23d5';
+String _$rickMortyListRepoHash() => r'e2659dcb7029e4fd6026cad29cdfa85743c89044';
 
 /// See also [rickMortyListRepo].
 final rickMortyListRepoProvider = AutoDisposeProvider<RickMortyListRepository>(

@@ -30,7 +30,7 @@ class _SystemHash {
 }
 
 String _$rickMortyDetailRepoHash() =>
-    r'340c85f4ecd791de2cbf292e46f53d1ad83498fd';
+    r'fcad8bc84f1760c5d6fe4cec9954bf6d554d4fd8';
 
 /// See also [rickMortyDetailRepo].
 final rickMortyDetailRepoProvider =
