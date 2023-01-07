@@ -41,15 +41,3 @@ class RickMortyListRepository {
 RickMortyListRepository rickMortyListRepo(RickMortyListRepoRef ref) {
   return RickMortyListRepository(ref.watch(graphQlClientProvider));
 }
-
-@riverpod
-Future<RickMortyListData> fetchListData(
-  FetchListDataRef ref, {
-  int page = 1,
-  Map<String, String>? filter,
-}) async {
-  final rickMortyListRepository = ref.watch(rickMortyListRepoProvider);
-  return filter == null
-      ? rickMortyListRepository.fetchListData(page: page)
-      : rickMortyListRepository.fetchListData(page: page, filter: filter);
-}

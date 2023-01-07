@@ -36,12 +36,3 @@ class RickMortyDetailRepository {
 RickMortyDetailRepository rickMortyDetailRepo(RickMortyDetailRepoRef ref) {
   return RickMortyDetailRepository(ref.watch(graphQlClientProvider));
 }
-
-@riverpod
-Future<RickMortyDetailResult> fetchDetailData(
-  FetchDetailDataRef ref, {
-  required int id,
-}) async {
-  final rickMortyDetailRepository = ref.watch(rickMortyDetailRepoProvider);
-  return rickMortyDetailRepository.fetchDetailData(id: id);
-}
