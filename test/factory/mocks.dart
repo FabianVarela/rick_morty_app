@@ -35,8 +35,6 @@ MockQueryResult<T> createMockQueryResult<T>(MockGraphQlClient graphQlClient) {
   return result;
 }
 
-class FakeRickMortyListData extends Fake implements RickMortyListData {}
-
 final mapRickMortyListData = <String, dynamic>{
   'characters': <String, dynamic>{
     'info': <String, dynamic>{'count': 826, 'pages': 42},
@@ -101,3 +99,5 @@ class MockDetailRepository extends Mock implements RickMortyDetailRepository {}
 class Listener<T> extends Mock {
   void call(T? previous, T next);
 }
+
+class MockOperationException extends Mock implements OperationException {}
