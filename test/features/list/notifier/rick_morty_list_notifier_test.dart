@@ -11,21 +11,22 @@ import '../../../factory/mocks.dart';
 void main() {
   test('Initial test to build $RickMortyListData', () async {
     // arrange
-    final rickMortyListRepository = MockListRepository();
+    final mockListRepository = MockListRepository();
     final container = setProviderContainer(
       overrides: [
-        rickMortyListRepoProvider.overrideWithValue(rickMortyListRepository),
+        rickMortyListRepoProvider.overrideWithValue(mockListRepository),
       ],
     );
 
     final listener = Listener<AsyncValue<RickMortyListData>>();
-    when(rickMortyListRepository.fetchListData).thenAnswer(
+    when(mockListRepository.fetchListData).thenAnswer(
       (_) async => rickMortyListData,
     );
+
     final notifier = container.read(rickMortyListProvider.notifier);
+    container.listen(rickMortyListProvider, listener, fireImmediately: true);
 
     // act
-    container.listen(rickMortyListProvider, listener, fireImmediately: true);
     await notifier.build();
 
     // assert
@@ -38,25 +39,26 @@ void main() {
     ]);
 
     verifyNoMoreInteractions(listener);
-    verify(rickMortyListRepository.fetchListData);
+    verify(mockListRepository.fetchListData);
   });
 
   test('Call fetchListData when I change page', () async {
     // arrange
-    final rickMortyListRepository = MockListRepository();
+    final mockListRepository = MockListRepository();
     final container = setProviderContainer(
       overrides: [
-        rickMortyListRepoProvider.overrideWithValue(rickMortyListRepository),
+        rickMortyListRepoProvider.overrideWithValue(mockListRepository),
       ],
     );
 
     final listener = Listener<AsyncValue<RickMortyListData>>();
-    when(() => rickMortyListRepository.fetchListData(page: any(named: 'page')))
+    when(() => mockListRepository.fetchListData(page: any(named: 'page')))
         .thenAnswer((_) async => rickMortyListData);
+
     final notifier = container.read(rickMortyListProvider.notifier);
+    container.listen(rickMortyListProvider, listener, fireImmediately: true);
 
     // act
-    container.listen(rickMortyListProvider, listener, fireImmediately: true);
     await notifier.fetchListData(page: 2);
 
     // assert
@@ -68,28 +70,26 @@ void main() {
     ]);
 
     verifyNoMoreInteractions(listener);
-    verify(
-      () => rickMortyListRepository.fetchListData(page: any(named: 'page')),
-    );
+    verify(() => mockListRepository.fetchListData(page: any(named: 'page')));
   });
 
   test('Call fetchListData when I filter data', () async {
     // arrange
-    final rickMortyListRepository = MockListRepository();
+    final mockListRepository = MockListRepository();
     final container = setProviderContainer(
       overrides: [
-        rickMortyListRepoProvider.overrideWithValue(rickMortyListRepository),
+        rickMortyListRepoProvider.overrideWithValue(mockListRepository),
       ],
     );
 
     final listener = Listener<AsyncValue<RickMortyListData>>();
-    when(
-      () => rickMortyListRepository.fetchListData(filter: any(named: 'filter')),
-    ).thenAnswer((_) async => rickMortyListData);
+    when(() => mockListRepository.fetchListData(filter: any(named: 'filter')))
+        .thenAnswer((_) async => rickMortyListData);
+
     final notifier = container.read(rickMortyListProvider.notifier);
+    container.listen(rickMortyListProvider, listener, fireImmediately: true);
 
     // act
-    container.listen(rickMortyListProvider, listener, fireImmediately: true);
     await notifier.fetchListData(filter: {'name': 'Rick Sanchez'});
 
     // assert
@@ -102,7 +102,7 @@ void main() {
 
     verifyNoMoreInteractions(listener);
     verify(
-      () => rickMortyListRepository.fetchListData(filter: any(named: 'filter')),
+      () => mockListRepository.fetchListData(filter: any(named: 'filter')),
     );
   });
 }

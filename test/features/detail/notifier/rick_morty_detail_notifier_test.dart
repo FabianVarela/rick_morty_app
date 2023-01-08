@@ -13,17 +13,17 @@ void main() {
     // arrange
     const detailId = 1;
 
-    final rickMortyDetailRepository = MockDetailRepository();
+    final mockDetailRepository = MockDetailRepository();
     final container = setProviderContainer(
       overrides: [
         rickMortyDetailRepoProvider.overrideWithValue(
-          rickMortyDetailRepository,
+          mockDetailRepository,
         ),
       ],
     );
 
     final listener = Listener<AsyncValue<RickMortyDetailResult>>();
-    when(() => rickMortyDetailRepository.fetchDetailData(id: any(named: 'id')))
+    when(() => mockDetailRepository.fetchDetailData(id: any(named: 'id')))
         .thenAnswer((_) async => rickMortyDetailData);
 
     final notifier = container.read(rickMortyDetailProvider(detailId).notifier);
@@ -47,8 +47,6 @@ void main() {
     ]);
 
     verifyNoMoreInteractions(listener);
-    verify(
-      () => rickMortyDetailRepository.fetchDetailData(id: any(named: 'id')),
-    );
+    verify(() => mockDetailRepository.fetchDetailData(id: any(named: 'id')));
   });
 }
