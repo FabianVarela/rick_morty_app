@@ -23,7 +23,7 @@ void main() {
     );
 
     when(mockListRepository.fetchListData).thenAnswer(
-      (_) async => Future.delayed(
+      (_) => Future.delayed(
         const Duration(milliseconds: 100),
         () => rickMortyListData,
       ),
@@ -65,7 +65,7 @@ void main() {
     });
 
     when(() => mockListRepository.fetchListData(page: any(named: 'page')))
-        .thenAnswer((_) async => delayedResult);
+        .thenAnswer((_) => delayedResult);
 
     final listener = Listener<AsyncValue<RickMortyListData>>();
     container.listen(rickMortyListProvider, listener, fireImmediately: true);
@@ -99,7 +99,7 @@ void main() {
       return rickMortyListData;
     });
     when(() => mockListRepository.fetchListData(filter: any(named: 'filter')))
-        .thenAnswer((_) async => delayedResult);
+        .thenAnswer((_) => delayedResult);
 
     final listener = Listener<AsyncValue<RickMortyListData>>();
     container.listen(rickMortyListProvider, listener, fireImmediately: true);
