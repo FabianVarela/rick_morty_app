@@ -18,16 +18,15 @@ void main() {
       ],
     );
 
-    final listener = Listener<AsyncValue<RickMortyListData>>();
     when(mockListRepository.fetchListData).thenAnswer(
       (_) async => rickMortyListData,
     );
 
-    final notifier = container.read(rickMortyListProvider.notifier);
+    final listener = Listener<AsyncValue<RickMortyListData>>();
     container.listen(rickMortyListProvider, listener, fireImmediately: true);
 
     // act
-    await notifier.build();
+    await container.read(rickMortyListProvider.notifier).build();
 
     // assert
     verifyInOrder([
@@ -51,15 +50,14 @@ void main() {
       ],
     );
 
-    final listener = Listener<AsyncValue<RickMortyListData>>();
     when(() => mockListRepository.fetchListData(page: any(named: 'page')))
         .thenAnswer((_) async => rickMortyListData);
 
-    final notifier = container.read(rickMortyListProvider.notifier);
+    final listener = Listener<AsyncValue<RickMortyListData>>();
     container.listen(rickMortyListProvider, listener, fireImmediately: true);
 
     // act
-    await notifier.fetchListData(page: 2);
+    await container.read(rickMortyListProvider.notifier).fetchListData(page: 2);
 
     // assert
     final asyncData = AsyncData<RickMortyListData>(rickMortyListData);
@@ -82,15 +80,16 @@ void main() {
       ],
     );
 
-    final listener = Listener<AsyncValue<RickMortyListData>>();
     when(() => mockListRepository.fetchListData(filter: any(named: 'filter')))
         .thenAnswer((_) async => rickMortyListData);
 
-    final notifier = container.read(rickMortyListProvider.notifier);
+    final listener = Listener<AsyncValue<RickMortyListData>>();
     container.listen(rickMortyListProvider, listener, fireImmediately: true);
 
     // act
-    await notifier.fetchListData(filter: {'name': 'Rick Sanchez'});
+    await container.read(rickMortyListProvider.notifier).fetchListData(
+      filter: {'name': 'Rick Sanchez'},
+    );
 
     // assert
     final asyncData = AsyncData<RickMortyListData>(rickMortyListData);

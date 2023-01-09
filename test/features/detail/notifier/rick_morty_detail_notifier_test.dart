@@ -22,20 +22,20 @@ void main() {
       ],
     );
 
-    final listener = Listener<AsyncValue<RickMortyDetailResult>>();
     when(() => mockDetailRepository.fetchDetailData(id: any(named: 'id')))
         .thenAnswer((_) async => rickMortyDetailData);
 
-    final notifier = container.read(rickMortyDetailProvider(detailId).notifier);
-
-    // act
+    final listener = Listener<AsyncValue<RickMortyDetailResult>>();
     container.listen(
       rickMortyDetailProvider(detailId),
       listener,
       fireImmediately: true,
     );
 
-    await notifier.build(detailId);
+    // act
+    await container
+        .read(rickMortyDetailProvider(detailId).notifier)
+        .build(detailId);
 
     // assert
     verifyInOrder([
