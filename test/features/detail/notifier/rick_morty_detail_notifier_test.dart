@@ -9,6 +9,10 @@ import '../../../factory/helpers.dart';
 import '../../../factory/mocks.dart';
 
 void main() {
+  setUpAll(() {
+    registerFallbackValue(FakeAsyncValue<RickMortyDetailResult>());
+  });
+
   test('Initial test to build $RickMortyDetailResult', () async {
     // arrange
     const detailId = 1;
@@ -16,14 +20,16 @@ void main() {
     final mockDetailRepository = MockDetailRepository();
     final container = setProviderContainer(
       overrides: [
-        rickMortyDetailRepoProvider.overrideWithValue(
-          mockDetailRepository,
-        ),
+        rickMortyDetailRepoProvider.overrideWithValue(mockDetailRepository),
       ],
     );
 
+    final delayedResult = Future.delayed(const Duration(milliseconds: 100), () {
+      return rickMortyDetailData;
+    });
+
     when(() => mockDetailRepository.fetchDetailData(id: any(named: 'id')))
-        .thenAnswer((_) async => rickMortyDetailData);
+        .thenAnswer((_) => delayedResult);
 
     final listener = Listener<AsyncValue<RickMortyDetailResult>>();
     container.listen(
@@ -33,11 +39,12 @@ void main() {
     );
 
     // act
-    await container
-        .read(rickMortyDetailProvider(detailId).notifier)
-        .build(detailId);
+    final state = container.read(rickMortyDetailProvider(detailId));
 
     // assert
+    expect(state, const AsyncLoading<RickMortyDetailResult>());
+    await Future<void>.delayed(const Duration(milliseconds: 100));
+
     verifyInOrder([
       () => listener(null, const AsyncLoading<RickMortyDetailResult>()),
       () => listener(
@@ -48,5 +55,49 @@ void main() {
 
     verifyNoMoreInteractions(listener);
     verify(() => mockDetailRepository.fetchDetailData(id: any(named: 'id')));
+  });
+
+  test('Initial test to build $RickMortyDetailResult has $Exception', () async {
+    // arrange
+    const detailId = 1;
+    final mockDetailRepository = MockDetailRepository();
+
+    final queryException = MockOperationException();
+    final delayedException = Future.delayed(
+      const Duration(milliseconds: 100),
+      () => throw queryException,
+    );
+
+    when(() => mockDetailRepository.fetchDetailData(id: any(named: 'id')))
+        .thenAnswer((_) => delayedException);
+
+    final container = setProviderContainer(
+      overrides: [
+        rickMortyDetailRepoProvider.overrideWithValue(mockDetailRepository),
+      ],
+    );
+
+    final listener = Listener<AsyncValue<RickMortyDetailResult>>();
+    container.listen(
+      rickMortyDetailProvider(detailId),
+      listener,
+      fireImmediately: true,
+    );
+
+    // act
+    final state = container.read(rickMortyDetailProvider(detailId));
+
+    // assert
+    expect(state, const AsyncLoading<RickMortyDetailResult>());
+    await Future<void>.delayed(const Duration(milliseconds: 100));
+
+    verifyInOrder([
+      () => listener(null, const AsyncLoading<RickMortyDetailResult>()),
+      () => listener(const AsyncLoading<RickMortyDetailResult>(), any()),
+    ]);
+
+    verifyNoMoreInteractions(listener);
+    verify(() => mockDetailRepository.fetchDetailData(id: any(named: 'id')))
+        .called(1);
   });
 }
