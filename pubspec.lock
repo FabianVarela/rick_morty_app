@@ -305,10 +305,10 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: "7a79232827c851f6b9f08c3c7254a1eaff7bc6aa147e103e51f951c5c10b0ccc"
+      sha256: b4bb06205ec607278b6fc23db238278417bca84a3905779cc68d1eb7afae37e2
       url: "https://pub.dev"
     source: hosted
-    version: "6.0.9"
+    version: "6.2.0"
   gql:
     dependency: transitive
     description:
