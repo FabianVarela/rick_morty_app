@@ -6,7 +6,7 @@ part of 'rick_morty_detail_notifier.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-// ignore_for_file: avoid_private_typedef_functions, non_constant_identifier_names, subtype_of_sealed_class, invalid_use_of_internal_member, unused_element, constant_identifier_names, unnecessary_raw_strings, library_private_types_in_public_api
+String _$rickMortyDetailHash() => r'7ef1e5fdc2f2730aa87e5c4bea2596531b1d9677';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -29,21 +29,74 @@ class _SystemHash {
   }
 }
 
-String _$RickMortyDetailHash() => r'7ef1e5fdc2f2730aa87e5c4bea2596531b1d9677';
+abstract class _$RickMortyDetail
+    extends BuildlessAutoDisposeAsyncNotifier<RickMortyDetailResult> {
+  late final int id;
+
+  FutureOr<RickMortyDetailResult> build(
+    int id,
+  );
+}
+
+/// See also [RickMortyDetail].
+@ProviderFor(RickMortyDetail)
+const rickMortyDetailProvider = RickMortyDetailFamily();
+
+/// See also [RickMortyDetail].
+class RickMortyDetailFamily extends Family<AsyncValue<RickMortyDetailResult>> {
+  /// See also [RickMortyDetail].
+  const RickMortyDetailFamily();
+
+  /// See also [RickMortyDetail].
+  RickMortyDetailProvider call(
+    int id,
+  ) {
+    return RickMortyDetailProvider(
+      id,
+    );
+  }
+
+  @override
+  RickMortyDetailProvider getProviderOverride(
+    covariant RickMortyDetailProvider provider,
+  ) {
+    return call(
+      provider.id,
+    );
+  }
+
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'rickMortyDetailProvider';
+}
 
 /// See also [RickMortyDetail].
 class RickMortyDetailProvider extends AutoDisposeAsyncNotifierProviderImpl<
     RickMortyDetail, RickMortyDetailResult> {
+  /// See also [RickMortyDetail].
   RickMortyDetailProvider(
     this.id,
-  ) : super(
+  ) : super.internal(
           () => RickMortyDetail()..id = id,
           from: rickMortyDetailProvider,
           name: r'rickMortyDetailProvider',
           debugGetCreateSourceHash:
               const bool.fromEnvironment('dart.vm.product')
                   ? null
-                  : _$RickMortyDetailHash,
+                  : _$rickMortyDetailHash,
+          dependencies: RickMortyDetailFamily._dependencies,
+          allTransitiveDependencies:
+              RickMortyDetailFamily._allTransitiveDependencies,
         );
 
   final int id;
@@ -63,56 +116,11 @@ class RickMortyDetailProvider extends AutoDisposeAsyncNotifierProviderImpl<
 
   @override
   FutureOr<RickMortyDetailResult> runNotifierBuild(
-    covariant _$RickMortyDetail notifier,
+    covariant RickMortyDetail notifier,
   ) {
     return notifier.build(
       id,
     );
   }
 }
-
-typedef RickMortyDetailRef
-    = AutoDisposeAsyncNotifierProviderRef<RickMortyDetailResult>;
-
-/// See also [RickMortyDetail].
-final rickMortyDetailProvider = RickMortyDetailFamily();
-
-class RickMortyDetailFamily extends Family<AsyncValue<RickMortyDetailResult>> {
-  RickMortyDetailFamily();
-
-  RickMortyDetailProvider call(
-    int id,
-  ) {
-    return RickMortyDetailProvider(
-      id,
-    );
-  }
-
-  @override
-  AutoDisposeAsyncNotifierProviderImpl<RickMortyDetail, RickMortyDetailResult>
-      getProviderOverride(
-    covariant RickMortyDetailProvider provider,
-  ) {
-    return call(
-      provider.id,
-    );
-  }
-
-  @override
-  List<ProviderOrFamily>? get allTransitiveDependencies => null;
-
-  @override
-  List<ProviderOrFamily>? get dependencies => null;
-
-  @override
-  String? get name => r'rickMortyDetailProvider';
-}
-
-abstract class _$RickMortyDetail
-    extends BuildlessAutoDisposeAsyncNotifier<RickMortyDetailResult> {
-  late final int id;
-
-  FutureOr<RickMortyDetailResult> build(
-    int id,
-  );
-}
+// ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions
