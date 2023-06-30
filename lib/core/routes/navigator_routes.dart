@@ -21,7 +21,7 @@ final rickMortyRouter = GoRouter(
           pageBuilder: (_, state) => _setDefaultPageRoute<dynamic>(
             pageKey: state.pageKey,
             child: RickMortyDetailView(
-              id: int.parse(state.params['id']!),
+              id: int.parse(state.pathParameters['id']!),
             ),
           ),
         ),
