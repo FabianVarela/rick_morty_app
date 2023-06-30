@@ -84,7 +84,6 @@ final rickMortyDetailData = RickMortyDetailResult(
   name: 'Rick Sanchez',
   status: DetailStatus.alive,
   species: 'Human',
-  type: '',
   gender: DetailGender.male,
   image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
   created: DateTime.parse('2017-11-04T18:48:46.250Z'),
