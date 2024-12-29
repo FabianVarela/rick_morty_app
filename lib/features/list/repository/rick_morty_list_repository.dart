@@ -1,4 +1,5 @@
 import 'package:graphql/client.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rick_morty_app/core/common/extensions.dart';
 import 'package:rick_morty_app/core/graph_ql/graph_ql_provider.dart';
 import 'package:rick_morty_app/features/list/model/rick_morty_list_model.dart';
@@ -38,6 +39,6 @@ class RickMortyListRepository {
 }
 
 @riverpod
-RickMortyListRepository rickMortyListRepo(RickMortyListRepoRef ref) {
+RickMortyListRepository rickMortyListRepo(Ref ref) {
   return RickMortyListRepository(ref.watch(graphQlClientProvider));
 }
