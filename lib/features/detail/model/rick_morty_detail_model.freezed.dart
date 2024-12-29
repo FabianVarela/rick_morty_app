@@ -12,7 +12,7 @@ part of 'rick_morty_detail_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 RickMortyDetailResult _$RickMortyDetailResultFromJson(
     Map<String, dynamic> json) {
@@ -32,7 +32,9 @@ mixin _$RickMortyDetailResult {
   RickMortyOriginResult get origin => throw _privateConstructorUsedError;
   RickMortyLocationResult get location => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RickMortyDetailResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RickMortyDetailResultCopyWith<RickMortyDetailResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -70,6 +72,8 @@ class _$RickMortyDetailResultCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RickMortyDetailResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -128,6 +132,8 @@ class _$RickMortyDetailResultCopyWithImpl<$Res,
     ) as $Val);
   }
 
+  /// Create a copy of RickMortyDetailResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $RickMortyOriginResultCopyWith<$Res> get origin {
@@ -136,6 +142,8 @@ class _$RickMortyDetailResultCopyWithImpl<$Res,
     });
   }
 
+  /// Create a copy of RickMortyDetailResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $RickMortyLocationResultCopyWith<$Res> get location {
@@ -146,11 +154,12 @@ class _$RickMortyDetailResultCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_RickMortyDetailResultCopyWith<$Res>
+abstract class _$$RickMortyDetailResultImplCopyWith<$Res>
     implements $RickMortyDetailResultCopyWith<$Res> {
-  factory _$$_RickMortyDetailResultCopyWith(_$_RickMortyDetailResult value,
-          $Res Function(_$_RickMortyDetailResult) then) =
-      __$$_RickMortyDetailResultCopyWithImpl<$Res>;
+  factory _$$RickMortyDetailResultImplCopyWith(
+          _$RickMortyDetailResultImpl value,
+          $Res Function(_$RickMortyDetailResultImpl) then) =
+      __$$RickMortyDetailResultImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -172,13 +181,16 @@ abstract class _$$_RickMortyDetailResultCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_RickMortyDetailResultCopyWithImpl<$Res>
-    extends _$RickMortyDetailResultCopyWithImpl<$Res, _$_RickMortyDetailResult>
-    implements _$$_RickMortyDetailResultCopyWith<$Res> {
-  __$$_RickMortyDetailResultCopyWithImpl(_$_RickMortyDetailResult _value,
-      $Res Function(_$_RickMortyDetailResult) _then)
+class __$$RickMortyDetailResultImplCopyWithImpl<$Res>
+    extends _$RickMortyDetailResultCopyWithImpl<$Res,
+        _$RickMortyDetailResultImpl>
+    implements _$$RickMortyDetailResultImplCopyWith<$Res> {
+  __$$RickMortyDetailResultImplCopyWithImpl(_$RickMortyDetailResultImpl _value,
+      $Res Function(_$RickMortyDetailResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RickMortyDetailResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -193,7 +205,7 @@ class __$$_RickMortyDetailResultCopyWithImpl<$Res>
     Object? origin = null,
     Object? location = null,
   }) {
-    return _then(_$_RickMortyDetailResult(
+    return _then(_$RickMortyDetailResultImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -241,8 +253,8 @@ class __$$_RickMortyDetailResultCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(createToJson: false)
-class _$_RickMortyDetailResult implements _RickMortyDetailResult {
-  _$_RickMortyDetailResult(
+class _$RickMortyDetailResultImpl implements _RickMortyDetailResult {
+  _$RickMortyDetailResultImpl(
       {required this.id,
       required this.name,
       this.status = DetailStatus.unknown,
@@ -254,8 +266,8 @@ class _$_RickMortyDetailResult implements _RickMortyDetailResult {
       required this.origin,
       required this.location});
 
-  factory _$_RickMortyDetailResult.fromJson(Map<String, dynamic> json) =>
-      _$$_RickMortyDetailResultFromJson(json);
+  factory _$RickMortyDetailResultImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RickMortyDetailResultImplFromJson(json);
 
   @override
   final String id;
@@ -287,10 +299,10 @@ class _$_RickMortyDetailResult implements _RickMortyDetailResult {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RickMortyDetailResult &&
+            other is _$RickMortyDetailResultImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.status, status) || other.status == status) &&
@@ -304,17 +316,19 @@ class _$_RickMortyDetailResult implements _RickMortyDetailResult {
                 other.location == location));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, name, status, species, type,
       gender, image, created, origin, location);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RickMortyDetailResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RickMortyDetailResultCopyWith<_$_RickMortyDetailResult> get copyWith =>
-      __$$_RickMortyDetailResultCopyWithImpl<_$_RickMortyDetailResult>(
-          this, _$identity);
+  _$$RickMortyDetailResultImplCopyWith<_$RickMortyDetailResultImpl>
+      get copyWith => __$$RickMortyDetailResultImplCopyWithImpl<
+          _$RickMortyDetailResultImpl>(this, _$identity);
 }
 
 abstract class _RickMortyDetailResult implements RickMortyDetailResult {
@@ -329,10 +343,10 @@ abstract class _RickMortyDetailResult implements RickMortyDetailResult {
           required final DateTime created,
           required final RickMortyOriginResult origin,
           required final RickMortyLocationResult location}) =
-      _$_RickMortyDetailResult;
+      _$RickMortyDetailResultImpl;
 
   factory _RickMortyDetailResult.fromJson(Map<String, dynamic> json) =
-      _$_RickMortyDetailResult.fromJson;
+      _$RickMortyDetailResultImpl.fromJson;
 
   @override
   String get id;
@@ -354,10 +368,13 @@ abstract class _RickMortyDetailResult implements RickMortyDetailResult {
   RickMortyOriginResult get origin;
   @override
   RickMortyLocationResult get location;
+
+  /// Create a copy of RickMortyDetailResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_RickMortyDetailResultCopyWith<_$_RickMortyDetailResult> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RickMortyDetailResultImplCopyWith<_$RickMortyDetailResultImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 RickMortyOriginResult _$RickMortyOriginResultFromJson(
@@ -370,7 +387,9 @@ mixin _$RickMortyOriginResult {
   String? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RickMortyOriginResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RickMortyOriginResultCopyWith<RickMortyOriginResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -395,6 +414,8 @@ class _$RickMortyOriginResultCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RickMortyOriginResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -415,31 +436,35 @@ class _$RickMortyOriginResultCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_RickMortyOriginResultCopyWith<$Res>
+abstract class _$$RickMortyOriginResultImplCopyWith<$Res>
     implements $RickMortyOriginResultCopyWith<$Res> {
-  factory _$$_RickMortyOriginResultCopyWith(_$_RickMortyOriginResult value,
-          $Res Function(_$_RickMortyOriginResult) then) =
-      __$$_RickMortyOriginResultCopyWithImpl<$Res>;
+  factory _$$RickMortyOriginResultImplCopyWith(
+          _$RickMortyOriginResultImpl value,
+          $Res Function(_$RickMortyOriginResultImpl) then) =
+      __$$RickMortyOriginResultImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? id, String? name});
 }
 
 /// @nodoc
-class __$$_RickMortyOriginResultCopyWithImpl<$Res>
-    extends _$RickMortyOriginResultCopyWithImpl<$Res, _$_RickMortyOriginResult>
-    implements _$$_RickMortyOriginResultCopyWith<$Res> {
-  __$$_RickMortyOriginResultCopyWithImpl(_$_RickMortyOriginResult _value,
-      $Res Function(_$_RickMortyOriginResult) _then)
+class __$$RickMortyOriginResultImplCopyWithImpl<$Res>
+    extends _$RickMortyOriginResultCopyWithImpl<$Res,
+        _$RickMortyOriginResultImpl>
+    implements _$$RickMortyOriginResultImplCopyWith<$Res> {
+  __$$RickMortyOriginResultImplCopyWithImpl(_$RickMortyOriginResultImpl _value,
+      $Res Function(_$RickMortyOriginResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RickMortyOriginResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
   }) {
-    return _then(_$_RickMortyOriginResult(
+    return _then(_$RickMortyOriginResultImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -455,11 +480,11 @@ class __$$_RickMortyOriginResultCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(createToJson: false)
-class _$_RickMortyOriginResult implements _RickMortyOriginResult {
-  _$_RickMortyOriginResult({this.id, this.name});
+class _$RickMortyOriginResultImpl implements _RickMortyOriginResult {
+  _$RickMortyOriginResultImpl({this.id, this.name});
 
-  factory _$_RickMortyOriginResult.fromJson(Map<String, dynamic> json) =>
-      _$$_RickMortyOriginResultFromJson(json);
+  factory _$RickMortyOriginResultImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RickMortyOriginResultImplFromJson(json);
 
   @override
   final String? id;
@@ -472,41 +497,46 @@ class _$_RickMortyOriginResult implements _RickMortyOriginResult {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RickMortyOriginResult &&
+            other is _$RickMortyOriginResultImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, name);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RickMortyOriginResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RickMortyOriginResultCopyWith<_$_RickMortyOriginResult> get copyWith =>
-      __$$_RickMortyOriginResultCopyWithImpl<_$_RickMortyOriginResult>(
-          this, _$identity);
+  _$$RickMortyOriginResultImplCopyWith<_$RickMortyOriginResultImpl>
+      get copyWith => __$$RickMortyOriginResultImplCopyWithImpl<
+          _$RickMortyOriginResultImpl>(this, _$identity);
 }
 
 abstract class _RickMortyOriginResult implements RickMortyOriginResult {
   factory _RickMortyOriginResult({final String? id, final String? name}) =
-      _$_RickMortyOriginResult;
+      _$RickMortyOriginResultImpl;
 
   factory _RickMortyOriginResult.fromJson(Map<String, dynamic> json) =
-      _$_RickMortyOriginResult.fromJson;
+      _$RickMortyOriginResultImpl.fromJson;
 
   @override
   String? get id;
   @override
   String? get name;
+
+  /// Create a copy of RickMortyOriginResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_RickMortyOriginResultCopyWith<_$_RickMortyOriginResult> get copyWith =>
-      throw _privateConstructorUsedError;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RickMortyOriginResultImplCopyWith<_$RickMortyOriginResultImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 RickMortyLocationResult _$RickMortyLocationResultFromJson(
@@ -519,7 +549,9 @@ mixin _$RickMortyLocationResult {
   String? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RickMortyLocationResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $RickMortyLocationResultCopyWith<RickMortyLocationResult> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -544,6 +576,8 @@ class _$RickMortyLocationResultCopyWithImpl<$Res,
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of RickMortyLocationResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -564,32 +598,36 @@ class _$RickMortyLocationResultCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_RickMortyLocationResultCopyWith<$Res>
+abstract class _$$RickMortyLocationResultImplCopyWith<$Res>
     implements $RickMortyLocationResultCopyWith<$Res> {
-  factory _$$_RickMortyLocationResultCopyWith(_$_RickMortyLocationResult value,
-          $Res Function(_$_RickMortyLocationResult) then) =
-      __$$_RickMortyLocationResultCopyWithImpl<$Res>;
+  factory _$$RickMortyLocationResultImplCopyWith(
+          _$RickMortyLocationResultImpl value,
+          $Res Function(_$RickMortyLocationResultImpl) then) =
+      __$$RickMortyLocationResultImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? id, String? name});
 }
 
 /// @nodoc
-class __$$_RickMortyLocationResultCopyWithImpl<$Res>
+class __$$RickMortyLocationResultImplCopyWithImpl<$Res>
     extends _$RickMortyLocationResultCopyWithImpl<$Res,
-        _$_RickMortyLocationResult>
-    implements _$$_RickMortyLocationResultCopyWith<$Res> {
-  __$$_RickMortyLocationResultCopyWithImpl(_$_RickMortyLocationResult _value,
-      $Res Function(_$_RickMortyLocationResult) _then)
+        _$RickMortyLocationResultImpl>
+    implements _$$RickMortyLocationResultImplCopyWith<$Res> {
+  __$$RickMortyLocationResultImplCopyWithImpl(
+      _$RickMortyLocationResultImpl _value,
+      $Res Function(_$RickMortyLocationResultImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of RickMortyLocationResult
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? id = freezed,
     Object? name = freezed,
   }) {
-    return _then(_$_RickMortyLocationResult(
+    return _then(_$RickMortyLocationResultImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -605,11 +643,11 @@ class __$$_RickMortyLocationResultCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(createToJson: false)
-class _$_RickMortyLocationResult implements _RickMortyLocationResult {
-  _$_RickMortyLocationResult({this.id, this.name});
+class _$RickMortyLocationResultImpl implements _RickMortyLocationResult {
+  _$RickMortyLocationResultImpl({this.id, this.name});
 
-  factory _$_RickMortyLocationResult.fromJson(Map<String, dynamic> json) =>
-      _$$_RickMortyLocationResultFromJson(json);
+  factory _$RickMortyLocationResultImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RickMortyLocationResultImplFromJson(json);
 
   @override
   final String? id;
@@ -622,40 +660,44 @@ class _$_RickMortyLocationResult implements _RickMortyLocationResult {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RickMortyLocationResult &&
+            other is _$RickMortyLocationResultImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, name);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of RickMortyLocationResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RickMortyLocationResultCopyWith<_$_RickMortyLocationResult>
-      get copyWith =>
-          __$$_RickMortyLocationResultCopyWithImpl<_$_RickMortyLocationResult>(
-              this, _$identity);
+  _$$RickMortyLocationResultImplCopyWith<_$RickMortyLocationResultImpl>
+      get copyWith => __$$RickMortyLocationResultImplCopyWithImpl<
+          _$RickMortyLocationResultImpl>(this, _$identity);
 }
 
 abstract class _RickMortyLocationResult implements RickMortyLocationResult {
   factory _RickMortyLocationResult({final String? id, final String? name}) =
-      _$_RickMortyLocationResult;
+      _$RickMortyLocationResultImpl;
 
   factory _RickMortyLocationResult.fromJson(Map<String, dynamic> json) =
-      _$_RickMortyLocationResult.fromJson;
+      _$RickMortyLocationResultImpl.fromJson;
 
   @override
   String? get id;
   @override
   String? get name;
+
+  /// Create a copy of RickMortyLocationResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_RickMortyLocationResultCopyWith<_$_RickMortyLocationResult>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$RickMortyLocationResultImplCopyWith<_$RickMortyLocationResultImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

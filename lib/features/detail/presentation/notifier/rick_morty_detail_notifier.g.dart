@@ -85,8 +85,8 @@ class RickMortyDetailProvider extends AutoDisposeAsyncNotifierProviderImpl<
     RickMortyDetail, RickMortyDetailResult> {
   /// See also [RickMortyDetail].
   RickMortyDetailProvider(
-    this.id,
-  ) : super.internal(
+    int id,
+  ) : this._internal(
           () => RickMortyDetail()..id = id,
           from: rickMortyDetailProvider,
           name: r'rickMortyDetailProvider',
@@ -97,9 +97,51 @@ class RickMortyDetailProvider extends AutoDisposeAsyncNotifierProviderImpl<
           dependencies: RickMortyDetailFamily._dependencies,
           allTransitiveDependencies:
               RickMortyDetailFamily._allTransitiveDependencies,
+          id: id,
         );
 
+  RickMortyDetailProvider._internal(
+    super._createNotifier, {
+    required super.name,
+    required super.dependencies,
+    required super.allTransitiveDependencies,
+    required super.debugGetCreateSourceHash,
+    required super.from,
+    required this.id,
+  }) : super.internal();
+
   final int id;
+
+  @override
+  FutureOr<RickMortyDetailResult> runNotifierBuild(
+    covariant RickMortyDetail notifier,
+  ) {
+    return notifier.build(
+      id,
+    );
+  }
+
+  @override
+  Override overrideWith(RickMortyDetail Function() create) {
+    return ProviderOverride(
+      origin: this,
+      override: RickMortyDetailProvider._internal(
+        () => create()..id = id,
+        from: from,
+        name: null,
+        dependencies: null,
+        allTransitiveDependencies: null,
+        debugGetCreateSourceHash: null,
+        id: id,
+      ),
+    );
+  }
+
+  @override
+  AutoDisposeAsyncNotifierProviderElement<RickMortyDetail,
+      RickMortyDetailResult> createElement() {
+    return _RickMortyDetailProviderElement(this);
+  }
 
   @override
   bool operator ==(Object other) {
@@ -113,14 +155,23 @@ class RickMortyDetailProvider extends AutoDisposeAsyncNotifierProviderImpl<
 
     return _SystemHash.finish(hash);
   }
+}
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+mixin RickMortyDetailRef
+    on AutoDisposeAsyncNotifierProviderRef<RickMortyDetailResult> {
+  /// The parameter `id` of this provider.
+  int get id;
+}
+
+class _RickMortyDetailProviderElement
+    extends AutoDisposeAsyncNotifierProviderElement<RickMortyDetail,
+        RickMortyDetailResult> with RickMortyDetailRef {
+  _RickMortyDetailProviderElement(super.provider);
 
   @override
-  FutureOr<RickMortyDetailResult> runNotifierBuild(
-    covariant RickMortyDetail notifier,
-  ) {
-    return notifier.build(
-      id,
-    );
-  }
+  int get id => (origin as RickMortyDetailProvider).id;
 }
-// ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions
+// ignore_for_file: type=lint
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
