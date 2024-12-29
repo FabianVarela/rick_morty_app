@@ -79,7 +79,7 @@ void main() {
     verifyInOrder([
       () => listener(null, const AsyncLoading<RickMortyListData>()),
       () => listener(const AsyncLoading<RickMortyListData>(), asyncData),
-      () => listener(asyncData, asyncData)
+      () => listener(asyncData, asyncData),
     ]);
 
     verifyNoMoreInteractions(listener);
@@ -115,7 +115,7 @@ void main() {
     verifyInOrder([
       () => listener(null, const AsyncLoading<RickMortyListData>()),
       () => listener(const AsyncLoading<RickMortyListData>(), asyncData),
-      () => listener(asyncData, asyncData)
+      () => listener(asyncData, asyncData),
     ]);
 
     verifyNoMoreInteractions(listener);

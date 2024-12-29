@@ -45,9 +45,9 @@ final mapRickMortyListData = <String, dynamic>{
         'name': 'Rick Sanchez',
         'image': 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
         'status': 'Alive',
-        'gender': 'Male'
+        'gender': 'Male',
       },
-    ]
+    ],
   },
 };
 
@@ -75,8 +75,8 @@ final mapRickMortyDetailData = <String, dynamic>{
     'image': 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
     'created': '2017-11-04T18:48:46.250Z',
     'origin': <String, dynamic>{'id': '1', 'name': 'Earth (C-137)'},
-    'location': <String, dynamic>{'id': '3', 'name': 'Citadel of Ricks'}
-  }
+    'location': <String, dynamic>{'id': '3', 'name': 'Citadel of Ricks'},
+  },
 };
 
 final rickMortyDetailData = RickMortyDetailResult(
