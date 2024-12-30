@@ -1,4 +1,4 @@
-package com.developer.fabian.rick.morty.app.rick_morty_app
+package com.developer.fabian.rick_morty_app.rick_morty_app
 
 import io.flutter.embedding.android.FlutterActivity
 
