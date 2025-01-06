@@ -6,7 +6,7 @@ part of 'rick_morty_list_repository.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$rickMortyListRepoHash() => r'e2659dcb7029e4fd6026cad29cdfa85743c89044';
+String _$rickMortyListRepoHash() => r'd3c2828a4b64b34ef13ce591d1b0bcce8596f5f1';
 
 /// See also [rickMortyListRepo].
 @ProviderFor(rickMortyListRepo)

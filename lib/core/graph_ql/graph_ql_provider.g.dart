@@ -6,7 +6,7 @@ part of 'graph_ql_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$graphQlClientHash() => r'24d0610aa1b0bf27ea1b6a68cf85e88af2a96337';
+String _$graphQlClientHash() => r'cb33cd404261976e10aec6506eb9a7a843a1bb31';
 
 /// See also [graphQlClient].
 @ProviderFor(graphQlClient)

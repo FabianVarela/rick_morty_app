@@ -7,7 +7,7 @@ part of 'rick_morty_detail_repository.dart';
 // **************************************************************************
 
 String _$rickMortyDetailRepoHash() =>
-    r'fcad8bc84f1760c5d6fe4cec9954bf6d554d4fd8';
+    r'9ae078df5132d1a55eafa98330c6b6bba8e079c0';
 
 /// See also [rickMortyDetailRepo].
 @ProviderFor(rickMortyDetailRepo)
