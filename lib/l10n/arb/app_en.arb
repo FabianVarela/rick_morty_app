@@ -1,7 +1,15 @@
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
+    "characterNavBarTitle": "Characters",
+    "@characterNavBarTitle": {
+        "description": "Text shown in the BottomNavBar of the main app"
+    },
+    "locationNavBarTitle": "Locations",
+    "@locationNavBarTitle": {
+        "description": "Text shown in the BottomNavBar of the main app"
+    },
+    "episodeNavBarTitle": "Episodes",
+    "@episodeNavBarTitle": {
+        "description": "Text shown in the BottomNavBar of the main app"
     }
 }

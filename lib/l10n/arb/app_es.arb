@@ -1,7 +1,15 @@
 {
     "@@locale": "es",
-    "counterAppBarTitle": "Contador",
-    "@counterAppBarTitle": {
-        "description": "Texto mostrado en la AppBar de la página del contador"
+    "characterNavBarTitle": "Personajes",
+    "@characterNavBarTitle": {
+        "description": "Texto mostrado en el BottomNavBar de la aplicación principal"
+    },
+    "locationNavBarTitle": "Lugares",
+    "@locationNavBarTitle": {
+        "description": "Texto mostrado en el BottomNavBar de la aplicación principal"
+    },
+    "episodeNavBarTitle": "Episodios",
+    "@episodeNavBarTitle": {
+        "description": "Texto mostrado en el BottomNavBar de la aplicación principal"
     }
 }
