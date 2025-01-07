@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:rick_morty_app/common/gen/assets.gen.dart';
+import 'package:rick_morty_app/core/gen/assets.gen.dart';
 import 'package:rick_morty_app/l10n/l10n.dart';
 import 'package:vector_graphics/vector_graphics.dart';
 
