@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rick_morty_app/core/routes/navigator_routes.dart';
-import 'package:rick_morty_app/l10n/l10n.dart';
+import 'package:rick_morty_app/l10n/generated/app_localizations.dart'
+    show AppLocalizations;
 
 class App extends StatelessWidget {
   const App({super.key});
