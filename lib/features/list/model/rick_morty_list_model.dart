@@ -6,7 +6,7 @@ part 'rick_morty_list_model.freezed.dart';
 part 'rick_morty_list_model.g.dart';
 
 @Freezed(toJson: false)
-class RickMortyListData with _$RickMortyListData {
+abstract class RickMortyListData with _$RickMortyListData {
   @JsonSerializable(createToJson: false)
   factory RickMortyListData({
     required RickMortyListInfo info,
@@ -18,7 +18,7 @@ class RickMortyListData with _$RickMortyListData {
 }
 
 @Freezed(toJson: false)
-class RickMortyListInfo with _$RickMortyListInfo {
+abstract class RickMortyListInfo with _$RickMortyListInfo {
   @JsonSerializable(createToJson: false)
   factory RickMortyListInfo({
     required int count,
@@ -50,7 +50,7 @@ enum ListGender {
 }
 
 @Freezed(toJson: false)
-class RickMortyListResult with _$RickMortyListResult {
+abstract class RickMortyListResult with _$RickMortyListResult {
   @JsonSerializable(createToJson: false)
   factory RickMortyListResult({
     required String id,

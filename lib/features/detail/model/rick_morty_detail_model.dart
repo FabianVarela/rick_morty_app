@@ -25,7 +25,7 @@ enum DetailGender {
 }
 
 @Freezed(toJson: false)
-class RickMortyDetailResult with _$RickMortyDetailResult {
+abstract class RickMortyDetailResult with _$RickMortyDetailResult {
   @JsonSerializable(createToJson: false)
   factory RickMortyDetailResult({
     required String id,
@@ -45,7 +45,7 @@ class RickMortyDetailResult with _$RickMortyDetailResult {
 }
 
 @Freezed(toJson: false)
-class RickMortyOriginResult with _$RickMortyOriginResult {
+abstract class RickMortyOriginResult with _$RickMortyOriginResult {
   @JsonSerializable(createToJson: false)
   factory RickMortyOriginResult({String? id, String? name}) =
       _RickMortyOriginResult;
@@ -55,7 +55,7 @@ class RickMortyOriginResult with _$RickMortyOriginResult {
 }
 
 @Freezed(toJson: false)
-class RickMortyLocationResult with _$RickMortyLocationResult {
+abstract class RickMortyLocationResult with _$RickMortyLocationResult {
   @JsonSerializable(createToJson: false)
   factory RickMortyLocationResult({String? id, String? name}) =
       _RickMortyLocationResult;

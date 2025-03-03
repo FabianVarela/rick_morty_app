@@ -26,12 +26,17 @@ class $AssetsSvgGen {
   String get search => 'assets/svg/search.svg';
 
   /// List of all assets
-  List<String> get values =>
-      [characters, episodes, location, rickMortyWatermark, search];
+  List<String> get values => [
+    characters,
+    episodes,
+    location,
+    rickMortyWatermark,
+    search,
+  ];
 }
 
 class Assets {
-  Assets._();
+  const Assets._();
 
   static const $AssetsSvgGen svg = $AssetsSvgGen();
 }
