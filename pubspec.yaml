@@ -14,7 +14,7 @@ dependencies:
   flutter_hooks: ^0.21.2
   flutter_localizations:
     sdk: flutter
-  freezed_annotation: ^2.4.4
+  freezed_annotation: ^3.0.0
   go_router: ^14.8.1
   graphql: ^5.2.0-beta.11
   hooks_riverpod: ^2.6.1
@@ -29,11 +29,11 @@ dev_dependencies:
   flutter_native_splash: ^2.4.5
   flutter_test:
     sdk: flutter
-  freezed: ^2.5.8
+  freezed: ^3.0.3
   json_serializable: ^6.9.4
   mocktail: ^1.0.4
   remove_from_coverage: ^2.0.0
-  riverpod_generator: ^2.6.4
+  riverpod_generator: ^2.6.5
   vector_graphics_compiler: ^1.1.11+1
   very_good_analysis: ^7.0.0
 
