@@ -6,9 +6,9 @@ part of 'rick_morty_detail_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RickMortyDetailResultImpl _$$RickMortyDetailResultImplFromJson(
+_RickMortyDetailResult _$RickMortyDetailResultFromJson(
         Map<String, dynamic> json) =>
-    _$RickMortyDetailResultImpl(
+    _RickMortyDetailResult(
       id: json['id'] as String,
       name: json['name'] as String,
       status: $enumDecodeNullable(_$DetailStatusEnumMap, json['status']) ??
@@ -38,16 +38,16 @@ const _$DetailGenderEnumMap = {
   DetailGender.unknown: 'unknown',
 };
 
-_$RickMortyOriginResultImpl _$$RickMortyOriginResultImplFromJson(
+_RickMortyOriginResult _$RickMortyOriginResultFromJson(
         Map<String, dynamic> json) =>
-    _$RickMortyOriginResultImpl(
+    _RickMortyOriginResult(
       id: json['id'] as String?,
       name: json['name'] as String?,
     );
 
-_$RickMortyLocationResultImpl _$$RickMortyLocationResultImplFromJson(
+_RickMortyLocationResult _$RickMortyLocationResultFromJson(
         Map<String, dynamic> json) =>
-    _$RickMortyLocationResultImpl(
+    _RickMortyLocationResult(
       id: json['id'] as String?,
       name: json['name'] as String?,
     );

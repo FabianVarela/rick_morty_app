@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,32 +10,55 @@ part of 'rick_morty_list_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
 
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-RickMortyListData _$RickMortyListDataFromJson(Map<String, dynamic> json) {
-  return _RickMortyListData.fromJson(json);
-}
-
 /// @nodoc
-mixin _$RickMortyListData {
-  RickMortyListInfo get info => throw _privateConstructorUsedError;
-  List<RickMortyListResult> get results => throw _privateConstructorUsedError;
+mixin _$RickMortyListData implements DiagnosticableTreeMixin {
+  RickMortyListInfo get info;
+  List<RickMortyListResult> get results;
 
   /// Create a copy of RickMortyListData
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $RickMortyListDataCopyWith<RickMortyListData> get copyWith =>
-      throw _privateConstructorUsedError;
+      _$RickMortyListDataCopyWithImpl<RickMortyListData>(
+          this as RickMortyListData, _$identity);
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    properties
+      ..add(DiagnosticsProperty('type', 'RickMortyListData'))
+      ..add(DiagnosticsProperty('info', info))
+      ..add(DiagnosticsProperty('results', results));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RickMortyListData &&
+            (identical(other.info, info) || other.info == info) &&
+            const DeepCollectionEquality().equals(other.results, results));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, info, const DeepCollectionEquality().hash(results));
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'RickMortyListData(info: $info, results: $results)';
+  }
 }
 
 /// @nodoc
-abstract class $RickMortyListDataCopyWith<$Res> {
+abstract mixin class $RickMortyListDataCopyWith<$Res> {
   factory $RickMortyListDataCopyWith(
-          RickMortyListData value, $Res Function(RickMortyListData) then) =
-      _$RickMortyListDataCopyWithImpl<$Res, RickMortyListData>;
+          RickMortyListData value, $Res Function(RickMortyListData) _then) =
+      _$RickMortyListDataCopyWithImpl;
   @useResult
   $Res call({RickMortyListInfo info, List<RickMortyListResult> results});
 
@@ -42,14 +66,12 @@ abstract class $RickMortyListDataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RickMortyListDataCopyWithImpl<$Res, $Val extends RickMortyListData>
+class _$RickMortyListDataCopyWithImpl<$Res>
     implements $RickMortyListDataCopyWith<$Res> {
-  _$RickMortyListDataCopyWithImpl(this._value, this._then);
+  _$RickMortyListDataCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final RickMortyListData _self;
+  final $Res Function(RickMortyListData) _then;
 
   /// Create a copy of RickMortyListData
   /// with the given fields replaced by the non-null parameter values.
@@ -59,16 +81,16 @@ class _$RickMortyListDataCopyWithImpl<$Res, $Val extends RickMortyListData>
     Object? info = null,
     Object? results = null,
   }) {
-    return _then(_value.copyWith(
+    return _then(_self.copyWith(
       info: null == info
-          ? _value.info
+          ? _self.info
           : info // ignore: cast_nullable_to_non_nullable
               as RickMortyListInfo,
       results: null == results
-          ? _value.results
+          ? _self.results
           : results // ignore: cast_nullable_to_non_nullable
               as List<RickMortyListResult>,
-    ) as $Val);
+    ));
   }
 
   /// Create a copy of RickMortyListData
@@ -76,67 +98,23 @@ class _$RickMortyListDataCopyWithImpl<$Res, $Val extends RickMortyListData>
   @override
   @pragma('vm:prefer-inline')
   $RickMortyListInfoCopyWith<$Res> get info {
-    return $RickMortyListInfoCopyWith<$Res>(_value.info, (value) {
-      return _then(_value.copyWith(info: value) as $Val);
+    return $RickMortyListInfoCopyWith<$Res>(_self.info, (value) {
+      return _then(_self.copyWith(info: value));
     });
-  }
-}
-
-/// @nodoc
-abstract class _$$RickMortyListDataImplCopyWith<$Res>
-    implements $RickMortyListDataCopyWith<$Res> {
-  factory _$$RickMortyListDataImplCopyWith(_$RickMortyListDataImpl value,
-          $Res Function(_$RickMortyListDataImpl) then) =
-      __$$RickMortyListDataImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({RickMortyListInfo info, List<RickMortyListResult> results});
-
-  @override
-  $RickMortyListInfoCopyWith<$Res> get info;
-}
-
-/// @nodoc
-class __$$RickMortyListDataImplCopyWithImpl<$Res>
-    extends _$RickMortyListDataCopyWithImpl<$Res, _$RickMortyListDataImpl>
-    implements _$$RickMortyListDataImplCopyWith<$Res> {
-  __$$RickMortyListDataImplCopyWithImpl(_$RickMortyListDataImpl _value,
-      $Res Function(_$RickMortyListDataImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RickMortyListData
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? info = null,
-    Object? results = null,
-  }) {
-    return _then(_$RickMortyListDataImpl(
-      info: null == info
-          ? _value.info
-          : info // ignore: cast_nullable_to_non_nullable
-              as RickMortyListInfo,
-      results: null == results
-          ? _value._results
-          : results // ignore: cast_nullable_to_non_nullable
-              as List<RickMortyListResult>,
-    ));
   }
 }
 
 /// @nodoc
 
 @JsonSerializable(createToJson: false)
-class _$RickMortyListDataImpl
+class _RickMortyListData
     with DiagnosticableTreeMixin
-    implements _RickMortyListData {
-  _$RickMortyListDataImpl(
+    implements RickMortyListData {
+  _RickMortyListData(
       {required this.info, required final List<RickMortyListResult> results})
       : _results = results;
-
-  factory _$RickMortyListDataImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RickMortyListDataImplFromJson(json);
+  factory _RickMortyListData.fromJson(Map<String, dynamic> json) =>
+      _$RickMortyListDataFromJson(json);
 
   @override
   final RickMortyListInfo info;
@@ -148,14 +126,16 @@ class _$RickMortyListDataImpl
     return EqualUnmodifiableListView(_results);
   }
 
+  /// Create a copy of RickMortyListData
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RickMortyListData(info: $info, results: $results)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RickMortyListDataCopyWith<_RickMortyListData> get copyWith =>
+      __$RickMortyListDataCopyWithImpl<_RickMortyListData>(this, _$identity);
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'RickMortyListData'))
       ..add(DiagnosticsProperty('info', info))
@@ -166,7 +146,7 @@ class _$RickMortyListDataImpl
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RickMortyListDataImpl &&
+            other is _RickMortyListData &&
             (identical(other.info, info) || other.info == info) &&
             const DeepCollectionEquality().equals(other._results, _results));
   }
@@ -176,158 +156,80 @@ class _$RickMortyListDataImpl
   int get hashCode => Object.hash(
       runtimeType, info, const DeepCollectionEquality().hash(_results));
 
-  /// Create a copy of RickMortyListData
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RickMortyListDataImplCopyWith<_$RickMortyListDataImpl> get copyWith =>
-      __$$RickMortyListDataImplCopyWithImpl<_$RickMortyListDataImpl>(
-          this, _$identity);
-}
-
-abstract class _RickMortyListData implements RickMortyListData {
-  factory _RickMortyListData(
-          {required final RickMortyListInfo info,
-          required final List<RickMortyListResult> results}) =
-      _$RickMortyListDataImpl;
-
-  factory _RickMortyListData.fromJson(Map<String, dynamic> json) =
-      _$RickMortyListDataImpl.fromJson;
-
-  @override
-  RickMortyListInfo get info;
-  @override
-  List<RickMortyListResult> get results;
-
-  /// Create a copy of RickMortyListData
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RickMortyListDataImplCopyWith<_$RickMortyListDataImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-RickMortyListInfo _$RickMortyListInfoFromJson(Map<String, dynamic> json) {
-  return _RickMortyListInfo.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RickMortyListInfo {
-  int get count => throw _privateConstructorUsedError;
-  int get pages => throw _privateConstructorUsedError;
-
-  /// Create a copy of RickMortyListInfo
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RickMortyListInfoCopyWith<RickMortyListInfo> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RickMortyListInfoCopyWith<$Res> {
-  factory $RickMortyListInfoCopyWith(
-          RickMortyListInfo value, $Res Function(RickMortyListInfo) then) =
-      _$RickMortyListInfoCopyWithImpl<$Res, RickMortyListInfo>;
-  @useResult
-  $Res call({int count, int pages});
-}
-
-/// @nodoc
-class _$RickMortyListInfoCopyWithImpl<$Res, $Val extends RickMortyListInfo>
-    implements $RickMortyListInfoCopyWith<$Res> {
-  _$RickMortyListInfoCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RickMortyListInfo
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? count = null,
-    Object? pages = null,
-  }) {
-    return _then(_value.copyWith(
-      count: null == count
-          ? _value.count
-          : count // ignore: cast_nullable_to_non_nullable
-              as int,
-      pages: null == pages
-          ? _value.pages
-          : pages // ignore: cast_nullable_to_non_nullable
-              as int,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$RickMortyListInfoImplCopyWith<$Res>
-    implements $RickMortyListInfoCopyWith<$Res> {
-  factory _$$RickMortyListInfoImplCopyWith(_$RickMortyListInfoImpl value,
-          $Res Function(_$RickMortyListInfoImpl) then) =
-      __$$RickMortyListInfoImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({int count, int pages});
-}
-
-/// @nodoc
-class __$$RickMortyListInfoImplCopyWithImpl<$Res>
-    extends _$RickMortyListInfoCopyWithImpl<$Res, _$RickMortyListInfoImpl>
-    implements _$$RickMortyListInfoImplCopyWith<$Res> {
-  __$$RickMortyListInfoImplCopyWithImpl(_$RickMortyListInfoImpl _value,
-      $Res Function(_$RickMortyListInfoImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of RickMortyListInfo
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? count = null,
-    Object? pages = null,
-  }) {
-    return _then(_$RickMortyListInfoImpl(
-      count: null == count
-          ? _value.count
-          : count // ignore: cast_nullable_to_non_nullable
-              as int,
-      pages: null == pages
-          ? _value.pages
-          : pages // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-@JsonSerializable(createToJson: false)
-class _$RickMortyListInfoImpl
-    with DiagnosticableTreeMixin
-    implements _RickMortyListInfo {
-  _$RickMortyListInfoImpl({required this.count, required this.pages});
-
-  factory _$RickMortyListInfoImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RickMortyListInfoImplFromJson(json);
-
-  @override
-  final int count;
-  @override
-  final int pages;
-
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RickMortyListInfo(count: $count, pages: $pages)';
+    return 'RickMortyListData(info: $info, results: $results)';
   }
+}
+
+/// @nodoc
+abstract mixin class _$RickMortyListDataCopyWith<$Res>
+    implements $RickMortyListDataCopyWith<$Res> {
+  factory _$RickMortyListDataCopyWith(
+          _RickMortyListData value, $Res Function(_RickMortyListData) _then) =
+      __$RickMortyListDataCopyWithImpl;
+  @override
+  @useResult
+  $Res call({RickMortyListInfo info, List<RickMortyListResult> results});
+
+  @override
+  $RickMortyListInfoCopyWith<$Res> get info;
+}
+
+/// @nodoc
+class __$RickMortyListDataCopyWithImpl<$Res>
+    implements _$RickMortyListDataCopyWith<$Res> {
+  __$RickMortyListDataCopyWithImpl(this._self, this._then);
+
+  final _RickMortyListData _self;
+  final $Res Function(_RickMortyListData) _then;
+
+  /// Create a copy of RickMortyListData
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? info = null,
+    Object? results = null,
+  }) {
+    return _then(_RickMortyListData(
+      info: null == info
+          ? _self.info
+          : info // ignore: cast_nullable_to_non_nullable
+              as RickMortyListInfo,
+      results: null == results
+          ? _self._results
+          : results // ignore: cast_nullable_to_non_nullable
+              as List<RickMortyListResult>,
+    ));
+  }
+
+  /// Create a copy of RickMortyListData
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $RickMortyListInfoCopyWith<$Res> get info {
+    return $RickMortyListInfoCopyWith<$Res>(_self.info, (value) {
+      return _then(_self.copyWith(info: value));
+    });
+  }
+}
+
+/// @nodoc
+mixin _$RickMortyListInfo implements DiagnosticableTreeMixin {
+  int get count;
+  int get pages;
+
+  /// Create a copy of RickMortyListInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $RickMortyListInfoCopyWith<RickMortyListInfo> get copyWith =>
+      _$RickMortyListInfoCopyWithImpl<RickMortyListInfo>(
+          this as RickMortyListInfo, _$identity);
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'RickMortyListInfo'))
       ..add(DiagnosticsProperty('count', count))
@@ -338,7 +240,7 @@ class _$RickMortyListInfoImpl
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RickMortyListInfoImpl &&
+            other is RickMortyListInfo &&
             (identical(other.count, count) || other.count == count) &&
             (identical(other.pages, pages) || other.pages == pages));
   }
@@ -347,123 +249,194 @@ class _$RickMortyListInfoImpl
   @override
   int get hashCode => Object.hash(runtimeType, count, pages);
 
-  /// Create a copy of RickMortyListInfo
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$RickMortyListInfoImplCopyWith<_$RickMortyListInfoImpl> get copyWith =>
-      __$$RickMortyListInfoImplCopyWithImpl<_$RickMortyListInfoImpl>(
-          this, _$identity);
-}
-
-abstract class _RickMortyListInfo implements RickMortyListInfo {
-  factory _RickMortyListInfo(
-      {required final int count,
-      required final int pages}) = _$RickMortyListInfoImpl;
-
-  factory _RickMortyListInfo.fromJson(Map<String, dynamic> json) =
-      _$RickMortyListInfoImpl.fromJson;
-
-  @override
-  int get count;
-  @override
-  int get pages;
-
-  /// Create a copy of RickMortyListInfo
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RickMortyListInfoImplCopyWith<_$RickMortyListInfoImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-RickMortyListResult _$RickMortyListResultFromJson(Map<String, dynamic> json) {
-  return _RickMortyListResult.fromJson(json);
-}
-
-/// @nodoc
-mixin _$RickMortyListResult {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get image => throw _privateConstructorUsedError;
-  ListStatus get status => throw _privateConstructorUsedError;
-  ListGender get gender => throw _privateConstructorUsedError;
-
-  /// Create a copy of RickMortyListResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $RickMortyListResultCopyWith<RickMortyListResult> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $RickMortyListResultCopyWith<$Res> {
-  factory $RickMortyListResultCopyWith(
-          RickMortyListResult value, $Res Function(RickMortyListResult) then) =
-      _$RickMortyListResultCopyWithImpl<$Res, RickMortyListResult>;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      String image,
-      ListStatus status,
-      ListGender gender});
-}
-
-/// @nodoc
-class _$RickMortyListResultCopyWithImpl<$Res, $Val extends RickMortyListResult>
-    implements $RickMortyListResultCopyWith<$Res> {
-  _$RickMortyListResultCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of RickMortyListResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? image = null,
-    Object? status = null,
-    Object? gender = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      image: null == image
-          ? _value.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as ListStatus,
-      gender: null == gender
-          ? _value.gender
-          : gender // ignore: cast_nullable_to_non_nullable
-              as ListGender,
-    ) as $Val);
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'RickMortyListInfo(count: $count, pages: $pages)';
   }
 }
 
 /// @nodoc
-abstract class _$$RickMortyListResultImplCopyWith<$Res>
-    implements $RickMortyListResultCopyWith<$Res> {
-  factory _$$RickMortyListResultImplCopyWith(_$RickMortyListResultImpl value,
-          $Res Function(_$RickMortyListResultImpl) then) =
-      __$$RickMortyListResultImplCopyWithImpl<$Res>;
+abstract mixin class $RickMortyListInfoCopyWith<$Res> {
+  factory $RickMortyListInfoCopyWith(
+          RickMortyListInfo value, $Res Function(RickMortyListInfo) _then) =
+      _$RickMortyListInfoCopyWithImpl;
+  @useResult
+  $Res call({int count, int pages});
+}
+
+/// @nodoc
+class _$RickMortyListInfoCopyWithImpl<$Res>
+    implements $RickMortyListInfoCopyWith<$Res> {
+  _$RickMortyListInfoCopyWithImpl(this._self, this._then);
+
+  final RickMortyListInfo _self;
+  final $Res Function(RickMortyListInfo) _then;
+
+  /// Create a copy of RickMortyListInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
   @override
+  $Res call({
+    Object? count = null,
+    Object? pages = null,
+  }) {
+    return _then(_self.copyWith(
+      count: null == count
+          ? _self.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
+      pages: null == pages
+          ? _self.pages
+          : pages // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+@JsonSerializable(createToJson: false)
+class _RickMortyListInfo
+    with DiagnosticableTreeMixin
+    implements RickMortyListInfo {
+  _RickMortyListInfo({required this.count, required this.pages});
+  factory _RickMortyListInfo.fromJson(Map<String, dynamic> json) =>
+      _$RickMortyListInfoFromJson(json);
+
+  @override
+  final int count;
+  @override
+  final int pages;
+
+  /// Create a copy of RickMortyListInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RickMortyListInfoCopyWith<_RickMortyListInfo> get copyWith =>
+      __$RickMortyListInfoCopyWithImpl<_RickMortyListInfo>(this, _$identity);
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    properties
+      ..add(DiagnosticsProperty('type', 'RickMortyListInfo'))
+      ..add(DiagnosticsProperty('count', count))
+      ..add(DiagnosticsProperty('pages', pages));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _RickMortyListInfo &&
+            (identical(other.count, count) || other.count == count) &&
+            (identical(other.pages, pages) || other.pages == pages));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, count, pages);
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'RickMortyListInfo(count: $count, pages: $pages)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$RickMortyListInfoCopyWith<$Res>
+    implements $RickMortyListInfoCopyWith<$Res> {
+  factory _$RickMortyListInfoCopyWith(
+          _RickMortyListInfo value, $Res Function(_RickMortyListInfo) _then) =
+      __$RickMortyListInfoCopyWithImpl;
+  @override
+  @useResult
+  $Res call({int count, int pages});
+}
+
+/// @nodoc
+class __$RickMortyListInfoCopyWithImpl<$Res>
+    implements _$RickMortyListInfoCopyWith<$Res> {
+  __$RickMortyListInfoCopyWithImpl(this._self, this._then);
+
+  final _RickMortyListInfo _self;
+  final $Res Function(_RickMortyListInfo) _then;
+
+  /// Create a copy of RickMortyListInfo
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? count = null,
+    Object? pages = null,
+  }) {
+    return _then(_RickMortyListInfo(
+      count: null == count
+          ? _self.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
+      pages: null == pages
+          ? _self.pages
+          : pages // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+mixin _$RickMortyListResult implements DiagnosticableTreeMixin {
+  String get id;
+  String get name;
+  String get image;
+  ListStatus get status;
+  ListGender get gender;
+
+  /// Create a copy of RickMortyListResult
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  $RickMortyListResultCopyWith<RickMortyListResult> get copyWith =>
+      _$RickMortyListResultCopyWithImpl<RickMortyListResult>(
+          this as RickMortyListResult, _$identity);
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    properties
+      ..add(DiagnosticsProperty('type', 'RickMortyListResult'))
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('name', name))
+      ..add(DiagnosticsProperty('image', image))
+      ..add(DiagnosticsProperty('status', status))
+      ..add(DiagnosticsProperty('gender', gender));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is RickMortyListResult &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.gender, gender) || other.gender == gender));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, name, image, status, gender);
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'RickMortyListResult(id: $id, name: $name, image: $image, status: $status, gender: $gender)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $RickMortyListResultCopyWith<$Res> {
+  factory $RickMortyListResultCopyWith(
+          RickMortyListResult value, $Res Function(RickMortyListResult) _then) =
+      _$RickMortyListResultCopyWithImpl;
   @useResult
   $Res call(
       {String id,
@@ -474,12 +447,12 @@ abstract class _$$RickMortyListResultImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$RickMortyListResultImplCopyWithImpl<$Res>
-    extends _$RickMortyListResultCopyWithImpl<$Res, _$RickMortyListResultImpl>
-    implements _$$RickMortyListResultImplCopyWith<$Res> {
-  __$$RickMortyListResultImplCopyWithImpl(_$RickMortyListResultImpl _value,
-      $Res Function(_$RickMortyListResultImpl) _then)
-      : super(_value, _then);
+class _$RickMortyListResultCopyWithImpl<$Res>
+    implements $RickMortyListResultCopyWith<$Res> {
+  _$RickMortyListResultCopyWithImpl(this._self, this._then);
+
+  final RickMortyListResult _self;
+  final $Res Function(RickMortyListResult) _then;
 
   /// Create a copy of RickMortyListResult
   /// with the given fields replaced by the non-null parameter values.
@@ -492,25 +465,25 @@ class __$$RickMortyListResultImplCopyWithImpl<$Res>
     Object? status = null,
     Object? gender = null,
   }) {
-    return _then(_$RickMortyListResultImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       name: null == name
-          ? _value.name
+          ? _self.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
       image: null == image
-          ? _value.image
+          ? _self.image
           : image // ignore: cast_nullable_to_non_nullable
               as String,
       status: null == status
-          ? _value.status
+          ? _self.status
           : status // ignore: cast_nullable_to_non_nullable
               as ListStatus,
       gender: null == gender
-          ? _value.gender
+          ? _self.gender
           : gender // ignore: cast_nullable_to_non_nullable
               as ListGender,
     ));
@@ -520,18 +493,17 @@ class __$$RickMortyListResultImplCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(createToJson: false)
-class _$RickMortyListResultImpl
+class _RickMortyListResult
     with DiagnosticableTreeMixin
-    implements _RickMortyListResult {
-  _$RickMortyListResultImpl(
+    implements RickMortyListResult {
+  _RickMortyListResult(
       {required this.id,
       required this.name,
       required this.image,
       this.status = ListStatus.unknown,
       this.gender = ListGender.unknown});
-
-  factory _$RickMortyListResultImpl.fromJson(Map<String, dynamic> json) =>
-      _$$RickMortyListResultImplFromJson(json);
+  factory _RickMortyListResult.fromJson(Map<String, dynamic> json) =>
+      _$RickMortyListResultFromJson(json);
 
   @override
   final String id;
@@ -546,14 +518,17 @@ class _$RickMortyListResultImpl
   @JsonKey()
   final ListGender gender;
 
+  /// Create a copy of RickMortyListResult
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RickMortyListResult(id: $id, name: $name, image: $image, status: $status, gender: $gender)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RickMortyListResultCopyWith<_RickMortyListResult> get copyWith =>
+      __$RickMortyListResultCopyWithImpl<_RickMortyListResult>(
+          this, _$identity);
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'RickMortyListResult'))
       ..add(DiagnosticsProperty('id', id))
@@ -567,7 +542,7 @@ class _$RickMortyListResultImpl
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RickMortyListResultImpl &&
+            other is _RickMortyListResult &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.image, image) || other.image == image) &&
@@ -579,42 +554,70 @@ class _$RickMortyListResultImpl
   @override
   int get hashCode => Object.hash(runtimeType, id, name, image, status, gender);
 
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'RickMortyListResult(id: $id, name: $name, image: $image, status: $status, gender: $gender)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$RickMortyListResultCopyWith<$Res>
+    implements $RickMortyListResultCopyWith<$Res> {
+  factory _$RickMortyListResultCopyWith(_RickMortyListResult value,
+          $Res Function(_RickMortyListResult) _then) =
+      __$RickMortyListResultCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      String image,
+      ListStatus status,
+      ListGender gender});
+}
+
+/// @nodoc
+class __$RickMortyListResultCopyWithImpl<$Res>
+    implements _$RickMortyListResultCopyWith<$Res> {
+  __$RickMortyListResultCopyWithImpl(this._self, this._then);
+
+  final _RickMortyListResult _self;
+  final $Res Function(_RickMortyListResult) _then;
+
   /// Create a copy of RickMortyListResult
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$RickMortyListResultImplCopyWith<_$RickMortyListResultImpl> get copyWith =>
-      __$$RickMortyListResultImplCopyWithImpl<_$RickMortyListResultImpl>(
-          this, _$identity);
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? image = null,
+    Object? status = null,
+    Object? gender = null,
+  }) {
+    return _then(_RickMortyListResult(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      image: null == image
+          ? _self.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: null == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as ListStatus,
+      gender: null == gender
+          ? _self.gender
+          : gender // ignore: cast_nullable_to_non_nullable
+              as ListGender,
+    ));
+  }
 }
 
-abstract class _RickMortyListResult implements RickMortyListResult {
-  factory _RickMortyListResult(
-      {required final String id,
-      required final String name,
-      required final String image,
-      final ListStatus status,
-      final ListGender gender}) = _$RickMortyListResultImpl;
-
-  factory _RickMortyListResult.fromJson(Map<String, dynamic> json) =
-      _$RickMortyListResultImpl.fromJson;
-
-  @override
-  String get id;
-  @override
-  String get name;
-  @override
-  String get image;
-  @override
-  ListStatus get status;
-  @override
-  ListGender get gender;
-
-  /// Create a copy of RickMortyListResult
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RickMortyListResultImplCopyWith<_$RickMortyListResultImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

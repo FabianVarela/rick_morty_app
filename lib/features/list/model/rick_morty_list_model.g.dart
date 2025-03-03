@@ -6,25 +6,22 @@ part of 'rick_morty_list_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$RickMortyListDataImpl _$$RickMortyListDataImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RickMortyListDataImpl(
+_RickMortyListData _$RickMortyListDataFromJson(Map<String, dynamic> json) =>
+    _RickMortyListData(
       info: RickMortyListInfo.fromJson(json['info'] as Map<String, dynamic>),
       results: (json['results'] as List<dynamic>)
           .map((e) => RickMortyListResult.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-_$RickMortyListInfoImpl _$$RickMortyListInfoImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RickMortyListInfoImpl(
+_RickMortyListInfo _$RickMortyListInfoFromJson(Map<String, dynamic> json) =>
+    _RickMortyListInfo(
       count: (json['count'] as num).toInt(),
       pages: (json['pages'] as num).toInt(),
     );
 
-_$RickMortyListResultImpl _$$RickMortyListResultImplFromJson(
-        Map<String, dynamic> json) =>
-    _$RickMortyListResultImpl(
+_RickMortyListResult _$RickMortyListResultFromJson(Map<String, dynamic> json) =>
+    _RickMortyListResult(
       id: json['id'] as String,
       name: json['name'] as String,
       image: json['image'] as String,
