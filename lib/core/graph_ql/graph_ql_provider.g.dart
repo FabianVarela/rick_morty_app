@@ -13,9 +13,10 @@ String _$graphQlClientHash() => r'cb33cd404261976e10aec6506eb9a7a843a1bb31';
 final graphQlClientProvider = AutoDisposeProvider<GraphQLClient>.internal(
   graphQlClient,
   name: r'graphQlClientProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$graphQlClientHash,
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$graphQlClientHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

@@ -33,9 +33,7 @@ abstract class _$RickMortyDetail
     extends BuildlessAutoDisposeAsyncNotifier<RickMortyDetailResult> {
   late final int id;
 
-  FutureOr<RickMortyDetailResult> build(
-    int id,
-  );
+  FutureOr<RickMortyDetailResult> build(int id);
 }
 
 /// See also [RickMortyDetail].
@@ -48,21 +46,15 @@ class RickMortyDetailFamily extends Family<AsyncValue<RickMortyDetailResult>> {
   const RickMortyDetailFamily();
 
   /// See also [RickMortyDetail].
-  RickMortyDetailProvider call(
-    int id,
-  ) {
-    return RickMortyDetailProvider(
-      id,
-    );
+  RickMortyDetailProvider call(int id) {
+    return RickMortyDetailProvider(id);
   }
 
   @override
   RickMortyDetailProvider getProviderOverride(
     covariant RickMortyDetailProvider provider,
   ) {
-    return call(
-      provider.id,
-    );
+    return call(provider.id);
   }
 
   static const Iterable<ProviderOrFamily>? _dependencies = null;
@@ -81,24 +73,27 @@ class RickMortyDetailFamily extends Family<AsyncValue<RickMortyDetailResult>> {
 }
 
 /// See also [RickMortyDetail].
-class RickMortyDetailProvider extends AutoDisposeAsyncNotifierProviderImpl<
-    RickMortyDetail, RickMortyDetailResult> {
+class RickMortyDetailProvider
+    extends
+        AutoDisposeAsyncNotifierProviderImpl<
+          RickMortyDetail,
+          RickMortyDetailResult
+        > {
   /// See also [RickMortyDetail].
-  RickMortyDetailProvider(
-    int id,
-  ) : this._internal(
-          () => RickMortyDetail()..id = id,
-          from: rickMortyDetailProvider,
-          name: r'rickMortyDetailProvider',
-          debugGetCreateSourceHash:
-              const bool.fromEnvironment('dart.vm.product')
-                  ? null
-                  : _$rickMortyDetailHash,
-          dependencies: RickMortyDetailFamily._dependencies,
-          allTransitiveDependencies:
-              RickMortyDetailFamily._allTransitiveDependencies,
-          id: id,
-        );
+  RickMortyDetailProvider(int id)
+    : this._internal(
+        () => RickMortyDetail()..id = id,
+        from: rickMortyDetailProvider,
+        name: r'rickMortyDetailProvider',
+        debugGetCreateSourceHash:
+            const bool.fromEnvironment('dart.vm.product')
+                ? null
+                : _$rickMortyDetailHash,
+        dependencies: RickMortyDetailFamily._dependencies,
+        allTransitiveDependencies:
+            RickMortyDetailFamily._allTransitiveDependencies,
+        id: id,
+      );
 
   RickMortyDetailProvider._internal(
     super._createNotifier, {
@@ -116,9 +111,7 @@ class RickMortyDetailProvider extends AutoDisposeAsyncNotifierProviderImpl<
   FutureOr<RickMortyDetailResult> runNotifierBuild(
     covariant RickMortyDetail notifier,
   ) {
-    return notifier.build(
-      id,
-    );
+    return notifier.build(id);
   }
 
   @override
@@ -138,8 +131,11 @@ class RickMortyDetailProvider extends AutoDisposeAsyncNotifierProviderImpl<
   }
 
   @override
-  AutoDisposeAsyncNotifierProviderElement<RickMortyDetail,
-      RickMortyDetailResult> createElement() {
+  AutoDisposeAsyncNotifierProviderElement<
+    RickMortyDetail,
+    RickMortyDetailResult
+  >
+  createElement() {
     return _RickMortyDetailProviderElement(this);
   }
 
@@ -166,12 +162,17 @@ mixin RickMortyDetailRef
 }
 
 class _RickMortyDetailProviderElement
-    extends AutoDisposeAsyncNotifierProviderElement<RickMortyDetail,
-        RickMortyDetailResult> with RickMortyDetailRef {
+    extends
+        AutoDisposeAsyncNotifierProviderElement<
+          RickMortyDetail,
+          RickMortyDetailResult
+        >
+    with RickMortyDetailRef {
   _RickMortyDetailProviderElement(super.provider);
 
   @override
   int get id => (origin as RickMortyDetailProvider).id;
 }
+
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

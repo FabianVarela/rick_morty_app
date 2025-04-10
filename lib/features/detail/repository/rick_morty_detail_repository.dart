@@ -12,12 +12,15 @@ class RickMortyDetailRepository {
   final GraphQLClient _graphQlClient;
 
   Future<RickMortyDetailResult> fetchDetailData({required int id}) async {
-    final queryBuilder = StringBuffer('query {')
-      ..write('  character(id: $id) {')
-      ..write('    id, name, status, species, type, gender, image, created,')
-      ..write('    origin { id, name } location { id, name }')
-      ..write('  }')
-      ..write('}');
+    final queryBuilder =
+        StringBuffer('query {')
+          ..write('  character(id: $id) {')
+          ..write(
+            '    id, name, status, species, type, gender, image, created,',
+          )
+          ..write('    origin { id, name } location { id, name }')
+          ..write('  }')
+          ..write('}');
 
     final rickMortyQueryResult = await _graphQlClient.query(
       QueryOptions(document: gql(queryBuilder.toString())),

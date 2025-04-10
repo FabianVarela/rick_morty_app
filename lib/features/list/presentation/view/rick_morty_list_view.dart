@@ -20,18 +20,16 @@ class RickMortyListView extends ConsumerWidget {
           return ListView.separated(
             itemCount: data.results.length,
             separatorBuilder: (_, index) => const Divider(),
-            itemBuilder: (_, index) => ListTile(
-              onTap: () => context.go('/${data.results[index].id}'),
-              title: Text(data.results[index].name),
-            ),
+            itemBuilder: (_, index) {
+              return ListTile(
+                onTap: () => context.go('/${data.results[index].id}'),
+                title: Text(data.results[index].name),
+              );
+            },
           );
         },
-        loading: () => const Center(
-          child: CircularProgressIndicator(),
-        ),
-        error: (e, _) => const Center(
-          child: Text('Error getting data'),
-        ),
+        loading: () => const Center(child: CircularProgressIndicator()),
+        error: (e, _) => const Center(child: Text('Error getting data')),
       ),
     );
   }

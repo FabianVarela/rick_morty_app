@@ -21,15 +21,9 @@ class RickMortyDetailView extends ConsumerWidget {
         ),
       ),
       body: detailResult.when(
-        data: (data) => Center(
-          child: Text(data.name),
-        ),
-        loading: () => const Center(
-          child: CircularProgressIndicator(),
-        ),
-        error: (e, _) => const Center(
-          child: Text('Error getting data'),
-        ),
+        data: (data) => Center(child: Text(data.name)),
+        loading: () => const Center(child: CircularProgressIndicator()),
+        error: (e, _) => const Center(child: Text('Error getting data')),
       ),
     );
   }

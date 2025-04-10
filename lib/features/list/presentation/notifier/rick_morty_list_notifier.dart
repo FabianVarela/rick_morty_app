@@ -19,9 +19,10 @@ class RickMortyList extends _$RickMortyList {
     state = const AsyncLoading();
 
     final rickMortyListRepository = ref.watch(rickMortyListRepoProvider);
-    final result = filter == null
-        ? rickMortyListRepository.fetchListData(page: page)
-        : rickMortyListRepository.fetchListData(page: page, filter: filter);
+    final result = rickMortyListRepository.fetchListData(
+      page: page,
+      filter: filter,
+    );
 
     state = await AsyncValue.guard(() => result);
   }

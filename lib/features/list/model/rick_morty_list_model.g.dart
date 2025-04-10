@@ -9,9 +9,12 @@ part of 'rick_morty_list_model.dart';
 _RickMortyListData _$RickMortyListDataFromJson(Map<String, dynamic> json) =>
     _RickMortyListData(
       info: RickMortyListInfo.fromJson(json['info'] as Map<String, dynamic>),
-      results: (json['results'] as List<dynamic>)
-          .map((e) => RickMortyListResult.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      results:
+          (json['results'] as List<dynamic>)
+              .map(
+                (e) => RickMortyListResult.fromJson(e as Map<String, dynamic>),
+              )
+              .toList(),
     );
 
 _RickMortyListInfo _$RickMortyListInfoFromJson(Map<String, dynamic> json) =>
@@ -25,9 +28,11 @@ _RickMortyListResult _$RickMortyListResultFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       name: json['name'] as String,
       image: json['image'] as String,
-      status: $enumDecodeNullable(_$ListStatusEnumMap, json['status']) ??
+      status:
+          $enumDecodeNullable(_$ListStatusEnumMap, json['status']) ??
           ListStatus.unknown,
-      gender: $enumDecodeNullable(_$ListGenderEnumMap, json['gender']) ??
+      gender:
+          $enumDecodeNullable(_$ListGenderEnumMap, json['gender']) ??
           ListGender.unknown,
     );
 

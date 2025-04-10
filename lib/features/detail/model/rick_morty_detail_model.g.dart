@@ -7,23 +7,27 @@ part of 'rick_morty_detail_model.dart';
 // **************************************************************************
 
 _RickMortyDetailResult _$RickMortyDetailResultFromJson(
-        Map<String, dynamic> json) =>
-    _RickMortyDetailResult(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      status: $enumDecodeNullable(_$DetailStatusEnumMap, json['status']) ??
-          DetailStatus.unknown,
-      species: json['species'] as String,
-      type: json['type'] as String? ?? '',
-      gender: $enumDecodeNullable(_$DetailGenderEnumMap, json['gender']) ??
-          DetailGender.unknown,
-      image: json['image'] as String,
-      created: DateTime.parse(json['created'] as String),
-      origin: RickMortyOriginResult.fromJson(
-          json['origin'] as Map<String, dynamic>),
-      location: RickMortyLocationResult.fromJson(
-          json['location'] as Map<String, dynamic>),
-    );
+  Map<String, dynamic> json,
+) => _RickMortyDetailResult(
+  id: json['id'] as String,
+  name: json['name'] as String,
+  status:
+      $enumDecodeNullable(_$DetailStatusEnumMap, json['status']) ??
+      DetailStatus.unknown,
+  species: json['species'] as String,
+  type: json['type'] as String? ?? '',
+  gender:
+      $enumDecodeNullable(_$DetailGenderEnumMap, json['gender']) ??
+      DetailGender.unknown,
+  image: json['image'] as String,
+  created: DateTime.parse(json['created'] as String),
+  origin: RickMortyOriginResult.fromJson(
+    json['origin'] as Map<String, dynamic>,
+  ),
+  location: RickMortyLocationResult.fromJson(
+    json['location'] as Map<String, dynamic>,
+  ),
+);
 
 const _$DetailStatusEnumMap = {
   DetailStatus.alive: 'Alive',
@@ -39,15 +43,15 @@ const _$DetailGenderEnumMap = {
 };
 
 _RickMortyOriginResult _$RickMortyOriginResultFromJson(
-        Map<String, dynamic> json) =>
-    _RickMortyOriginResult(
-      id: json['id'] as String?,
-      name: json['name'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _RickMortyOriginResult(
+  id: json['id'] as String?,
+  name: json['name'] as String?,
+);
 
 _RickMortyLocationResult _$RickMortyLocationResultFromJson(
-        Map<String, dynamic> json) =>
-    _RickMortyLocationResult(
-      id: json['id'] as String?,
-      name: json['name'] as String?,
-    );
+  Map<String, dynamic> json,
+) => _RickMortyLocationResult(
+  id: json['id'] as String?,
+  name: json['name'] as String?,
+);

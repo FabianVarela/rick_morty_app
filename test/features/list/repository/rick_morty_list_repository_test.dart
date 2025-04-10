@@ -85,9 +85,7 @@ void main() {
     test('Get $RickMortyListData with no filters using Riverpod', () async {
       // arrange
       final container = setProviderContainer(
-        overrides: [
-          graphQlClientProvider.overrideWithValue(mockGraphQlClient),
-        ],
+        overrides: [graphQlClientProvider.overrideWithValue(mockGraphQlClient)],
       );
 
       final queryResult = createMockQueryResult<Object?>(mockGraphQlClient);

@@ -22,19 +22,23 @@ final rickMortyRouter = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: '/characters',
-              pageBuilder: (_, state) => ScreenPage<dynamic>(
-                key: state.pageKey,
-                child: const RickMortyListView(),
-              ),
+              pageBuilder: (_, state) {
+                return ScreenPage<dynamic>(
+                  key: state.pageKey,
+                  child: const RickMortyListView(),
+                );
+              },
               routes: <GoRoute>[
                 GoRoute(
                   path: ':id',
-                  pageBuilder: (_, state) => ScreenPage<dynamic>(
-                    key: state.pageKey,
-                    child: RickMortyDetailView(
-                      id: int.parse(state.pathParameters['id']!),
-                    ),
-                  ),
+                  pageBuilder: (_, state) {
+                    return ScreenPage<dynamic>(
+                      key: state.pageKey,
+                      child: RickMortyDetailView(
+                        id: int.parse(state.pathParameters['id']!),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),
@@ -45,10 +49,12 @@ final rickMortyRouter = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: '/location',
-              pageBuilder: (_, state) => ScreenPage(
-                key: state.pageKey,
-                child: Scaffold(body: Container()),
-              ),
+              pageBuilder: (_, state) {
+                return ScreenPage(
+                  key: state.pageKey,
+                  child: Scaffold(body: Container()),
+                );
+              },
             ),
           ],
         ),
@@ -57,17 +63,19 @@ final rickMortyRouter = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: '/episodes',
-              pageBuilder: (_, state) => ScreenPage(
-                key: state.pageKey,
-                child: Scaffold(body: Container()),
-              ),
+              pageBuilder: (_, state) {
+                return ScreenPage(
+                  key: state.pageKey,
+                  child: Scaffold(body: Container()),
+                );
+              },
             ),
           ],
         ),
       ],
-      builder: (_, __, navigationShell) => NavigationScaffold(
-        navigationShell: navigationShell,
-      ),
+      builder: (_, __, navigationShell) {
+        return NavigationScaffold(navigationShell: navigationShell);
+      },
     ),
   ],
   debugLogDiagnostics: kDebugMode,

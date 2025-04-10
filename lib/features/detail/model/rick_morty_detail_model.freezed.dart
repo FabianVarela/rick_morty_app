@@ -15,76 +15,45 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$RickMortyDetailResult {
-  String get id;
-  String get name;
-  DetailStatus get status;
-  String get species;
-  String get type;
-  DetailGender get gender;
-  String get image;
-  DateTime get created;
-  RickMortyOriginResult get origin;
-  RickMortyLocationResult get location;
 
-  /// Create a copy of RickMortyDetailResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $RickMortyDetailResultCopyWith<RickMortyDetailResult> get copyWith =>
-      _$RickMortyDetailResultCopyWithImpl<RickMortyDetailResult>(
-          this as RickMortyDetailResult, _$identity);
+ String get id; String get name; DetailStatus get status; String get species; String get type; DetailGender get gender; String get image; DateTime get created; RickMortyOriginResult get origin; RickMortyLocationResult get location;
+/// Create a copy of RickMortyDetailResult
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$RickMortyDetailResultCopyWith<RickMortyDetailResult> get copyWith => _$RickMortyDetailResultCopyWithImpl<RickMortyDetailResult>(this as RickMortyDetailResult, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is RickMortyDetailResult &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.status, status) || other.status == status) &&
-            (identical(other.species, species) || other.species == species) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.gender, gender) || other.gender == gender) &&
-            (identical(other.image, image) || other.image == image) &&
-            (identical(other.created, created) || other.created == created) &&
-            (identical(other.origin, origin) || other.origin == origin) &&
-            (identical(other.location, location) ||
-                other.location == location));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, name, status, species, type,
-      gender, image, created, origin, location);
 
-  @override
-  String toString() {
-    return 'RickMortyDetailResult(id: $id, name: $name, status: $status, species: $species, type: $type, gender: $gender, image: $image, created: $created, origin: $origin, location: $location)';
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyDetailResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.status, status) || other.status == status)&&(identical(other.species, species) || other.species == species)&&(identical(other.type, type) || other.type == type)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.image, image) || other.image == image)&&(identical(other.created, created) || other.created == created)&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.location, location) || other.location == location));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,name,status,species,type,gender,image,created,origin,location);
+
+@override
+String toString() {
+  return 'RickMortyDetailResult(id: $id, name: $name, status: $status, species: $species, type: $type, gender: $gender, image: $image, created: $created, origin: $origin, location: $location)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $RickMortyDetailResultCopyWith<$Res> {
-  factory $RickMortyDetailResultCopyWith(RickMortyDetailResult value,
-          $Res Function(RickMortyDetailResult) _then) =
-      _$RickMortyDetailResultCopyWithImpl;
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      DetailStatus status,
-      String species,
-      String type,
-      DetailGender gender,
-      String image,
-      DateTime created,
-      RickMortyOriginResult origin,
-      RickMortyLocationResult location});
+abstract mixin class $RickMortyDetailResultCopyWith<$Res>  {
+  factory $RickMortyDetailResultCopyWith(RickMortyDetailResult value, $Res Function(RickMortyDetailResult) _then) = _$RickMortyDetailResultCopyWithImpl;
+@useResult
+$Res call({
+ String id, String name, DetailStatus status, String species, String type, DetailGender gender, String image, DateTime created, RickMortyOriginResult origin, RickMortyLocationResult location
+});
 
-  $RickMortyOriginResultCopyWith<$Res> get origin;
-  $RickMortyLocationResultCopyWith<$Res> get location;
+
+$RickMortyOriginResultCopyWith<$Res> get origin;$RickMortyLocationResultCopyWith<$Res> get location;
+
 }
-
 /// @nodoc
 class _$RickMortyDetailResultCopyWithImpl<$Res>
     implements $RickMortyDetailResultCopyWith<$Res> {
@@ -93,193 +62,100 @@ class _$RickMortyDetailResultCopyWithImpl<$Res>
   final RickMortyDetailResult _self;
   final $Res Function(RickMortyDetailResult) _then;
 
-  /// Create a copy of RickMortyDetailResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? status = null,
-    Object? species = null,
-    Object? type = null,
-    Object? gender = null,
-    Object? image = null,
-    Object? created = null,
-    Object? origin = null,
-    Object? location = null,
-  }) {
-    return _then(_self.copyWith(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _self.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as DetailStatus,
-      species: null == species
-          ? _self.species
-          : species // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      gender: null == gender
-          ? _self.gender
-          : gender // ignore: cast_nullable_to_non_nullable
-              as DetailGender,
-      image: null == image
-          ? _self.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as String,
-      created: null == created
-          ? _self.created
-          : created // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      origin: null == origin
-          ? _self.origin
-          : origin // ignore: cast_nullable_to_non_nullable
-              as RickMortyOriginResult,
-      location: null == location
-          ? _self.location
-          : location // ignore: cast_nullable_to_non_nullable
-              as RickMortyLocationResult,
-    ));
-  }
-
-  /// Create a copy of RickMortyDetailResult
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $RickMortyOriginResultCopyWith<$Res> get origin {
-    return $RickMortyOriginResultCopyWith<$Res>(_self.origin, (value) {
-      return _then(_self.copyWith(origin: value));
-    });
-  }
-
-  /// Create a copy of RickMortyDetailResult
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $RickMortyLocationResultCopyWith<$Res> get location {
-    return $RickMortyLocationResultCopyWith<$Res>(_self.location, (value) {
-      return _then(_self.copyWith(location: value));
-    });
-  }
+/// Create a copy of RickMortyDetailResult
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? status = null,Object? species = null,Object? type = null,Object? gender = null,Object? image = null,Object? created = null,Object? origin = null,Object? location = null,}) {
+  return _then(_self.copyWith(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as DetailStatus,species: null == species ? _self.species : species // ignore: cast_nullable_to_non_nullable
+as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as String,gender: null == gender ? _self.gender : gender // ignore: cast_nullable_to_non_nullable
+as DetailGender,image: null == image ? _self.image : image // ignore: cast_nullable_to_non_nullable
+as String,created: null == created ? _self.created : created // ignore: cast_nullable_to_non_nullable
+as DateTime,origin: null == origin ? _self.origin : origin // ignore: cast_nullable_to_non_nullable
+as RickMortyOriginResult,location: null == location ? _self.location : location // ignore: cast_nullable_to_non_nullable
+as RickMortyLocationResult,
+  ));
 }
+/// Create a copy of RickMortyDetailResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RickMortyOriginResultCopyWith<$Res> get origin {
+  
+  return $RickMortyOriginResultCopyWith<$Res>(_self.origin, (value) {
+    return _then(_self.copyWith(origin: value));
+  });
+}/// Create a copy of RickMortyDetailResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RickMortyLocationResultCopyWith<$Res> get location {
+  
+  return $RickMortyLocationResultCopyWith<$Res>(_self.location, (value) {
+    return _then(_self.copyWith(location: value));
+  });
+}
+}
+
 
 /// @nodoc
 
 @JsonSerializable(createToJson: false)
 class _RickMortyDetailResult implements RickMortyDetailResult {
-  _RickMortyDetailResult(
-      {required this.id,
-      required this.name,
-      this.status = DetailStatus.unknown,
-      required this.species,
-      this.type = '',
-      this.gender = DetailGender.unknown,
-      required this.image,
-      required this.created,
-      required this.origin,
-      required this.location});
-  factory _RickMortyDetailResult.fromJson(Map<String, dynamic> json) =>
-      _$RickMortyDetailResultFromJson(json);
+   _RickMortyDetailResult({required this.id, required this.name, this.status = DetailStatus.unknown, required this.species, this.type = '', this.gender = DetailGender.unknown, required this.image, required this.created, required this.origin, required this.location});
+  factory _RickMortyDetailResult.fromJson(Map<String, dynamic> json) => _$RickMortyDetailResultFromJson(json);
 
-  @override
-  final String id;
-  @override
-  final String name;
-  @override
-  @JsonKey()
-  final DetailStatus status;
-  @override
-  final String species;
-  @override
-  @JsonKey()
-  final String type;
-  @override
-  @JsonKey()
-  final DetailGender gender;
-  @override
-  final String image;
-  @override
-  final DateTime created;
-  @override
-  final RickMortyOriginResult origin;
-  @override
-  final RickMortyLocationResult location;
+@override final  String id;
+@override final  String name;
+@override@JsonKey() final  DetailStatus status;
+@override final  String species;
+@override@JsonKey() final  String type;
+@override@JsonKey() final  DetailGender gender;
+@override final  String image;
+@override final  DateTime created;
+@override final  RickMortyOriginResult origin;
+@override final  RickMortyLocationResult location;
 
-  /// Create a copy of RickMortyDetailResult
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$RickMortyDetailResultCopyWith<_RickMortyDetailResult> get copyWith =>
-      __$RickMortyDetailResultCopyWithImpl<_RickMortyDetailResult>(
-          this, _$identity);
+/// Create a copy of RickMortyDetailResult
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$RickMortyDetailResultCopyWith<_RickMortyDetailResult> get copyWith => __$RickMortyDetailResultCopyWithImpl<_RickMortyDetailResult>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _RickMortyDetailResult &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.status, status) || other.status == status) &&
-            (identical(other.species, species) || other.species == species) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.gender, gender) || other.gender == gender) &&
-            (identical(other.image, image) || other.image == image) &&
-            (identical(other.created, created) || other.created == created) &&
-            (identical(other.origin, origin) || other.origin == origin) &&
-            (identical(other.location, location) ||
-                other.location == location));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, name, status, species, type,
-      gender, image, created, origin, location);
 
-  @override
-  String toString() {
-    return 'RickMortyDetailResult(id: $id, name: $name, status: $status, species: $species, type: $type, gender: $gender, image: $image, created: $created, origin: $origin, location: $location)';
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyDetailResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.status, status) || other.status == status)&&(identical(other.species, species) || other.species == species)&&(identical(other.type, type) || other.type == type)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.image, image) || other.image == image)&&(identical(other.created, created) || other.created == created)&&(identical(other.origin, origin) || other.origin == origin)&&(identical(other.location, location) || other.location == location));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,name,status,species,type,gender,image,created,origin,location);
+
+@override
+String toString() {
+  return 'RickMortyDetailResult(id: $id, name: $name, status: $status, species: $species, type: $type, gender: $gender, image: $image, created: $created, origin: $origin, location: $location)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$RickMortyDetailResultCopyWith<$Res>
-    implements $RickMortyDetailResultCopyWith<$Res> {
-  factory _$RickMortyDetailResultCopyWith(_RickMortyDetailResult value,
-          $Res Function(_RickMortyDetailResult) _then) =
-      __$RickMortyDetailResultCopyWithImpl;
-  @override
-  @useResult
-  $Res call(
-      {String id,
-      String name,
-      DetailStatus status,
-      String species,
-      String type,
-      DetailGender gender,
-      String image,
-      DateTime created,
-      RickMortyOriginResult origin,
-      RickMortyLocationResult location});
+abstract mixin class _$RickMortyDetailResultCopyWith<$Res> implements $RickMortyDetailResultCopyWith<$Res> {
+  factory _$RickMortyDetailResultCopyWith(_RickMortyDetailResult value, $Res Function(_RickMortyDetailResult) _then) = __$RickMortyDetailResultCopyWithImpl;
+@override @useResult
+$Res call({
+ String id, String name, DetailStatus status, String species, String type, DetailGender gender, String image, DateTime created, RickMortyOriginResult origin, RickMortyLocationResult location
+});
 
-  @override
-  $RickMortyOriginResultCopyWith<$Res> get origin;
-  @override
-  $RickMortyLocationResultCopyWith<$Res> get location;
+
+@override $RickMortyOriginResultCopyWith<$Res> get origin;@override $RickMortyLocationResultCopyWith<$Res> get location;
+
 }
-
 /// @nodoc
 class __$RickMortyDetailResultCopyWithImpl<$Res>
     implements _$RickMortyDetailResultCopyWith<$Res> {
@@ -288,128 +164,87 @@ class __$RickMortyDetailResultCopyWithImpl<$Res>
   final _RickMortyDetailResult _self;
   final $Res Function(_RickMortyDetailResult) _then;
 
-  /// Create a copy of RickMortyDetailResult
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? status = null,
-    Object? species = null,
-    Object? type = null,
-    Object? gender = null,
-    Object? image = null,
-    Object? created = null,
-    Object? origin = null,
-    Object? location = null,
-  }) {
-    return _then(_RickMortyDetailResult(
-      id: null == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _self.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as DetailStatus,
-      species: null == species
-          ? _self.species
-          : species // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _self.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      gender: null == gender
-          ? _self.gender
-          : gender // ignore: cast_nullable_to_non_nullable
-              as DetailGender,
-      image: null == image
-          ? _self.image
-          : image // ignore: cast_nullable_to_non_nullable
-              as String,
-      created: null == created
-          ? _self.created
-          : created // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      origin: null == origin
-          ? _self.origin
-          : origin // ignore: cast_nullable_to_non_nullable
-              as RickMortyOriginResult,
-      location: null == location
-          ? _self.location
-          : location // ignore: cast_nullable_to_non_nullable
-              as RickMortyLocationResult,
-    ));
-  }
-
-  /// Create a copy of RickMortyDetailResult
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $RickMortyOriginResultCopyWith<$Res> get origin {
-    return $RickMortyOriginResultCopyWith<$Res>(_self.origin, (value) {
-      return _then(_self.copyWith(origin: value));
-    });
-  }
-
-  /// Create a copy of RickMortyDetailResult
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $RickMortyLocationResultCopyWith<$Res> get location {
-    return $RickMortyLocationResultCopyWith<$Res>(_self.location, (value) {
-      return _then(_self.copyWith(location: value));
-    });
-  }
+/// Create a copy of RickMortyDetailResult
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? status = null,Object? species = null,Object? type = null,Object? gender = null,Object? image = null,Object? created = null,Object? origin = null,Object? location = null,}) {
+  return _then(_RickMortyDetailResult(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as DetailStatus,species: null == species ? _self.species : species // ignore: cast_nullable_to_non_nullable
+as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as String,gender: null == gender ? _self.gender : gender // ignore: cast_nullable_to_non_nullable
+as DetailGender,image: null == image ? _self.image : image // ignore: cast_nullable_to_non_nullable
+as String,created: null == created ? _self.created : created // ignore: cast_nullable_to_non_nullable
+as DateTime,origin: null == origin ? _self.origin : origin // ignore: cast_nullable_to_non_nullable
+as RickMortyOriginResult,location: null == location ? _self.location : location // ignore: cast_nullable_to_non_nullable
+as RickMortyLocationResult,
+  ));
 }
+
+/// Create a copy of RickMortyDetailResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RickMortyOriginResultCopyWith<$Res> get origin {
+  
+  return $RickMortyOriginResultCopyWith<$Res>(_self.origin, (value) {
+    return _then(_self.copyWith(origin: value));
+  });
+}/// Create a copy of RickMortyDetailResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RickMortyLocationResultCopyWith<$Res> get location {
+  
+  return $RickMortyLocationResultCopyWith<$Res>(_self.location, (value) {
+    return _then(_self.copyWith(location: value));
+  });
+}
+}
+
 
 /// @nodoc
 mixin _$RickMortyOriginResult {
-  String? get id;
-  String? get name;
 
-  /// Create a copy of RickMortyOriginResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $RickMortyOriginResultCopyWith<RickMortyOriginResult> get copyWith =>
-      _$RickMortyOriginResultCopyWithImpl<RickMortyOriginResult>(
-          this as RickMortyOriginResult, _$identity);
+ String? get id; String? get name;
+/// Create a copy of RickMortyOriginResult
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$RickMortyOriginResultCopyWith<RickMortyOriginResult> get copyWith => _$RickMortyOriginResultCopyWithImpl<RickMortyOriginResult>(this as RickMortyOriginResult, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is RickMortyOriginResult &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, name);
 
-  @override
-  String toString() {
-    return 'RickMortyOriginResult(id: $id, name: $name)';
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyOriginResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,name);
+
+@override
+String toString() {
+  return 'RickMortyOriginResult(id: $id, name: $name)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $RickMortyOriginResultCopyWith<$Res> {
-  factory $RickMortyOriginResultCopyWith(RickMortyOriginResult value,
-          $Res Function(RickMortyOriginResult) _then) =
-      _$RickMortyOriginResultCopyWithImpl;
-  @useResult
-  $Res call({String? id, String? name});
-}
+abstract mixin class $RickMortyOriginResultCopyWith<$Res>  {
+  factory $RickMortyOriginResultCopyWith(RickMortyOriginResult value, $Res Function(RickMortyOriginResult) _then) = _$RickMortyOriginResultCopyWithImpl;
+@useResult
+$Res call({
+ String? id, String? name
+});
 
+
+
+
+}
 /// @nodoc
 class _$RickMortyOriginResultCopyWithImpl<$Res>
     implements $RickMortyOriginResultCopyWith<$Res> {
@@ -418,79 +253,66 @@ class _$RickMortyOriginResultCopyWithImpl<$Res>
   final RickMortyOriginResult _self;
   final $Res Function(RickMortyOriginResult) _then;
 
-  /// Create a copy of RickMortyOriginResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-  }) {
-    return _then(_self.copyWith(
-      id: freezed == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+/// Create a copy of RickMortyOriginResult
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = freezed,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
+
+}
+
 
 /// @nodoc
 
 @JsonSerializable(createToJson: false)
 class _RickMortyOriginResult implements RickMortyOriginResult {
-  _RickMortyOriginResult({this.id, this.name});
-  factory _RickMortyOriginResult.fromJson(Map<String, dynamic> json) =>
-      _$RickMortyOriginResultFromJson(json);
+   _RickMortyOriginResult({this.id, this.name});
+  factory _RickMortyOriginResult.fromJson(Map<String, dynamic> json) => _$RickMortyOriginResultFromJson(json);
 
-  @override
-  final String? id;
-  @override
-  final String? name;
+@override final  String? id;
+@override final  String? name;
 
-  /// Create a copy of RickMortyOriginResult
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$RickMortyOriginResultCopyWith<_RickMortyOriginResult> get copyWith =>
-      __$RickMortyOriginResultCopyWithImpl<_RickMortyOriginResult>(
-          this, _$identity);
+/// Create a copy of RickMortyOriginResult
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$RickMortyOriginResultCopyWith<_RickMortyOriginResult> get copyWith => __$RickMortyOriginResultCopyWithImpl<_RickMortyOriginResult>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _RickMortyOriginResult &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, name);
 
-  @override
-  String toString() {
-    return 'RickMortyOriginResult(id: $id, name: $name)';
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyOriginResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,name);
+
+@override
+String toString() {
+  return 'RickMortyOriginResult(id: $id, name: $name)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$RickMortyOriginResultCopyWith<$Res>
-    implements $RickMortyOriginResultCopyWith<$Res> {
-  factory _$RickMortyOriginResultCopyWith(_RickMortyOriginResult value,
-          $Res Function(_RickMortyOriginResult) _then) =
-      __$RickMortyOriginResultCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String? id, String? name});
-}
+abstract mixin class _$RickMortyOriginResultCopyWith<$Res> implements $RickMortyOriginResultCopyWith<$Res> {
+  factory _$RickMortyOriginResultCopyWith(_RickMortyOriginResult value, $Res Function(_RickMortyOriginResult) _then) = __$RickMortyOriginResultCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, String? name
+});
 
+
+
+
+}
 /// @nodoc
 class __$RickMortyOriginResultCopyWithImpl<$Res>
     implements _$RickMortyOriginResultCopyWith<$Res> {
@@ -499,68 +321,61 @@ class __$RickMortyOriginResultCopyWithImpl<$Res>
   final _RickMortyOriginResult _self;
   final $Res Function(_RickMortyOriginResult) _then;
 
-  /// Create a copy of RickMortyOriginResult
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-  }) {
-    return _then(_RickMortyOriginResult(
-      id: freezed == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+/// Create a copy of RickMortyOriginResult
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = freezed,}) {
+  return _then(_RickMortyOriginResult(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
+
+
+}
+
 
 /// @nodoc
 mixin _$RickMortyLocationResult {
-  String? get id;
-  String? get name;
 
-  /// Create a copy of RickMortyLocationResult
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  $RickMortyLocationResultCopyWith<RickMortyLocationResult> get copyWith =>
-      _$RickMortyLocationResultCopyWithImpl<RickMortyLocationResult>(
-          this as RickMortyLocationResult, _$identity);
+ String? get id; String? get name;
+/// Create a copy of RickMortyLocationResult
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$RickMortyLocationResultCopyWith<RickMortyLocationResult> get copyWith => _$RickMortyLocationResultCopyWithImpl<RickMortyLocationResult>(this as RickMortyLocationResult, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is RickMortyLocationResult &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, name);
 
-  @override
-  String toString() {
-    return 'RickMortyLocationResult(id: $id, name: $name)';
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyLocationResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,name);
+
+@override
+String toString() {
+  return 'RickMortyLocationResult(id: $id, name: $name)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class $RickMortyLocationResultCopyWith<$Res> {
-  factory $RickMortyLocationResultCopyWith(RickMortyLocationResult value,
-          $Res Function(RickMortyLocationResult) _then) =
-      _$RickMortyLocationResultCopyWithImpl;
-  @useResult
-  $Res call({String? id, String? name});
-}
+abstract mixin class $RickMortyLocationResultCopyWith<$Res>  {
+  factory $RickMortyLocationResultCopyWith(RickMortyLocationResult value, $Res Function(RickMortyLocationResult) _then) = _$RickMortyLocationResultCopyWithImpl;
+@useResult
+$Res call({
+ String? id, String? name
+});
 
+
+
+
+}
 /// @nodoc
 class _$RickMortyLocationResultCopyWithImpl<$Res>
     implements $RickMortyLocationResultCopyWith<$Res> {
@@ -569,79 +384,66 @@ class _$RickMortyLocationResultCopyWithImpl<$Res>
   final RickMortyLocationResult _self;
   final $Res Function(RickMortyLocationResult) _then;
 
-  /// Create a copy of RickMortyLocationResult
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-  }) {
-    return _then(_self.copyWith(
-      id: freezed == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+/// Create a copy of RickMortyLocationResult
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? name = freezed,}) {
+  return _then(_self.copyWith(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
+
+}
+
 
 /// @nodoc
 
 @JsonSerializable(createToJson: false)
 class _RickMortyLocationResult implements RickMortyLocationResult {
-  _RickMortyLocationResult({this.id, this.name});
-  factory _RickMortyLocationResult.fromJson(Map<String, dynamic> json) =>
-      _$RickMortyLocationResultFromJson(json);
+   _RickMortyLocationResult({this.id, this.name});
+  factory _RickMortyLocationResult.fromJson(Map<String, dynamic> json) => _$RickMortyLocationResultFromJson(json);
 
-  @override
-  final String? id;
-  @override
-  final String? name;
+@override final  String? id;
+@override final  String? name;
 
-  /// Create a copy of RickMortyLocationResult
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @pragma('vm:prefer-inline')
-  _$RickMortyLocationResultCopyWith<_RickMortyLocationResult> get copyWith =>
-      __$RickMortyLocationResultCopyWithImpl<_RickMortyLocationResult>(
-          this, _$identity);
+/// Create a copy of RickMortyLocationResult
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$RickMortyLocationResultCopyWith<_RickMortyLocationResult> get copyWith => __$RickMortyLocationResultCopyWithImpl<_RickMortyLocationResult>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _RickMortyLocationResult &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name));
-  }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, id, name);
 
-  @override
-  String toString() {
-    return 'RickMortyLocationResult(id: $id, name: $name)';
-  }
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyLocationResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,id,name);
+
+@override
+String toString() {
+  return 'RickMortyLocationResult(id: $id, name: $name)';
+}
+
+
 }
 
 /// @nodoc
-abstract mixin class _$RickMortyLocationResultCopyWith<$Res>
-    implements $RickMortyLocationResultCopyWith<$Res> {
-  factory _$RickMortyLocationResultCopyWith(_RickMortyLocationResult value,
-          $Res Function(_RickMortyLocationResult) _then) =
-      __$RickMortyLocationResultCopyWithImpl;
-  @override
-  @useResult
-  $Res call({String? id, String? name});
-}
+abstract mixin class _$RickMortyLocationResultCopyWith<$Res> implements $RickMortyLocationResultCopyWith<$Res> {
+  factory _$RickMortyLocationResultCopyWith(_RickMortyLocationResult value, $Res Function(_RickMortyLocationResult) _then) = __$RickMortyLocationResultCopyWithImpl;
+@override @useResult
+$Res call({
+ String? id, String? name
+});
 
+
+
+
+}
 /// @nodoc
 class __$RickMortyLocationResultCopyWithImpl<$Res>
     implements _$RickMortyLocationResultCopyWith<$Res> {
@@ -650,25 +452,17 @@ class __$RickMortyLocationResultCopyWithImpl<$Res>
   final _RickMortyLocationResult _self;
   final $Res Function(_RickMortyLocationResult) _then;
 
-  /// Create a copy of RickMortyLocationResult
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-  }) {
-    return _then(_RickMortyLocationResult(
-      id: freezed == id
-          ? _self.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: freezed == name
-          ? _self.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+/// Create a copy of RickMortyLocationResult
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? name = freezed,}) {
+  return _then(_RickMortyLocationResult(
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
 }
 
 // dart format on

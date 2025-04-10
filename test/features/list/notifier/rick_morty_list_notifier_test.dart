@@ -42,9 +42,9 @@ void main() {
     verifyInOrder([
       () => listener(null, const AsyncLoading<RickMortyListData>()),
       () => listener(
-            const AsyncLoading<RickMortyListData>(),
-            AsyncData<RickMortyListData>(rickMortyListData),
-          ),
+        const AsyncLoading<RickMortyListData>(),
+        AsyncData<RickMortyListData>(rickMortyListData),
+      ),
     ]);
 
     verifyNoMoreInteractions(listener);
@@ -64,8 +64,9 @@ void main() {
       return rickMortyListData;
     });
 
-    when(() => mockListRepository.fetchListData(page: any(named: 'page')))
-        .thenAnswer((_) => delayedResult);
+    when(
+      () => mockListRepository.fetchListData(page: any(named: 'page')),
+    ).thenAnswer((_) => delayedResult);
 
     final listener = Listener<AsyncValue<RickMortyListData>>();
     container.listen(rickMortyListProvider, listener, fireImmediately: true);
@@ -98,16 +99,17 @@ void main() {
     final delayedResult = Future.delayed(const Duration(milliseconds: 100), () {
       return rickMortyListData;
     });
-    when(() => mockListRepository.fetchListData(filter: any(named: 'filter')))
-        .thenAnswer((_) => delayedResult);
+    when(
+      () => mockListRepository.fetchListData(filter: any(named: 'filter')),
+    ).thenAnswer((_) => delayedResult);
 
     final listener = Listener<AsyncValue<RickMortyListData>>();
     container.listen(rickMortyListProvider, listener, fireImmediately: true);
 
     // act
-    await container.read(rickMortyListProvider.notifier).fetchListData(
-      filter: {'name': 'Rick Sanchez'},
-    );
+    await container
+        .read(rickMortyListProvider.notifier)
+        .fetchListData(filter: {'name': 'Rick Sanchez'});
     await Future<void>.delayed(const Duration(milliseconds: 100));
 
     // assert

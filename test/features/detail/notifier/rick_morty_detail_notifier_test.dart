@@ -28,8 +28,9 @@ void main() {
       return rickMortyDetailData;
     });
 
-    when(() => mockDetailRepository.fetchDetailData(id: any(named: 'id')))
-        .thenAnswer((_) => delayedResult);
+    when(
+      () => mockDetailRepository.fetchDetailData(id: any(named: 'id')),
+    ).thenAnswer((_) => delayedResult);
 
     final listener = Listener<AsyncValue<RickMortyDetailResult>>();
     container.listen(
@@ -48,9 +49,9 @@ void main() {
     verifyInOrder([
       () => listener(null, const AsyncLoading<RickMortyDetailResult>()),
       () => listener(
-            const AsyncLoading<RickMortyDetailResult>(),
-            AsyncData<RickMortyDetailResult>(rickMortyDetailData),
-          ),
+        const AsyncLoading<RickMortyDetailResult>(),
+        AsyncData<RickMortyDetailResult>(rickMortyDetailData),
+      ),
     ]);
 
     verifyNoMoreInteractions(listener);
@@ -68,8 +69,9 @@ void main() {
       () => throw queryException,
     );
 
-    when(() => mockDetailRepository.fetchDetailData(id: any(named: 'id')))
-        .thenAnswer((_) => delayedException);
+    when(
+      () => mockDetailRepository.fetchDetailData(id: any(named: 'id')),
+    ).thenAnswer((_) => delayedException);
 
     final container = setProviderContainer(
       overrides: [
@@ -97,7 +99,8 @@ void main() {
     ]);
 
     verifyNoMoreInteractions(listener);
-    verify(() => mockDetailRepository.fetchDetailData(id: any(named: 'id')))
-        .called(1);
+    verify(
+      () => mockDetailRepository.fetchDetailData(id: any(named: 'id')),
+    ).called(1);
   });
 }

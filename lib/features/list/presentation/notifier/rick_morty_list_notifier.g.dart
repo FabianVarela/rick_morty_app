@@ -6,20 +6,21 @@ part of 'rick_morty_list_notifier.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$rickMortyListHash() => r'e2397e0bbed9c05338f52e357bf3bbc6d9dfd239';
+String _$rickMortyListHash() => r'ec062ddb928fd4c530a30e714c982cb0caeac617';
 
 /// See also [RickMortyList].
 @ProviderFor(RickMortyList)
 final rickMortyListProvider =
     AutoDisposeAsyncNotifierProvider<RickMortyList, RickMortyListData>.internal(
-  RickMortyList.new,
-  name: r'rickMortyListProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$rickMortyListHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+      RickMortyList.new,
+      name: r'rickMortyListProvider',
+      debugGetCreateSourceHash:
+          const bool.fromEnvironment('dart.vm.product')
+              ? null
+              : _$rickMortyListHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
 typedef _$RickMortyList = AutoDisposeAsyncNotifier<RickMortyListData>;
 // ignore_for_file: type=lint

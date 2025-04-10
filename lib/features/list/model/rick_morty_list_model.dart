@@ -20,10 +20,8 @@ abstract class RickMortyListData with _$RickMortyListData {
 @Freezed(toJson: false)
 abstract class RickMortyListInfo with _$RickMortyListInfo {
   @JsonSerializable(createToJson: false)
-  factory RickMortyListInfo({
-    required int count,
-    required int pages,
-  }) = _RickMortyListInfo;
+  factory RickMortyListInfo({required int count, required int pages}) =
+      _RickMortyListInfo;
 
   factory RickMortyListInfo.fromJson(Map<String, dynamic> json) =>
       _$RickMortyListInfoFromJson(json);

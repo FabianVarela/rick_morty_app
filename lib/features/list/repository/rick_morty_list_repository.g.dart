@@ -12,14 +12,15 @@ String _$rickMortyListRepoHash() => r'd3c2828a4b64b34ef13ce591d1b0bcce8596f5f1';
 @ProviderFor(rickMortyListRepo)
 final rickMortyListRepoProvider =
     AutoDisposeProvider<RickMortyListRepository>.internal(
-  rickMortyListRepo,
-  name: r'rickMortyListRepoProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$rickMortyListRepoHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+      rickMortyListRepo,
+      name: r'rickMortyListRepoProvider',
+      debugGetCreateSourceHash:
+          const bool.fromEnvironment('dart.vm.product')
+              ? null
+              : _$rickMortyListRepoHash,
+      dependencies: null,
+      allTransitiveDependencies: null,
+    );
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
