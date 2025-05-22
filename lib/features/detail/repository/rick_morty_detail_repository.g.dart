@@ -15,10 +15,9 @@ final rickMortyDetailRepoProvider =
     AutoDisposeProvider<RickMortyDetailRepository>.internal(
       rickMortyDetailRepo,
       name: r'rickMortyDetailRepoProvider',
-      debugGetCreateSourceHash:
-          const bool.fromEnvironment('dart.vm.product')
-              ? null
-              : _$rickMortyDetailRepoHash,
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$rickMortyDetailRepoHash,
       dependencies: null,
       allTransitiveDependencies: null,
     );

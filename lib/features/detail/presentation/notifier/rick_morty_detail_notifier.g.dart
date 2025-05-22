@@ -85,10 +85,9 @@ class RickMortyDetailProvider
         () => RickMortyDetail()..id = id,
         from: rickMortyDetailProvider,
         name: r'rickMortyDetailProvider',
-        debugGetCreateSourceHash:
-            const bool.fromEnvironment('dart.vm.product')
-                ? null
-                : _$rickMortyDetailHash,
+        debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+            ? null
+            : _$rickMortyDetailHash,
         dependencies: RickMortyDetailFamily._dependencies,
         allTransitiveDependencies:
             RickMortyDetailFamily._allTransitiveDependencies,

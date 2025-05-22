@@ -17,13 +17,12 @@ class RickMortyListRepository {
     Map<String, String>? filter,
   }) async {
     final filterText = filter != null ? 'filter: ${filter.toGraphQuery()}' : '';
-    final queryBuilder =
-        StringBuffer('query {')
-          ..write('  characters(page: $page, $filterText) {')
-          ..write('    info { count, pages }')
-          ..write('    results { id, name, image, status, gender }')
-          ..write('  }')
-          ..write('}');
+    final queryBuilder = StringBuffer('query {')
+      ..write('  characters(page: $page, $filterText) {')
+      ..write('    info { count, pages }')
+      ..write('    results { id, name, image, status, gender }')
+      ..write('  }')
+      ..write('}');
 
     final rickMortyQueryResult = await _graphQlClient.query(
       QueryOptions(document: gql(queryBuilder.toString())),

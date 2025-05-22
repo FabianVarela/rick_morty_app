@@ -9,12 +9,9 @@ part of 'rick_morty_list_model.dart';
 _RickMortyListData _$RickMortyListDataFromJson(Map<String, dynamic> json) =>
     _RickMortyListData(
       info: RickMortyListInfo.fromJson(json['info'] as Map<String, dynamic>),
-      results:
-          (json['results'] as List<dynamic>)
-              .map(
-                (e) => RickMortyListResult.fromJson(e as Map<String, dynamic>),
-              )
-              .toList(),
+      results: (json['results'] as List<dynamic>)
+          .map((e) => RickMortyListResult.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 _RickMortyListInfo _$RickMortyListInfoFromJson(Map<String, dynamic> json) =>

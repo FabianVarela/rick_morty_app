@@ -27,22 +27,21 @@ class NavigationScaffold extends StatelessWidget {
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.white30,
         backgroundColor: const Color(0xFF4EADC7),
-        items:
-            menuItems.mapIndexed((index, item) {
-              return BottomNavigationBarItem(
-                label: item.title,
-                icon: SizedBox.fromSize(
-                  size: const Size(24, 24),
-                  child: VectorGraphic(
-                    loader: AssetBytesLoader(item.iconPath),
-                    colorFilter: ColorFilter.mode(
-                      currentIndex == index ? Colors.white : Colors.white30,
-                      BlendMode.srcIn,
-                    ),
-                  ),
+        items: menuItems.mapIndexed((index, item) {
+          return BottomNavigationBarItem(
+            label: item.title,
+            icon: SizedBox.fromSize(
+              size: const Size(24, 24),
+              child: VectorGraphic(
+                loader: AssetBytesLoader(item.iconPath),
+                colorFilter: ColorFilter.mode(
+                  currentIndex == index ? Colors.white : Colors.white30,
+                  BlendMode.srcIn,
                 ),
-              );
-            }).toList(),
+              ),
+            ),
+          );
+        }).toList(),
         currentIndex: currentIndex,
         onTap: navigationShell.goBranch,
       ),

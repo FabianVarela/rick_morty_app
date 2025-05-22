@@ -14,10 +14,9 @@ final rickMortyListProvider =
     AutoDisposeAsyncNotifierProvider<RickMortyList, RickMortyListData>.internal(
       RickMortyList.new,
       name: r'rickMortyListProvider',
-      debugGetCreateSourceHash:
-          const bool.fromEnvironment('dart.vm.product')
-              ? null
-              : _$rickMortyListHash,
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$rickMortyListHash,
       dependencies: null,
       allTransitiveDependencies: null,
     );

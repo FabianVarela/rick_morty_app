@@ -14,10 +14,9 @@ final rickMortyListRepoProvider =
     AutoDisposeProvider<RickMortyListRepository>.internal(
       rickMortyListRepo,
       name: r'rickMortyListRepoProvider',
-      debugGetCreateSourceHash:
-          const bool.fromEnvironment('dart.vm.product')
-              ? null
-              : _$rickMortyListRepoHash,
+      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+          ? null
+          : _$rickMortyListRepoHash,
       dependencies: null,
       allTransitiveDependencies: null,
     );
