@@ -1,5 +1,4 @@
 import 'package:graphql/client.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:rick_morty_app/features/detail/model/rick_morty_detail_model.dart';
 import 'package:rick_morty_app/features/detail/repository/rick_morty_detail_repository.dart';
@@ -101,6 +100,3 @@ class Listener<T> extends Mock {
 }
 
 class MockOperationException extends Mock implements OperationException {}
-
-// ignore: subtype_of_sealed_class
-class FakeAsyncValue<T> extends Fake implements AsyncValue<T> {}

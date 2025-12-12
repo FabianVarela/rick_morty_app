@@ -10,7 +10,7 @@ import '../../../factory/mocks.dart';
 
 void main() {
   setUpAll(() {
-    registerFallbackValue(FakeAsyncValue<RickMortyListData>());
+    registerFallbackValue(const AsyncLoading<RickMortyListData>());
   });
 
   test('Initial test to build $RickMortyListData', () async {
@@ -80,7 +80,6 @@ void main() {
     verifyInOrder([
       () => listener(null, const AsyncLoading<RickMortyListData>()),
       () => listener(const AsyncLoading<RickMortyListData>(), asyncData),
-      () => listener(asyncData, asyncData),
     ]);
 
     verifyNoMoreInteractions(listener);
@@ -117,7 +116,6 @@ void main() {
     verifyInOrder([
       () => listener(null, const AsyncLoading<RickMortyListData>()),
       () => listener(const AsyncLoading<RickMortyListData>(), asyncData),
-      () => listener(asyncData, asyncData),
     ]);
 
     verifyNoMoreInteractions(listener);
@@ -153,12 +151,25 @@ void main() {
     expect(state, const AsyncLoading<RickMortyListData>());
     await Future<void>.delayed(const Duration(milliseconds: 100));
 
-    verifyInOrder([
-      () => listener(null, const AsyncLoading<RickMortyListData>()),
-      () => listener(const AsyncLoading<RickMortyListData>(), any()),
-    ]);
+    final capturedCalls = verify(
+      () => listener(captureAny(), captureAny()),
+    ).captured;
 
-    verifyNoMoreInteractions(listener);
+    expect(capturedCalls.length, 4);
+
+    expect(capturedCalls[0], null);
+    expect(capturedCalls[1], const AsyncLoading<RickMortyListData>());
+    expect(capturedCalls[2], const AsyncLoading<RickMortyListData>());
+
+    final lastState = capturedCalls[3] as AsyncValue<RickMortyListData>;
+    expect(lastState.hasValue, false);
+
+    lastState.when(
+      data: (_) => fail('Should not be data'),
+      loading: () => <dynamic, dynamic>{},
+      error: (error, stack) => expect(error, isA<MockOperationException>()),
+    );
+
     verify(mockListRepository.fetchListData);
   });
 }

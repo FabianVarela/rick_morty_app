@@ -10,7 +10,7 @@ import '../../../factory/mocks.dart';
 
 void main() {
   setUpAll(() {
-    registerFallbackValue(FakeAsyncValue<RickMortyDetailResult>());
+    registerFallbackValue(const AsyncLoading<RickMortyDetailResult>());
   });
 
   test('Initial test to build $RickMortyDetailResult', () async {
@@ -93,12 +93,25 @@ void main() {
     expect(state, const AsyncLoading<RickMortyDetailResult>());
     await Future<void>.delayed(const Duration(milliseconds: 100));
 
-    verifyInOrder([
-      () => listener(null, const AsyncLoading<RickMortyDetailResult>()),
-      () => listener(const AsyncLoading<RickMortyDetailResult>(), any()),
-    ]);
+    final capturedCalls = verify(
+      () => listener(captureAny(), captureAny()),
+    ).captured;
 
-    verifyNoMoreInteractions(listener);
+    expect(capturedCalls.length, 4);
+
+    expect(capturedCalls[0], null);
+    expect(capturedCalls[1], const AsyncLoading<RickMortyDetailResult>());
+    expect(capturedCalls[2], const AsyncLoading<RickMortyDetailResult>());
+
+    final lastState = capturedCalls[3] as AsyncValue<RickMortyDetailResult>;
+    expect(lastState.hasValue, false);
+
+    lastState.when(
+      data: (_) => fail('Should not be data'),
+      loading: () => <dynamic, dynamic>{},
+      error: (error, stack) => expect(error, isA<MockOperationException>()),
+    );
+
     verify(
       () => mockDetailRepository.fetchDetailData(id: any(named: 'id')),
     ).called(1);
