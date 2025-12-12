@@ -6,25 +6,53 @@ part of 'rick_morty_detail_repository.dart';
 // RiverpodGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
+@ProviderFor(rickMortyDetailRepo)
+const rickMortyDetailRepoProvider = RickMortyDetailRepoProvider._();
+
+final class RickMortyDetailRepoProvider
+    extends
+        $FunctionalProvider<
+          RickMortyDetailRepository,
+          RickMortyDetailRepository,
+          RickMortyDetailRepository
+        >
+    with $Provider<RickMortyDetailRepository> {
+  const RickMortyDetailRepoProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'rickMortyDetailRepoProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$rickMortyDetailRepoHash();
+
+  @$internal
+  @override
+  $ProviderElement<RickMortyDetailRepository> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  RickMortyDetailRepository create(Ref ref) {
+    return rickMortyDetailRepo(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(RickMortyDetailRepository value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<RickMortyDetailRepository>(value),
+    );
+  }
+}
+
 String _$rickMortyDetailRepoHash() =>
     r'9ae078df5132d1a55eafa98330c6b6bba8e079c0';
-
-/// See also [rickMortyDetailRepo].
-@ProviderFor(rickMortyDetailRepo)
-final rickMortyDetailRepoProvider =
-    AutoDisposeProvider<RickMortyDetailRepository>.internal(
-      rickMortyDetailRepo,
-      name: r'rickMortyDetailRepoProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$rickMortyDetailRepoHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
-
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef RickMortyDetailRepoRef =
-    AutoDisposeProviderRef<RickMortyDetailRepository>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

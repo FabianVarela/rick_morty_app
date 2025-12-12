@@ -6,22 +6,46 @@ part of 'graph_ql_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$graphQlClientHash() => r'cb33cd404261976e10aec6506eb9a7a843a1bb31';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [graphQlClient].
 @ProviderFor(graphQlClient)
-final graphQlClientProvider = AutoDisposeProvider<GraphQLClient>.internal(
-  graphQlClient,
-  name: r'graphQlClientProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$graphQlClientHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+const graphQlClientProvider = GraphQlClientProvider._();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef GraphQlClientRef = AutoDisposeProviderRef<GraphQLClient>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+final class GraphQlClientProvider
+    extends $FunctionalProvider<GraphQLClient, GraphQLClient, GraphQLClient>
+    with $Provider<GraphQLClient> {
+  const GraphQlClientProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'graphQlClientProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$graphQlClientHash();
+
+  @$internal
+  @override
+  $ProviderElement<GraphQLClient> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  GraphQLClient create(Ref ref) {
+    return graphQlClient(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(GraphQLClient value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<GraphQLClient>(value),
+    );
+  }
+}
+
+String _$graphQlClientHash() => r'cb33cd404261976e10aec6506eb9a7a843a1bb31';

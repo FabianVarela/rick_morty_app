@@ -6,23 +6,52 @@ part of 'rick_morty_list_repository.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$rickMortyListRepoHash() => r'd3c2828a4b64b34ef13ce591d1b0bcce8596f5f1';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [rickMortyListRepo].
 @ProviderFor(rickMortyListRepo)
-final rickMortyListRepoProvider =
-    AutoDisposeProvider<RickMortyListRepository>.internal(
-      rickMortyListRepo,
-      name: r'rickMortyListRepoProvider',
-      debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-          ? null
-          : _$rickMortyListRepoHash,
-      dependencies: null,
-      allTransitiveDependencies: null,
-    );
+const rickMortyListRepoProvider = RickMortyListRepoProvider._();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef RickMortyListRepoRef = AutoDisposeProviderRef<RickMortyListRepository>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+final class RickMortyListRepoProvider
+    extends
+        $FunctionalProvider<
+          RickMortyListRepository,
+          RickMortyListRepository,
+          RickMortyListRepository
+        >
+    with $Provider<RickMortyListRepository> {
+  const RickMortyListRepoProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'rickMortyListRepoProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$rickMortyListRepoHash();
+
+  @$internal
+  @override
+  $ProviderElement<RickMortyListRepository> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  RickMortyListRepository create(Ref ref) {
+    return rickMortyListRepo(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(RickMortyListRepository value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<RickMortyListRepository>(value),
+    );
+  }
+}
+
+String _$rickMortyListRepoHash() => r'd3c2828a4b64b34ef13ce591d1b0bcce8596f5f1';
