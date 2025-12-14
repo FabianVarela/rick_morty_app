@@ -45,6 +45,8 @@ final mapRickMortyListData = <String, dynamic>{
         'image': 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
         'status': 'Alive',
         'gender': 'Male',
+        'species': 'Human',
+        'location': <String, dynamic>{'name': 'Citadel of Ricks'},
       },
     ],
   },
@@ -59,6 +61,8 @@ final rickMortyListData = RickMortyListData(
       image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
       status: ListStatus.alive,
       gender: ListGender.male,
+      species: 'Human',
+      location: RickMortyListLocation(name: 'Citadel of Ricks'),
     ),
   ],
 );
