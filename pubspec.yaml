@@ -44,6 +44,7 @@ flutter:
   uses-material-design: true
   generate: true
   assets:
+    - path: assets/images/
     - path: assets/svg/
       transformers:
         - package: vector_graphics_compiler
