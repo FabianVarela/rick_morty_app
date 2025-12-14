@@ -30,13 +30,13 @@ class NavigationScaffold extends StatelessWidget {
         items: menuItems.mapIndexed((index, item) {
           return BottomNavigationBarItem(
             label: item.title,
-            icon: SizedBox.fromSize(
-              size: const Size(24, 24),
+            icon: SizedBox.square(
+              dimension: 24,
               child: VectorGraphic(
                 loader: AssetBytesLoader(item.iconPath),
                 colorFilter: ColorFilter.mode(
                   currentIndex == index ? Colors.white : Colors.white30,
-                  BlendMode.srcIn,
+                  .srcIn,
                 ),
               ),
             ),

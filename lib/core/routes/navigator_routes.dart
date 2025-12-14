@@ -22,23 +22,19 @@ final rickMortyRouter = GoRouter(
           routes: <RouteBase>[
             GoRoute(
               path: '/characters',
-              pageBuilder: (_, state) {
-                return ScreenPage<dynamic>(
-                  key: state.pageKey,
-                  child: const RickMortyListView(),
-                );
-              },
+              pageBuilder: (_, state) => ScreenPage<dynamic>(
+                key: state.pageKey,
+                child: const RickMortyListView(),
+              ),
               routes: <GoRoute>[
                 GoRoute(
                   path: ':id',
-                  pageBuilder: (_, state) {
-                    return ScreenPage<dynamic>(
-                      key: state.pageKey,
-                      child: RickMortyDetailView(
-                        id: int.parse(state.pathParameters['id']!),
-                      ),
-                    );
-                  },
+                  pageBuilder: (_, state) => ScreenPage<dynamic>(
+                    key: state.pageKey,
+                    child: RickMortyDetailView(
+                      id: int.parse(state.pathParameters['id']!),
+                    ),
+                  ),
                 ),
               ],
             ),
