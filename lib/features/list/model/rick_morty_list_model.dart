@@ -56,8 +56,19 @@ abstract class RickMortyListResult with _$RickMortyListResult {
     required String image,
     @Default(ListStatus.unknown) ListStatus status,
     @Default(ListGender.unknown) ListGender gender,
+    @Default('') String species,
+    RickMortyListLocation? location,
   }) = _RickMortyListResult;
 
   factory RickMortyListResult.fromJson(Map<String, dynamic> json) =>
       _$RickMortyListResultFromJson(json);
+}
+
+@Freezed(toJson: false)
+abstract class RickMortyListLocation with _$RickMortyListLocation {
+  @JsonSerializable(createToJson: false)
+  factory RickMortyListLocation({String? name}) = _RickMortyListLocation;
+
+  factory RickMortyListLocation.fromJson(Map<String, dynamic> json) =>
+      _$RickMortyListLocationFromJson(json);
 }

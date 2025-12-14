@@ -585,7 +585,7 @@ as int,
 /// @nodoc
 mixin _$RickMortyListResult implements DiagnosticableTreeMixin {
 
- String get id; String get name; String get image; ListStatus get status; ListGender get gender;
+ String get id; String get name; String get image; ListStatus get status; ListGender get gender; String get species; RickMortyListLocation? get location;
 /// Create a copy of RickMortyListResult
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -597,21 +597,21 @@ $RickMortyListResultCopyWith<RickMortyListResult> get copyWith => _$RickMortyLis
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
   properties
     ..add(DiagnosticsProperty('type', 'RickMortyListResult'))
-    ..add(DiagnosticsProperty('id', id))..add(DiagnosticsProperty('name', name))..add(DiagnosticsProperty('image', image))..add(DiagnosticsProperty('status', status))..add(DiagnosticsProperty('gender', gender));
+    ..add(DiagnosticsProperty('id', id))..add(DiagnosticsProperty('name', name))..add(DiagnosticsProperty('image', image))..add(DiagnosticsProperty('status', status))..add(DiagnosticsProperty('gender', gender))..add(DiagnosticsProperty('species', species))..add(DiagnosticsProperty('location', location));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyListResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.image, image) || other.image == image)&&(identical(other.status, status) || other.status == status)&&(identical(other.gender, gender) || other.gender == gender));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyListResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.image, image) || other.image == image)&&(identical(other.status, status) || other.status == status)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.species, species) || other.species == species)&&(identical(other.location, location) || other.location == location));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,image,status,gender);
+int get hashCode => Object.hash(runtimeType,id,name,image,status,gender,species,location);
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'RickMortyListResult(id: $id, name: $name, image: $image, status: $status, gender: $gender)';
+  return 'RickMortyListResult(id: $id, name: $name, image: $image, status: $status, gender: $gender, species: $species, location: $location)';
 }
 
 
@@ -622,11 +622,11 @@ abstract mixin class $RickMortyListResultCopyWith<$Res>  {
   factory $RickMortyListResultCopyWith(RickMortyListResult value, $Res Function(RickMortyListResult) _then) = _$RickMortyListResultCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String image, ListStatus status, ListGender gender
+ String id, String name, String image, ListStatus status, ListGender gender, String species, RickMortyListLocation? location
 });
 
 
-
+$RickMortyListLocationCopyWith<$Res>? get location;
 
 }
 /// @nodoc
@@ -639,17 +639,31 @@ class _$RickMortyListResultCopyWithImpl<$Res>
 
 /// Create a copy of RickMortyListResult
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? image = null,Object? status = null,Object? gender = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? image = null,Object? status = null,Object? gender = null,Object? species = null,Object? location = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,image: null == image ? _self.image : image // ignore: cast_nullable_to_non_nullable
 as String,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as ListStatus,gender: null == gender ? _self.gender : gender // ignore: cast_nullable_to_non_nullable
-as ListGender,
+as ListGender,species: null == species ? _self.species : species // ignore: cast_nullable_to_non_nullable
+as String,location: freezed == location ? _self.location : location // ignore: cast_nullable_to_non_nullable
+as RickMortyListLocation?,
   ));
 }
+/// Create a copy of RickMortyListResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RickMortyListLocationCopyWith<$Res>? get location {
+    if (_self.location == null) {
+    return null;
+  }
 
+  return $RickMortyListLocationCopyWith<$Res>(_self.location!, (value) {
+    return _then(_self.copyWith(location: value));
+  });
+}
 }
 
 
@@ -731,10 +745,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String image,  ListStatus status,  ListGender gender)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String image,  ListStatus status,  ListGender gender,  String species,  RickMortyListLocation? location)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _RickMortyListResult() when $default != null:
-return $default(_that.id,_that.name,_that.image,_that.status,_that.gender);case _:
+return $default(_that.id,_that.name,_that.image,_that.status,_that.gender,_that.species,_that.location);case _:
   return orElse();
 
 }
@@ -752,10 +766,10 @@ return $default(_that.id,_that.name,_that.image,_that.status,_that.gender);case 
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String image,  ListStatus status,  ListGender gender)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String image,  ListStatus status,  ListGender gender,  String species,  RickMortyListLocation? location)  $default,) {final _that = this;
 switch (_that) {
 case _RickMortyListResult():
-return $default(_that.id,_that.name,_that.image,_that.status,_that.gender);case _:
+return $default(_that.id,_that.name,_that.image,_that.status,_that.gender,_that.species,_that.location);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -772,10 +786,10 @@ return $default(_that.id,_that.name,_that.image,_that.status,_that.gender);case 
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String image,  ListStatus status,  ListGender gender)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String image,  ListStatus status,  ListGender gender,  String species,  RickMortyListLocation? location)?  $default,) {final _that = this;
 switch (_that) {
 case _RickMortyListResult() when $default != null:
-return $default(_that.id,_that.name,_that.image,_that.status,_that.gender);case _:
+return $default(_that.id,_that.name,_that.image,_that.status,_that.gender,_that.species,_that.location);case _:
   return null;
 
 }
@@ -787,7 +801,7 @@ return $default(_that.id,_that.name,_that.image,_that.status,_that.gender);case 
 
 @JsonSerializable(createToJson: false)
 class _RickMortyListResult with DiagnosticableTreeMixin implements RickMortyListResult {
-   _RickMortyListResult({required this.id, required this.name, required this.image, this.status = ListStatus.unknown, this.gender = ListGender.unknown});
+   _RickMortyListResult({required this.id, required this.name, required this.image, this.status = ListStatus.unknown, this.gender = ListGender.unknown, this.species = '', this.location});
   factory _RickMortyListResult.fromJson(Map<String, dynamic> json) => _$RickMortyListResultFromJson(json);
 
 @override final  String id;
@@ -795,6 +809,8 @@ class _RickMortyListResult with DiagnosticableTreeMixin implements RickMortyList
 @override final  String image;
 @override@JsonKey() final  ListStatus status;
 @override@JsonKey() final  ListGender gender;
+@override@JsonKey() final  String species;
+@override final  RickMortyListLocation? location;
 
 /// Create a copy of RickMortyListResult
 /// with the given fields replaced by the non-null parameter values.
@@ -807,21 +823,21 @@ _$RickMortyListResultCopyWith<_RickMortyListResult> get copyWith => __$RickMorty
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
   properties
     ..add(DiagnosticsProperty('type', 'RickMortyListResult'))
-    ..add(DiagnosticsProperty('id', id))..add(DiagnosticsProperty('name', name))..add(DiagnosticsProperty('image', image))..add(DiagnosticsProperty('status', status))..add(DiagnosticsProperty('gender', gender));
+    ..add(DiagnosticsProperty('id', id))..add(DiagnosticsProperty('name', name))..add(DiagnosticsProperty('image', image))..add(DiagnosticsProperty('status', status))..add(DiagnosticsProperty('gender', gender))..add(DiagnosticsProperty('species', species))..add(DiagnosticsProperty('location', location));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyListResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.image, image) || other.image == image)&&(identical(other.status, status) || other.status == status)&&(identical(other.gender, gender) || other.gender == gender));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyListResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.image, image) || other.image == image)&&(identical(other.status, status) || other.status == status)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.species, species) || other.species == species)&&(identical(other.location, location) || other.location == location));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,image,status,gender);
+int get hashCode => Object.hash(runtimeType,id,name,image,status,gender,species,location);
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'RickMortyListResult(id: $id, name: $name, image: $image, status: $status, gender: $gender)';
+  return 'RickMortyListResult(id: $id, name: $name, image: $image, status: $status, gender: $gender, species: $species, location: $location)';
 }
 
 
@@ -832,11 +848,11 @@ abstract mixin class _$RickMortyListResultCopyWith<$Res> implements $RickMortyLi
   factory _$RickMortyListResultCopyWith(_RickMortyListResult value, $Res Function(_RickMortyListResult) _then) = __$RickMortyListResultCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String image, ListStatus status, ListGender gender
+ String id, String name, String image, ListStatus status, ListGender gender, String species, RickMortyListLocation? location
 });
 
 
-
+@override $RickMortyListLocationCopyWith<$Res>? get location;
 
 }
 /// @nodoc
@@ -849,14 +865,298 @@ class __$RickMortyListResultCopyWithImpl<$Res>
 
 /// Create a copy of RickMortyListResult
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? image = null,Object? status = null,Object? gender = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? image = null,Object? status = null,Object? gender = null,Object? species = null,Object? location = freezed,}) {
   return _then(_RickMortyListResult(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,image: null == image ? _self.image : image // ignore: cast_nullable_to_non_nullable
 as String,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as ListStatus,gender: null == gender ? _self.gender : gender // ignore: cast_nullable_to_non_nullable
-as ListGender,
+as ListGender,species: null == species ? _self.species : species // ignore: cast_nullable_to_non_nullable
+as String,location: freezed == location ? _self.location : location // ignore: cast_nullable_to_non_nullable
+as RickMortyListLocation?,
+  ));
+}
+
+/// Create a copy of RickMortyListResult
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RickMortyListLocationCopyWith<$Res>? get location {
+    if (_self.location == null) {
+    return null;
+  }
+
+  return $RickMortyListLocationCopyWith<$Res>(_self.location!, (value) {
+    return _then(_self.copyWith(location: value));
+  });
+}
+}
+
+
+/// @nodoc
+mixin _$RickMortyListLocation implements DiagnosticableTreeMixin {
+
+ String? get name;
+/// Create a copy of RickMortyListLocation
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$RickMortyListLocationCopyWith<RickMortyListLocation> get copyWith => _$RickMortyListLocationCopyWithImpl<RickMortyListLocation>(this as RickMortyListLocation, _$identity);
+
+
+@override
+void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+  properties
+    ..add(DiagnosticsProperty('type', 'RickMortyListLocation'))
+    ..add(DiagnosticsProperty('name', name));
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyListLocation&&(identical(other.name, name) || other.name == name));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,name);
+
+@override
+String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
+  return 'RickMortyListLocation(name: $name)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class $RickMortyListLocationCopyWith<$Res>  {
+  factory $RickMortyListLocationCopyWith(RickMortyListLocation value, $Res Function(RickMortyListLocation) _then) = _$RickMortyListLocationCopyWithImpl;
+@useResult
+$Res call({
+ String? name
+});
+
+
+
+
+}
+/// @nodoc
+class _$RickMortyListLocationCopyWithImpl<$Res>
+    implements $RickMortyListLocationCopyWith<$Res> {
+  _$RickMortyListLocationCopyWithImpl(this._self, this._then);
+
+  final RickMortyListLocation _self;
+  final $Res Function(RickMortyListLocation) _then;
+
+/// Create a copy of RickMortyListLocation
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? name = freezed,}) {
+  return _then(_self.copyWith(
+name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [RickMortyListLocation].
+extension RickMortyListLocationPatterns on RickMortyListLocation {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _RickMortyListLocation value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _RickMortyListLocation() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _RickMortyListLocation value)  $default,){
+final _that = this;
+switch (_that) {
+case _RickMortyListLocation():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _RickMortyListLocation value)?  $default,){
+final _that = this;
+switch (_that) {
+case _RickMortyListLocation() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? name)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _RickMortyListLocation() when $default != null:
+return $default(_that.name);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? name)  $default,) {final _that = this;
+switch (_that) {
+case _RickMortyListLocation():
+return $default(_that.name);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? name)?  $default,) {final _that = this;
+switch (_that) {
+case _RickMortyListLocation() when $default != null:
+return $default(_that.name);case _:
+  return null;
+
+}
+}
+
+}
+
+/// @nodoc
+
+@JsonSerializable(createToJson: false)
+class _RickMortyListLocation with DiagnosticableTreeMixin implements RickMortyListLocation {
+   _RickMortyListLocation({this.name});
+  factory _RickMortyListLocation.fromJson(Map<String, dynamic> json) => _$RickMortyListLocationFromJson(json);
+
+@override final  String? name;
+
+/// Create a copy of RickMortyListLocation
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$RickMortyListLocationCopyWith<_RickMortyListLocation> get copyWith => __$RickMortyListLocationCopyWithImpl<_RickMortyListLocation>(this, _$identity);
+
+
+@override
+void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+  properties
+    ..add(DiagnosticsProperty('type', 'RickMortyListLocation'))
+    ..add(DiagnosticsProperty('name', name));
+}
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyListLocation&&(identical(other.name, name) || other.name == name));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,name);
+
+@override
+String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
+  return 'RickMortyListLocation(name: $name)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$RickMortyListLocationCopyWith<$Res> implements $RickMortyListLocationCopyWith<$Res> {
+  factory _$RickMortyListLocationCopyWith(_RickMortyListLocation value, $Res Function(_RickMortyListLocation) _then) = __$RickMortyListLocationCopyWithImpl;
+@override @useResult
+$Res call({
+ String? name
+});
+
+
+
+
+}
+/// @nodoc
+class __$RickMortyListLocationCopyWithImpl<$Res>
+    implements _$RickMortyListLocationCopyWith<$Res> {
+  __$RickMortyListLocationCopyWithImpl(this._self, this._then);
+
+  final _RickMortyListLocation _self;
+  final $Res Function(_RickMortyListLocation) _then;
+
+/// Create a copy of RickMortyListLocation
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? name = freezed,}) {
+  return _then(_RickMortyListLocation(
+name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 

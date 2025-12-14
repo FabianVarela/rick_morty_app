@@ -19,7 +19,10 @@ class RickMortyListRepository {
     final queryBuilder = StringBuffer('query {')
       ..write('  characters(page: $page, $filterText) {')
       ..write('    info { count, pages }')
-      ..write('    results { id, name, image, status, gender }')
+      ..write('    results {')
+      ..write('       id, name, image, status, gender, species, ')
+      ..write('       location { name }')
+      ..write('    }')
       ..write('  }')
       ..write('}');
 

@@ -31,6 +31,12 @@ _RickMortyListResult _$RickMortyListResultFromJson(Map<String, dynamic> json) =>
       gender:
           $enumDecodeNullable(_$ListGenderEnumMap, json['gender']) ??
           ListGender.unknown,
+      species: json['species'] as String? ?? '',
+      location: json['location'] == null
+          ? null
+          : RickMortyListLocation.fromJson(
+              json['location'] as Map<String, dynamic>,
+            ),
     );
 
 const _$ListStatusEnumMap = {
@@ -45,3 +51,7 @@ const _$ListGenderEnumMap = {
   ListGender.genderless: 'Genderless',
   ListGender.unknown: 'unknown',
 };
+
+_RickMortyListLocation _$RickMortyListLocationFromJson(
+  Map<String, dynamic> json,
+) => _RickMortyListLocation(name: json['name'] as String?);
