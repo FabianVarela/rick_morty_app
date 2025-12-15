@@ -21,6 +21,7 @@ void main() {
         rickMortyListRepoProvider.overrideWithValue(mockListRepository),
       ],
     );
+    const parameter = (filter: null, page: 1);
 
     when(mockListRepository.fetchListData).thenAnswer(
       (_) => Future.delayed(
@@ -30,10 +31,14 @@ void main() {
     );
 
     final listener = Listener<AsyncValue<RickMortyListData>>();
-    container.listen(rickMortyListProvider, listener, fireImmediately: true);
+    container.listen(
+      characterListProvider(parameter),
+      listener,
+      fireImmediately: true,
+    );
 
     // act
-    final state = container.read(rickMortyListProvider);
+    final state = container.read(characterListProvider(parameter));
 
     // assert
     expect(state, const AsyncLoading<RickMortyListData>());
@@ -59,20 +64,28 @@ void main() {
         rickMortyListRepoProvider.overrideWithValue(mockListRepository),
       ],
     );
-
-    final delayedResult = Future.delayed(const Duration(milliseconds: 100), () {
-      return rickMortyListData;
-    });
+    const parameter = (filter: null, page: 2);
 
     when(
       () => mockListRepository.fetchListData(page: any(named: 'page')),
-    ).thenAnswer((_) => delayedResult);
+    ).thenAnswer(
+      (_) => Future.delayed(
+        const Duration(milliseconds: 100),
+        () => rickMortyListData,
+      ),
+    );
 
     final listener = Listener<AsyncValue<RickMortyListData>>();
-    container.listen(rickMortyListProvider, listener, fireImmediately: true);
+    container.listen(
+      characterListProvider(parameter),
+      listener,
+      fireImmediately: true,
+    );
 
     // act
-    await container.read(rickMortyListProvider.notifier).fetchListData(page: 2);
+    final state = container.read(characterListProvider(parameter));
+    expect(state, const AsyncLoading<RickMortyListData>());
+
     await Future<void>.delayed(const Duration(milliseconds: 100));
 
     // assert
@@ -94,6 +107,7 @@ void main() {
         rickMortyListRepoProvider.overrideWithValue(mockListRepository),
       ],
     );
+    final parameter = (filter: {'name': 'Rick Sanchez'}, page: 1);
 
     final delayedResult = Future.delayed(const Duration(milliseconds: 100), () {
       return rickMortyListData;
@@ -103,12 +117,16 @@ void main() {
     ).thenAnswer((_) => delayedResult);
 
     final listener = Listener<AsyncValue<RickMortyListData>>();
-    container.listen(rickMortyListProvider, listener, fireImmediately: true);
+    container.listen(
+      characterListProvider(parameter),
+      listener,
+      fireImmediately: true,
+    );
 
     // act
-    await container
-        .read(rickMortyListProvider.notifier)
-        .fetchListData(filter: {'name': 'Rick Sanchez'});
+    final state = container.read(characterListProvider(parameter));
+    expect(state, const AsyncLoading<RickMortyListData>());
+
     await Future<void>.delayed(const Duration(milliseconds: 100));
 
     // assert
@@ -127,8 +145,9 @@ void main() {
   test('Initial test to build $RickMortyListData has $Exception', () async {
     // arrange
     final mockListRepository = MockListRepository();
-
     final queryException = MockOperationException();
+    const parameter = (filter: null, page: 1);
+
     when(mockListRepository.fetchListData).thenAnswer(
       (_) => Future.delayed(const Duration(milliseconds: 100), () {
         throw queryException;
@@ -142,10 +161,14 @@ void main() {
     );
 
     final listener = Listener<AsyncValue<RickMortyListData>>();
-    container.listen(rickMortyListProvider, listener, fireImmediately: true);
+    container.listen(
+      characterListProvider(parameter),
+      listener,
+      fireImmediately: true,
+    );
 
     // act
-    final state = container.read(rickMortyListProvider);
+    final state = container.read(characterListProvider(parameter));
 
     // assert
     expect(state, const AsyncLoading<RickMortyListData>());
