@@ -27,6 +27,13 @@ _RickMortyDetailResult _$RickMortyDetailResultFromJson(
   location: RickMortyLocationResult.fromJson(
     json['location'] as Map<String, dynamic>,
   ),
+  episode:
+      (json['episode'] as List<dynamic>?)
+          ?.map(
+            (e) => RickMortyEpisodeResult.fromJson(e as Map<String, dynamic>),
+          )
+          .toList() ??
+      const [],
 );
 
 const _$DetailStatusEnumMap = {
@@ -54,4 +61,13 @@ _RickMortyLocationResult _$RickMortyLocationResultFromJson(
 ) => _RickMortyLocationResult(
   id: json['id'] as String?,
   name: json['name'] as String?,
+);
+
+_RickMortyEpisodeResult _$RickMortyEpisodeResultFromJson(
+  Map<String, dynamic> json,
+) => _RickMortyEpisodeResult(
+  id: json['id'] as String,
+  name: json['name'] as String,
+  airDate: json['air_date'] as String,
+  episode: json['episode'] as String,
 );

@@ -15,6 +15,7 @@ class RickMortyDetailRepository {
       ..write('  character(id: $id) {')
       ..write('    id, name, status, species, type, gender, image, created,')
       ..write('    origin { id, name } location { id, name }')
+      ..write('    episode { id, name, air_date, episode }')
       ..write('  }')
       ..write('}');
 

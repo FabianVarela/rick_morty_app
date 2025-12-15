@@ -38,6 +38,7 @@ abstract class RickMortyDetailResult with _$RickMortyDetailResult {
     required DateTime created,
     required RickMortyOriginResult origin,
     required RickMortyLocationResult location,
+    @Default([]) List<RickMortyEpisodeResult> episode,
   }) = _RickMortyDetailResult;
 
   factory RickMortyDetailResult.fromJson(Map<String, dynamic> json) =>
@@ -62,4 +63,18 @@ abstract class RickMortyLocationResult with _$RickMortyLocationResult {
 
   factory RickMortyLocationResult.fromJson(Map<String, dynamic> json) =>
       _$RickMortyLocationResultFromJson(json);
+}
+
+@Freezed(toJson: false)
+abstract class RickMortyEpisodeResult with _$RickMortyEpisodeResult {
+  @JsonSerializable(createToJson: false, fieldRename: FieldRename.snake)
+  factory RickMortyEpisodeResult({
+    required String id,
+    required String name,
+    required String airDate,
+    required String episode,
+  }) = _RickMortyEpisodeResult;
+
+  factory RickMortyEpisodeResult.fromJson(Map<String, dynamic> json) =>
+      _$RickMortyEpisodeResultFromJson(json);
 }
