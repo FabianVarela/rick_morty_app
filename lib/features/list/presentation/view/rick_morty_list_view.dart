@@ -6,6 +6,7 @@ import 'package:rick_morty_app/core/widgets/empty_container.dart';
 import 'package:rick_morty_app/core/widgets/error_container.dart';
 import 'package:rick_morty_app/features/list/presentation/notifier/rick_morty_list_notifier.dart';
 import 'package:rick_morty_app/features/list/presentation/widgets/character_card.dart';
+import 'package:rick_morty_app/features/list/presentation/widgets/character_card_shimmer.dart';
 import 'package:rick_morty_app/features/list/presentation/widgets/filter_tabs.dart';
 
 class RickMortyListView extends HookConsumerWidget {
@@ -131,9 +132,7 @@ class _CharacterList extends ConsumerWidget {
                       onTap: () => context.go('/characters/${character.id}'),
                     );
                   },
-                  loading: () => const Center(
-                    child: CircularProgressIndicator(color: Color(0xFF4EAD7F)),
-                  ),
+                  loading: () => const CharacterCardShimmer(),
                   error: (_, _) => indexInPage == 0
                       ? _ErrorTile(page: page, filter: filter)
                       : const Offstage(),
