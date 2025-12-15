@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rick_morty_app/core/widgets/empty_container.dart';
 import 'package:rick_morty_app/core/widgets/error_container.dart';
+import 'package:rick_morty_app/core/widgets/keep_alive_wrapper.dart';
 import 'package:rick_morty_app/features/list/presentation/notifier/rick_morty_list_notifier.dart';
 import 'package:rick_morty_app/features/list/presentation/widgets/character_card.dart';
 import 'package:rick_morty_app/features/list/presentation/widgets/character_card_shimmer.dart';
@@ -127,9 +128,11 @@ class _CharacterList extends ConsumerWidget {
                     if (indexInPage >= data.results.length) return null;
 
                     final character = data.results[indexInPage];
-                    return CharacterCard(
-                      character: character,
-                      onTap: () => context.go('/characters/${character.id}'),
+                    return KeepAliveWrapper(
+                      child: CharacterCard(
+                        character: character,
+                        onTap: () => context.go('/characters/${character.id}'),
+                      ),
                     );
                   },
                   loading: () => const CharacterCardShimmer(),
