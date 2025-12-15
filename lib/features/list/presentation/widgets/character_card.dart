@@ -68,8 +68,8 @@ class CharacterCard extends StatelessWidget {
                       overflow: .ellipsis,
                       style: const TextStyle(
                         fontSize: 18,
+                        fontWeight: .bold,
                         color: Colors.white,
-                        fontWeight: FontWeight.bold,
                       ),
                     ),
                     Row(

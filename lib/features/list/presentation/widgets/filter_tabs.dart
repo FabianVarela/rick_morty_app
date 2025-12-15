@@ -54,8 +54,8 @@ class FilterTabs extends StatelessWidget {
               backgroundColor: const Color(0xFF2D5F3F),
               selectedColor: const Color(0xFF4EAD7F),
               labelStyle: TextStyle(
+                fontWeight: isSelected ? .bold : .normal,
                 color: isSelected ? Colors.black : Colors.white,
-                fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
               ),
               shape: RoundedRectangleBorder(
                 borderRadius: .circular(20),
