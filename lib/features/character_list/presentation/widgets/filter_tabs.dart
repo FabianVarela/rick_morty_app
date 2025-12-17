@@ -18,7 +18,7 @@ class FilterTabs extends StatelessWidget {
     return SizedBox(
       height: 80,
       child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
+        scrollDirection: .horizontal,
         padding: const .symmetric(horizontal: 16, vertical: 12),
         child: Row(
           spacing: 8,
