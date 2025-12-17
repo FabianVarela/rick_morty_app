@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rick_morty_app/core/gen/assets.gen.dart';
+import 'package:rick_morty_app/core/theme/app_theme.dart';
 
 class ErrorContainer extends StatelessWidget {
   const ErrorContainer({
@@ -28,13 +29,10 @@ class ErrorContainer extends StatelessWidget {
             child: Assets.images.rickAndMortyError.image(fit: .cover),
           ),
         ),
-        Text(
-          title,
-          style: const TextStyle(color: Colors.white70, fontSize: 16),
-        ),
+        Text(title, style: context.subtitle),
         Text(
           error,
-          style: const TextStyle(color: Colors.white70, fontSize: 12),
+          style: context.secondaryInfo.copyWith(color: Colors.white70),
           textAlign: TextAlign.center,
         ),
         Padding(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rick_morty_app/core/theme/app_theme.dart';
 
 enum CharacterFilter { all, alive, dead, unknown }
 
@@ -32,9 +33,9 @@ class FilterTabs extends StatelessWidget {
                     decoration: BoxDecoration(
                       shape: .circle,
                       color: switch (filter) {
-                        .alive => Colors.green,
-                        .dead => Colors.red,
-                        .unknown => Colors.grey,
+                        .alive => context.colors.statusAlive,
+                        .dead => context.colors.statusDead,
+                        .unknown => context.colors.statusUnknown,
                         _ => Colors.transparent,
                       },
                     ),
@@ -51,16 +52,16 @@ class FilterTabs extends StatelessWidget {
               ),
               selected: isSelected,
               onSelected: (_) => onFilterChanged(filter),
-              backgroundColor: const Color(0xFF2D5F3F),
-              selectedColor: const Color(0xFF4EAD7F),
-              labelStyle: TextStyle(
-                fontWeight: isSelected ? .bold : .normal,
-                color: isSelected ? Colors.black : Colors.white,
+              backgroundColor: context.colors.borderColor,
+              selectedColor: context.colors.primary,
+              labelStyle: context.normalText.copyWith(
+                fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                color: isSelected ? Colors.black : context.colors.textPrimary,
               ),
               shape: RoundedRectangleBorder(
                 borderRadius: .circular(20),
                 side: BorderSide(
-                  color: const Color(0xFF4EAD7F),
+                  color: context.colors.primary,
                   width: isSelected ? 2 : 1,
                 ),
               ),

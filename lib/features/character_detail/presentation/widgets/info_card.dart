@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rick_morty_app/core/theme/app_theme.dart';
 
 enum InfoCardPosition { row, column }
 
@@ -22,11 +23,11 @@ class InfoCard extends StatelessWidget {
       DecoratedBox(
         decoration: BoxDecoration(
           borderRadius: .circular(8),
-          color: const Color(0xFF142217),
+          color: context.colors.backgroundInfoCard,
         ),
         child: Padding(
           padding: const .all(8),
-          child: Icon(icon, color: const Color(0xFF4EAD7F)),
+          child: Icon(icon, color: context.colors.primary),
         ),
       ),
       _TitleSubtitle(title: label, subtitle: value),
@@ -37,8 +38,8 @@ class InfoCard extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           borderRadius: .circular(12),
-          color: const Color(0xFF1E3A2F),
-          border: .all(color: const Color(0xFF2D5A47)),
+          color: context.colors.backgroundCard,
+          border: .all(color: context.colors.borderColor),
         ),
         child: Padding(
           padding: const .all(16),
@@ -74,24 +75,12 @@ class _TitleSubtitle extends StatelessWidget {
       mainAxisSize: .min,
       crossAxisAlignment: .start,
       children: <Widget>[
-        Text(
-          title.toUpperCase(),
-          style: const TextStyle(
-            fontSize: 10,
-            fontWeight: .w600,
-            letterSpacing: 1.2,
-            color: Colors.white54,
-          ),
-        ),
+        Text(title.toUpperCase(), style: context.label),
         Text(
           subtitle,
           maxLines: 2,
           overflow: .ellipsis,
-          style: const TextStyle(
-            fontSize: 16,
-            fontWeight: .w600,
-            color: Colors.white,
-          ),
+          style: context.buttonText,
         ),
       ],
     );

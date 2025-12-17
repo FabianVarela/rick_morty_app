@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rick_morty_app/core/gen/assets.gen.dart';
+import 'package:rick_morty_app/core/theme/app_theme.dart';
 
 class EmptyContainer extends StatelessWidget {
   const EmptyContainer({required this.message, super.key});
@@ -18,10 +19,7 @@ class EmptyContainer extends StatelessWidget {
           size: Size(size.width * .7, size.height * .35),
           child: Assets.images.rickAndMortyEmpty.image(fit: .cover),
         ),
-        Text(
-          message,
-          style: const TextStyle(color: Colors.white70, fontSize: 16),
-        ),
+        Text(message, style: context.subtitle),
       ],
     );
   }

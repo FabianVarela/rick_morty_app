@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:rick_morty_app/core/theme/app_theme.dart';
 import 'package:rick_morty_app/core/widgets/error_container.dart';
 import 'package:rick_morty_app/features/character_detail/model/character_detail_model.dart';
 import 'package:rick_morty_app/features/character_detail/presentation/notifier/character_detail_notifier.dart';
@@ -16,18 +17,18 @@ class CharacterDetailView extends ConsumerWidget {
     final detailResult = ref.watch(rickMortyDetailProvider(id));
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0D1B2A),
+      backgroundColor: context.colors.backgroundPrimary,
       appBar: detailResult.whenOrNull(
         error: (_, _) => AppBar(
           foregroundColor: Colors.white,
-          backgroundColor: const Color(0xFF0D1B2A),
+          backgroundColor: context.colors.backgroundPrimary,
           title: const Text('Error'),
         ),
       ),
       body: detailResult.when(
         data: (data) => _DetailContent(character: data),
-        loading: () => const Center(
-          child: CircularProgressIndicator(color: Color(0xFF4EAD7F)),
+        loading: () => Center(
+          child: CircularProgressIndicator(color: context.colors.primary),
         ),
         error: (e, _) => Center(
           child: ErrorContainer(
@@ -53,7 +54,7 @@ class _DetailContent extends StatelessWidget {
         SliverAppBar(
           pinned: true,
           expandedHeight: 300,
-          backgroundColor: const Color(0xFF0D1B2A),
+          backgroundColor: context.colors.backgroundPrimary,
           leading: IconButton(
             icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
             onPressed: () => Navigator.of(context).pop(),
@@ -76,8 +77,8 @@ class _DetailContent extends StatelessWidget {
                       end: .bottomCenter,
                       colors: <Color>[
                         Colors.black.withValues(alpha: .3),
-                        const Color(0xFF0D1B2A).withValues(alpha: .8),
-                        const Color(0xFF0D1B2A),
+                        context.colors.backgroundPrimary.withValues(alpha: .8),
+                        context.colors.backgroundPrimary,
                       ],
                       stops: const <double>[0, .7, 1],
                     ),
@@ -91,7 +92,7 @@ class _DetailContent extends StatelessWidget {
                       style: FilledButton.styleFrom(
                         padding: const .all(12),
                         shape: const CircleBorder(),
-                        backgroundColor: const Color(0xFF4EAD7F),
+                        backgroundColor: context.colors.primary,
                       ),
                       onPressed: () {},
                       label: const Icon(Icons.favorite, color: Colors.black),
@@ -109,14 +110,7 @@ class _DetailContent extends StatelessWidget {
               spacing: 12,
               crossAxisAlignment: .start,
               children: <Widget>[
-                Text(
-                  character.name,
-                  style: const TextStyle(
-                    fontSize: 32,
-                    fontWeight: .bold,
-                    color: Colors.white,
-                  ),
-                ),
+                Text(character.name, style: context.characterTitle),
                 Row(
                   spacing: 8,
                   children: <Widget>[
@@ -125,9 +119,9 @@ class _DetailContent extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: .circular(16),
                         color: switch (character.status) {
-                          .alive => const Color(0xFF4EAD7F),
-                          .dead => const Color(0xFFD63D2D),
-                          .unknown => Colors.grey,
+                          .alive => context.colors.statusAlive,
+                          .dead => context.colors.statusDead,
+                          .unknown => context.colors.statusUnknown,
                         },
                       ),
                       child: Row(
@@ -142,25 +136,11 @@ class _DetailContent extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Text(
-                            _statusText.toUpperCase(),
-                            style: const TextStyle(
-                              fontSize: 12,
-                              fontWeight: .bold,
-                              letterSpacing: 1.2,
-                              color: Colors.white,
-                            ),
-                          ),
+                          Text(_statusText.toUpperCase(), style: context.badge),
                         ],
                       ),
                     ),
-                    Text(
-                      '• ${character.species}',
-                      style: const TextStyle(
-                        fontSize: 16,
-                        color: Colors.white70,
-                      ),
-                    ),
+                    Text('• ${character.species}', style: context.subtitle),
                   ],
                 ),
               ],
@@ -224,21 +204,12 @@ class _DetailContent extends StatelessWidget {
             padding: const .symmetric(horizontal: 24, vertical: 16),
             child: Row(
               children: <Widget>[
-                const Text(
-                  'Episodes',
-                  style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: .bold,
-                    color: Colors.white,
-                  ),
-                ),
+                Text('Episodes', style: context.sectionTitle),
                 const Spacer(),
                 Text(
                   '${character.episode.length} total',
-                  style: const TextStyle(
-                    fontSize: 14,
-                    fontWeight: .w600,
-                    color: Color(0xFF4EAD7F),
+                  style: context.episodeTitle.copyWith(
+                    color: context.colors.primary,
                   ),
                 ),
               ],
@@ -266,17 +237,10 @@ class _DetailContent extends StatelessWidget {
                 onPressed: () {},
                 style: OutlinedButton.styleFrom(
                   padding: const .symmetric(vertical: 16),
-                  side: const BorderSide(color: Color(0xFF2D5A47)),
+                  side: BorderSide(color: context.colors.borderColor),
                   shape: RoundedRectangleBorder(borderRadius: .circular(8)),
                 ),
-                child: const Text(
-                  'View all episodes',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: .w600,
-                    color: Colors.white,
-                  ),
-                ),
+                child: Text('View all episodes', style: context.buttonText),
               ),
             ),
           )

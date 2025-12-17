@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rick_morty_app/core/theme/app_theme.dart';
 import 'package:rick_morty_app/features/character_list/model/character_list_model.dart';
 
 class CharacterCard extends StatelessWidget {
@@ -17,7 +18,7 @@ class CharacterCard extends StatelessWidget {
       onTap: onTap,
       child: Card.filled(
         margin: .zero,
-        color: const Color(0xFF1E3A2F),
+        color: context.colors.backgroundCard,
         clipBehavior: .antiAliasWithSaveLayer,
         shape: RoundedRectangleBorder(borderRadius: .circular(16)),
         child: Row(
@@ -66,11 +67,7 @@ class CharacterCard extends StatelessWidget {
                       character.name,
                       maxLines: 1,
                       overflow: .ellipsis,
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: .bold,
-                        color: Colors.white,
-                      ),
+                      style: context.cardTitle,
                     ),
                     Row(
                       spacing: 6,
@@ -81,9 +78,9 @@ class CharacterCard extends StatelessWidget {
                             decoration: BoxDecoration(
                               shape: .circle,
                               color: switch (character.status) {
-                                .alive => const Color(0xFF4EAD7F),
-                                .dead => const Color(0xFFD63D2D),
-                                .unknown => Colors.grey,
+                                .alive => context.colors.statusAlive,
+                                .dead => context.colors.statusDead,
+                                .unknown => context.colors.statusUnknown,
                               },
                             ),
                           ),
@@ -93,10 +90,7 @@ class CharacterCard extends StatelessWidget {
                             '$_statusText • ${character.species}',
                             maxLines: 1,
                             overflow: .ellipsis,
-                            style: const TextStyle(
-                              fontSize: 14,
-                              color: Colors.white70,
-                            ),
+                            style: context.secondarySubtitle,
                           ),
                         ),
                       ],
@@ -109,18 +103,12 @@ class CharacterCard extends StatelessWidget {
                             const TextSpan(text: '\n\t'),
                             TextSpan(
                               text: character.location?.name ?? 'Unknown',
-                              style: const TextStyle(
-                                fontSize: 14,
-                                color: Colors.white70,
-                              ),
+                              style: context.secondarySubtitle,
                             ),
                           ],
                         ),
                         overflow: .ellipsis,
-                        style: const TextStyle(
-                          fontSize: 12,
-                          color: Colors.white54,
-                        ),
+                        style: context.secondaryInfo,
                       ),
                   ],
                 ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rick_morty_app/core/theme/app_theme.dart';
 import 'package:rick_morty_app/features/character_detail/model/character_detail_model.dart';
 
 class EpisodeListItem extends StatelessWidget {
@@ -13,7 +14,7 @@ class EpisodeListItem extends StatelessWidget {
       onTap: onTap,
       minTileHeight: 60,
       textColor: Colors.white,
-      tileColor: const Color(0xFF1E3A2F),
+      tileColor: context.colors.backgroundCard,
       shape: RoundedRectangleBorder(borderRadius: .circular(8)),
       contentPadding: const .symmetric(vertical: 12, horizontal: 16),
       leading: _EpisodeText(episodeText: episode.episode),
@@ -21,11 +22,11 @@ class EpisodeListItem extends StatelessWidget {
         episode.name,
         maxLines: 1,
         overflow: .ellipsis,
-        style: const TextStyle(fontSize: 14, fontWeight: .w600),
+        style: context.episodeTitle,
       ),
       subtitle: Text(
         episode.airDate,
-        style: const TextStyle(fontSize: 12, color: Colors.white54),
+        style: context.secondaryInfo,
       ),
       trailing: const Icon(
         Icons.play_circle_fill_rounded,
@@ -47,29 +48,15 @@ class _EpisodeText extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           borderRadius: .circular(6),
-          color: const Color(0xFF0D1B2A),
+          color: context.colors.backgroundPrimary,
         ),
         child: Padding(
           padding: const .symmetric(horizontal: 4),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
-                _extractSeason,
-                style: const TextStyle(
-                  fontSize: 10,
-                  fontWeight: .w600,
-                  color: Colors.white54,
-                ),
-              ),
-              Text(
-                _extractEpisode,
-                style: const TextStyle(
-                  fontSize: 12,
-                  fontWeight: .bold,
-                  color: Colors.white,
-                ),
-              ),
+              Text(_extractSeason, style: context.smallLabel),
+              Text(_extractEpisode, style: context.episodeNumber),
             ],
           ),
         ),
