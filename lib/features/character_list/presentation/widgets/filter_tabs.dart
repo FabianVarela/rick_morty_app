@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rick_morty_app/core/theme/app_theme.dart';
+import 'package:rick_morty_app/core/widgets/custom_filter_chip.dart';
 
 enum CharacterFilter { all, alive, dead, unknown }
 
@@ -24,7 +25,15 @@ class FilterTabs extends StatelessWidget {
           spacing: 8,
           children: CharacterFilter.values.map((filter) {
             final isSelected = filter == selectedFilter;
-            return FilterChip(
+            return CustomFilterChip(
+              label: switch (filter) {
+                .all => 'Todos',
+                .alive => 'Vivo',
+                .dead => 'Muerto',
+                .unknown => 'Desconocido',
+              },
+              isSelected: isSelected,
+              onSelected: () => onFilterChanged(filter),
               avatar: switch (filter) {
                 .all => null,
                 _ => SizedBox.square(
@@ -42,31 +51,6 @@ class FilterTabs extends StatelessWidget {
                   ),
                 ),
               },
-              label: Text(
-                switch (filter) {
-                  .all => 'Todos',
-                  .alive => 'Vivo',
-                  .dead => 'Muerto',
-                  .unknown => 'Desconocido',
-                },
-              ),
-              selected: isSelected,
-              onSelected: (_) => onFilterChanged(filter),
-              backgroundColor: context.colors.borderColor,
-              selectedColor: context.colors.primary,
-              labelStyle: context.normalText.copyWith(
-                fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                color: isSelected ? Colors.black : context.colors.textPrimary,
-              ),
-              shape: RoundedRectangleBorder(
-                borderRadius: .circular(20),
-                side: BorderSide(
-                  color: context.colors.primary,
-                  width: isSelected ? 2 : 1,
-                ),
-              ),
-              showCheckmark: false,
-              padding: const .symmetric(horizontal: 12, vertical: 8),
             );
           }).toList(),
         ),
