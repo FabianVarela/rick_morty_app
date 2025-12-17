@@ -10,73 +10,59 @@ class EpisodeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
+    return ListTile(
       onTap: onTap,
-      borderRadius: .circular(12),
-      child: Container(
-        padding: const .all(16),
-        decoration: BoxDecoration(
-          color: context.colors.backgroundCard,
-          borderRadius: BorderRadius.circular(12),
+      minTileHeight: 60,
+      tileColor: context.colors.backgroundCard,
+      shape: RoundedRectangleBorder(borderRadius: .circular(12)),
+      contentPadding: const .symmetric(horizontal: 16, vertical: 8),
+      leading: _EpisodeNumber(episodeText: episode.episode),
+      title: Padding(
+        padding: const .only(bottom: 4),
+        child: Text(
+          episode.name,
+          maxLines: 1,
+          overflow: .ellipsis,
+          style: context.episodeTitle.copyWith(
+            color: context.colors.textPrimary,
+            fontSize: 16,
+          ),
         ),
-        child: Row(
-          spacing: 16,
-          children: <Widget>[
-            _EpisodeNumber(episodeText: episode.episode),
-            Expanded(
-              child: Column(
-                spacing: 4,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    episode.name,
-                    style: context.episodeTitle.copyWith(
-                      color: context.colors.textPrimary,
-                      fontSize: 16,
-                    ),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  Row(
-                    spacing: 8,
-                    children: <Widget>[
-                      Text(
-                        episode.airDate,
-                        style: context.secondaryInfo.copyWith(
-                          color: context.colors.textSecondary,
-                        ),
-                      ),
-                      const Text(' · '),
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 8,
-                          vertical: 4,
-                        ),
-                        decoration: BoxDecoration(
-                          color: context.colors.primary,
-                          borderRadius: BorderRadius.circular(6),
-                        ),
-                        child: Text(
-                          _extractSeason,
-                          style: context.episodeNumber.copyWith(
-                            color: Colors.black,
-                            fontSize: 11,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+      ),
+      subtitle: Text.rich(
+        TextSpan(
+          text: episode.airDate,
+          style: context.secondaryInfo.copyWith(
+            color: context.colors.textSecondary,
+          ),
+          children: <InlineSpan>[
+            TextSpan(
+              text: ' · ',
+              style: context.secondaryInfo.copyWith(
+                color: context.colors.textSecondary,
               ),
             ),
-            Icon(
-              Icons.chevron_right,
-              color: context.colors.textSecondary,
-              size: 24,
+            WidgetSpan(
+              alignment: .middle,
+              child: Container(
+                padding: const .symmetric(horizontal: 6, vertical: 1),
+                decoration: BoxDecoration(
+                  borderRadius: .circular(4),
+                  color: context.colors.primary.withValues(alpha: .2),
+                ),
+                child: Text(
+                  _extractSeason,
+                  style: context.secondaryInfo.copyWith(
+                    fontWeight: .w600,
+                    color: context.colors.primary,
+                  ),
+                ),
+              ),
             ),
           ],
         ),
       ),
+      trailing: Icon(Icons.chevron_right, color: context.colors.textSecondary),
     );
   }
 
@@ -93,23 +79,34 @@ class _EpisodeNumber extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Text(
-          'EP',
-          style: context.smallLabel.copyWith(
-            color: context.colors.textTertiary,
-            fontSize: 10,
-          ),
+    return SizedBox.square(
+      dimension: 56,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          borderRadius: .circular(8),
+          color: context.colors.backgroundPrimary,
         ),
-        Text(
-          _extractEpisode,
-          style: context.episodeNumber.copyWith(
-            color: context.colors.primary,
-            fontSize: 18,
-          ),
+        child: Column(
+          mainAxisAlignment: .center,
+          children: <Widget>[
+            Text(
+              'EP',
+              style: context.smallLabel.copyWith(
+                color: context.colors.textTertiary,
+                fontSize: 10,
+              ),
+            ),
+            Text(
+              _extractEpisode,
+              style: context.characterTitle.copyWith(
+                color: context.colors.primary,
+                fontSize: 22,
+                fontWeight: .bold,
+              ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 
