@@ -1,10 +1,10 @@
 import 'package:graphql/client.dart';
 import 'package:rick_morty_app/core/common/extensions.dart';
 import 'package:rick_morty_app/core/graph_ql/graph_ql_provider.dart';
-import 'package:rick_morty_app/features/list/model/rick_morty_list_model.dart';
+import 'package:rick_morty_app/features/character_list/model/character_list_model.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'rick_morty_list_repository.g.dart';
+part 'character_list_repository.g.dart';
 
 class RickMortyListRepository {
   const RickMortyListRepository(this._graphQlClient);

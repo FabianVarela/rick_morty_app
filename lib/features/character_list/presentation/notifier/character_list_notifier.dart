@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:rick_morty_app/features/list/model/rick_morty_list_model.dart';
-import 'package:rick_morty_app/features/list/repository/rick_morty_list_repository.dart';
+import 'package:rick_morty_app/features/character_list/model/character_list_model.dart';
+import 'package:rick_morty_app/features/character_list/repository/character_list_repository.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'rick_morty_list_notifier.g.dart';
+part 'character_list_notifier.g.dart';
 
 typedef FilterData<T> = ({T filter, int page});
 

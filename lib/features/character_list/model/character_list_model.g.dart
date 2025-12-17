@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'rick_morty_list_model.dart';
+part of 'character_list_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator

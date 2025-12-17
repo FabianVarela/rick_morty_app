@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'rick_morty_list_model.freezed.dart';
+part 'character_list_model.freezed.dart';
 
-part 'rick_morty_list_model.g.dart';
+part 'character_list_model.g.dart';
 
 @Freezed(toJson: false)
 abstract class RickMortyListData with _$RickMortyListData {

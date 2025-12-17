@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:rick_morty_app/core/routes/page_routes.dart';
 import 'package:rick_morty_app/core/widgets/navigation_scaffold.dart';
+import 'package:rick_morty_app/features/character_list/presentation/view/character_list_view.dart';
 import 'package:rick_morty_app/features/detail/presentation/view/rick_morty_detail_view.dart';
-import 'package:rick_morty_app/features/list/presentation/view/rick_morty_list_view.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 final _shellNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'shell');
@@ -24,7 +24,7 @@ final rickMortyRouter = GoRouter(
               path: '/characters',
               pageBuilder: (_, state) => ScreenPage<dynamic>(
                 key: state.pageKey,
-                child: const RickMortyListView(),
+                child: const CharacterListView(),
               ),
               routes: <GoRoute>[
                 GoRoute(
