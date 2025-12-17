@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rick_morty_app/features/detail/model/rick_morty_detail_model.dart';
+import 'package:rick_morty_app/features/character_detail/model/character_detail_model.dart';
 
 class EpisodeListItem extends StatelessWidget {
   const EpisodeListItem({required this.episode, this.onTap, super.key});

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rick_morty_app/core/widgets/error_container.dart';
-import 'package:rick_morty_app/features/detail/model/rick_morty_detail_model.dart';
-import 'package:rick_morty_app/features/detail/presentation/notifier/rick_morty_detail_notifier.dart';
-import 'package:rick_morty_app/features/detail/presentation/widgets/episode_list_item.dart';
-import 'package:rick_morty_app/features/detail/presentation/widgets/info_card.dart';
+import 'package:rick_morty_app/features/character_detail/model/character_detail_model.dart';
+import 'package:rick_morty_app/features/character_detail/presentation/notifier/character_detail_notifier.dart';
+import 'package:rick_morty_app/features/character_detail/presentation/widgets/episode_list_item.dart';
+import 'package:rick_morty_app/features/character_detail/presentation/widgets/info_card.dart';
 
-class RickMortyDetailView extends ConsumerWidget {
-  const RickMortyDetailView({required this.id, super.key});
+class CharacterDetailView extends ConsumerWidget {
+  const CharacterDetailView({required this.id, super.key});
 
   final int id;
 

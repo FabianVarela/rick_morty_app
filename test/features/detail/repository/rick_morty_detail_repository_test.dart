@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:rick_morty_app/core/graph_ql/graph_ql_provider.dart';
-import 'package:rick_morty_app/features/detail/model/rick_morty_detail_model.dart';
-import 'package:rick_morty_app/features/detail/repository/rick_morty_detail_repository.dart';
+import 'package:rick_morty_app/features/character_detail/model/character_detail_model.dart';
+import 'package:rick_morty_app/features/character_detail/repository/character_detail_repository.dart';
 
 import '../../../factory/helpers.dart';
 import '../../../factory/mocks.dart';

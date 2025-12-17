@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'rick_morty_detail_repository.dart';
+part of 'character_detail_repository.dart';
 
 // **************************************************************************
 // RiverpodGenerator

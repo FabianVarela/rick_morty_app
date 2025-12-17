@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'rick_morty_detail_model.freezed.dart';
+part 'character_detail_model.freezed.dart';
 
-part 'rick_morty_detail_model.g.dart';
+part 'character_detail_model.g.dart';
 
 enum DetailStatus {
   @JsonValue('Alive')

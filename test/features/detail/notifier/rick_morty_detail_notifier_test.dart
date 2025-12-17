@@ -1,9 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:rick_morty_app/features/detail/model/rick_morty_detail_model.dart';
-import 'package:rick_morty_app/features/detail/presentation/notifier/rick_morty_detail_notifier.dart';
-import 'package:rick_morty_app/features/detail/repository/rick_morty_detail_repository.dart';
+import 'package:rick_morty_app/features/character_detail/model/character_detail_model.dart';
+import 'package:rick_morty_app/features/character_detail/presentation/notifier/character_detail_notifier.dart';
+import 'package:rick_morty_app/features/character_detail/repository/character_detail_repository.dart';
 
 import '../../../factory/helpers.dart';
 import '../../../factory/mocks.dart';
