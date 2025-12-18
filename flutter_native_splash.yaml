@@ -2,7 +2,7 @@ flutter_native_splash:
   color: "#4EADC7"
   image: assets/splash_screen/splash_screen.png
   # branding: assets/branding-development.png
-  color_dark: "#215969"
+  color_dark: "#0D1B2A"
   image_dark: assets/splash_screen/splash_screen.png
   # branding_dark: assets/branding-development.png
 
@@ -11,7 +11,7 @@ flutter_native_splash:
     icon_background_color: "#4EADC7"
     branding: assets/splash_screen/splash_screen_brand.png
     image_dark: assets/splash_screen/splash_screen_circular.png
-    icon_background_color_dark: "#215969"
+    icon_background_color_dark: "#0D1B2A"
     branding_dark: assets/splash_screen/splash_screen_brand.png
 
   web: false
