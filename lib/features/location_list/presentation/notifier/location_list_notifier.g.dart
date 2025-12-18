@@ -16,7 +16,7 @@ final class LocationListProvider
     extends $AsyncNotifierProvider<LocationList, RickMortyLocationListData> {
   const LocationListProvider._({
     required LocationListFamily super.from,
-    required Map<String, String> super.argument,
+    required FilterData<Map<String, String>?> super.argument,
   }) : super(
          retry: null,
          name: r'locationListProvider',
@@ -50,7 +50,7 @@ final class LocationListProvider
   }
 }
 
-String _$locationListHash() => r'853d0b00508b169c30a6e236c1b6ddebd4d4a945';
+String _$locationListHash() => r'4c365f804e5cce1bc62f9240cb1e335ee1448b3d';
 
 final class LocationListFamily extends $Family
     with
@@ -59,7 +59,7 @@ final class LocationListFamily extends $Family
           AsyncValue<RickMortyLocationListData>,
           RickMortyLocationListData,
           FutureOr<RickMortyLocationListData>,
-          Map<String, String>
+          FilterData<Map<String, String>?>
         > {
   const LocationListFamily._()
     : super(
@@ -70,8 +70,8 @@ final class LocationListFamily extends $Family
         isAutoDispose: true,
       );
 
-  LocationListProvider call(Map<String, String> filter) =>
-      LocationListProvider._(argument: filter, from: this);
+  LocationListProvider call(FilterData<Map<String, String>?> data) =>
+      LocationListProvider._(argument: data, from: this);
 
   @override
   String toString() => r'locationListProvider';
@@ -79,10 +79,12 @@ final class LocationListFamily extends $Family
 
 abstract class _$LocationList
     extends $AsyncNotifier<RickMortyLocationListData> {
-  late final _$args = ref.$arg as Map<String, String>;
-  Map<String, String> get filter => _$args;
+  late final _$args = ref.$arg as FilterData<Map<String, String>?>;
+  FilterData<Map<String, String>?> get data => _$args;
 
-  FutureOr<RickMortyLocationListData> build(Map<String, String> filter);
+  FutureOr<RickMortyLocationListData> build(
+    FilterData<Map<String, String>?> data,
+  );
   @$mustCallSuper
   @override
   void runBuild() {
@@ -112,7 +114,7 @@ abstract class _$LocationList
 const locationFilterQueryProvider = LocationFilterQueryProvider._();
 
 final class LocationFilterQueryProvider
-    extends $NotifierProvider<LocationFilterQuery, Map<String, String>> {
+    extends $NotifierProvider<LocationFilterQuery, Map<String, String>?> {
   const LocationFilterQueryProvider._()
     : super(
         from: null,
@@ -132,29 +134,29 @@ final class LocationFilterQueryProvider
   LocationFilterQuery create() => LocationFilterQuery();
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(Map<String, String> value) {
+  Override overrideWithValue(Map<String, String>? value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<Map<String, String>>(value),
+      providerOverride: $SyncValueProvider<Map<String, String>?>(value),
     );
   }
 }
 
 String _$locationFilterQueryHash() =>
-    r'f52ce5d6dc8d36715091d849190c9cf3274bcbe2';
+    r'342f698d117dc3434f9cd39a44d86cc359ba211b';
 
-abstract class _$LocationFilterQuery extends $Notifier<Map<String, String>> {
-  Map<String, String> build();
+abstract class _$LocationFilterQuery extends $Notifier<Map<String, String>?> {
+  Map<String, String>? build();
   @$mustCallSuper
   @override
   void runBuild() {
     final created = build();
-    final ref = this.ref as $Ref<Map<String, String>, Map<String, String>>;
+    final ref = this.ref as $Ref<Map<String, String>?, Map<String, String>?>;
     final element =
         ref.element
             as $ClassProviderElement<
-              AnyNotifier<Map<String, String>, Map<String, String>>,
-              Map<String, String>,
+              AnyNotifier<Map<String, String>?, Map<String, String>?>,
+              Map<String, String>?,
               Object?,
               Object?
             >;

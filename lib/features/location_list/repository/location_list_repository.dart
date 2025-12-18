@@ -12,10 +12,16 @@ class RickMortyLocationListRepository {
   final GraphQLClient _graphQlClient;
 
   Future<RickMortyLocationListData> fetchLocationListData({
-    required Map<String, String> filter,
+    int page = 1,
+    Map<String, String>? filter,
   }) async {
+    final filterText = filter != null && filter.isNotEmpty
+        ? 'filter: ${filter.toGraphQuery()}'
+        : '';
+
     final queryBuilder = StringBuffer('query {')
-      ..write('  locations(filter: ${filter.toGraphQuery()}) {')
+      ..write('  locations(page: $page, $filterText) {')
+      ..write('    info { count, pages }')
       ..write('    results {')
       ..write('       id, name, type, dimension')
       ..write('    }')

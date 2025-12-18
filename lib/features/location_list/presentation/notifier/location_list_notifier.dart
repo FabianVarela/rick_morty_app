@@ -6,14 +6,22 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'location_list_notifier.g.dart';
 
+typedef FilterData<T> = ({T filter, int page});
+
 @riverpod
 class LocationList extends _$LocationList {
   @override
-  FutureOr<RickMortyLocationListData> build(Map<String, String> filter) async {
+  FutureOr<RickMortyLocationListData> build(
+    FilterData<Map<String, String>?> data,
+  ) async {
     final locationListRepository = ref.watch(
       rickMortyLocationListRepoProvider,
     );
-    return await locationListRepository.fetchLocationListData(filter: filter);
+
+    return await locationListRepository.fetchLocationListData(
+      page: data.page,
+      filter: data.filter,
+    );
   }
 }
 
@@ -22,12 +30,12 @@ class LocationFilterQuery extends _$LocationFilterQuery {
   Timer? _debounceTimer;
 
   @override
-  Map<String, String> build() {
+  Map<String, String>? build() {
     ref.onDispose(() => _debounceTimer?.cancel());
-    return {};
+    return null;
   }
 
-  void setQuery({required Map<String, String> query}) {
+  void setQuery({Map<String, String>? query}) {
     _debounceTimer?.cancel();
     _debounceTimer = Timer(const Duration(milliseconds: 500), () {
       state = query;
@@ -36,6 +44,6 @@ class LocationFilterQuery extends _$LocationFilterQuery {
 
   void clearQuery() {
     _debounceTimer?.cancel();
-    state = {};
+    state = null;
   }
 }
