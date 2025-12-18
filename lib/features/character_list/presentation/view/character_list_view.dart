@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:rick_morty_app/core/theme/app_theme.dart';
 import 'package:rick_morty_app/core/widgets/empty_container.dart';
 import 'package:rick_morty_app/core/widgets/error_container.dart';
 import 'package:rick_morty_app/core/widgets/keep_alive_wrapper.dart';
@@ -39,7 +40,7 @@ class CharacterListView extends HookConsumerWidget {
     );
 
     return Scaffold(
-      backgroundColor: const Color(0xFF0D1B2A),
+      backgroundColor: context.colors.backgroundPrimary,
       body: SafeArea(
         child: Column(
           children: <Widget>[
@@ -51,9 +52,9 @@ class CharacterListView extends HookConsumerWidget {
               child: Builder(
                 builder: (_) {
                   if (listData.isLoading && !listData.hasValue) {
-                    return const Center(
+                    return Center(
                       child: CircularProgressIndicator(
-                        color: Color(0xFF4EAD7F),
+                        color: context.colors.primary,
                       ),
                     );
                   }

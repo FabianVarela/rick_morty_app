@@ -22,8 +22,6 @@ class LocationDetailView extends ConsumerWidget {
     return Scaffold(
       backgroundColor: context.colors.backgroundPrimary,
       appBar: AppBar(
-        foregroundColor: Colors.white,
-        backgroundColor: context.colors.backgroundPrimary,
         title: const Text('Detalles de Ubicación'),
       ),
       body: locationDetailResult.when(

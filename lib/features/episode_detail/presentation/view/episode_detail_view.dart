@@ -20,8 +20,6 @@ class EpisodeDetailView extends ConsumerWidget {
     return Scaffold(
       backgroundColor: context.colors.backgroundPrimary,
       appBar: AppBar(
-        foregroundColor: Colors.white,
-        backgroundColor: context.colors.backgroundPrimary,
         title: const Text('Detalles del Episodio'),
       ),
       body: episodeDetailResult.when(

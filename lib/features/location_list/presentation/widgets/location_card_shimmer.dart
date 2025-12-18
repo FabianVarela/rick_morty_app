@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rick_morty_app/core/theme/app_theme.dart';
 import 'package:rick_morty_app/core/widgets/shimmer_widget.dart';
 
 class LocationCardShimmer extends StatelessWidget {
@@ -8,7 +9,7 @@ class LocationCardShimmer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card.filled(
       margin: .zero,
-      color: const Color(0xFF1E3A2F),
+      color: context.colors.backgroundCard,
       clipBehavior: .antiAliasWithSaveLayer,
       shape: RoundedRectangleBorder(borderRadius: .circular(12)),
       child: const ListTile(

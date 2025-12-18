@@ -38,8 +38,6 @@ class EpisodeListView extends HookConsumerWidget {
       backgroundColor: context.colors.backgroundPrimary,
       appBar: AppBar(
         title: const Text('Lista de Episodios'),
-        foregroundColor: Colors.white,
-        backgroundColor: context.colors.backgroundPrimary,
       ),
       body: SafeArea(
         child: Column(

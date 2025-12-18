@@ -66,7 +66,7 @@ class LocationCard extends StatelessWidget {
     } else if (typeLower.contains('microverse')) {
       return context.colors.statusDead;
     } else if (typeLower.contains('tv') || typeLower.contains('dimension')) {
-      return Colors.blue;
+      return context.colors.primary;
     } else if (typeLower.contains('resort')) {
       return context.colors.statusAlive;
     }

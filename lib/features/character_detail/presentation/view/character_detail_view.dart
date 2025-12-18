@@ -21,11 +21,7 @@ class CharacterDetailView extends ConsumerWidget {
     return Scaffold(
       backgroundColor: context.colors.backgroundPrimary,
       appBar: detailResult.whenOrNull(
-        error: (_, _) => AppBar(
-          foregroundColor: Colors.white,
-          backgroundColor: context.colors.backgroundPrimary,
-          title: const Text('Error'),
-        ),
+        error: (_, _) => AppBar(title: const Text('Error')),
       ),
       body: detailResult.when(
         data: (data) => _DetailContent(character: data),
@@ -58,12 +54,15 @@ class _DetailContent extends StatelessWidget {
           expandedHeight: 300,
           backgroundColor: context.colors.backgroundPrimary,
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
+            icon: Icon(
+              Icons.arrow_back_ios_new,
+              color: context.colors.textPrimary,
+            ),
             onPressed: () => Navigator.of(context).pop(),
           ),
           actions: <Widget>[
             IconButton(
-              icon: const Icon(Icons.share, color: Colors.white),
+              icon: Icon(Icons.share, color: context.colors.textPrimary),
               onPressed: () {},
             ),
           ],
@@ -97,7 +96,10 @@ class _DetailContent extends StatelessWidget {
                         backgroundColor: context.colors.primary,
                       ),
                       onPressed: () {},
-                      label: const Icon(Icons.favorite, color: Colors.black),
+                      label: Icon(
+                        Icons.favorite,
+                        color: context.colors.textOnPrimary,
+                      ),
                     ),
                   ),
                 ),

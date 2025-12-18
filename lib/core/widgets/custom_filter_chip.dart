@@ -26,7 +26,9 @@ class CustomFilterChip extends StatelessWidget {
       selectedColor: context.colors.primary,
       labelStyle: context.normalText.copyWith(
         fontWeight: isSelected ? .bold : .normal,
-        color: isSelected ? Colors.black : context.colors.textPrimary,
+        color: isSelected
+            ? context.colors.textOnPrimary
+            : context.colors.textPrimary,
       ),
       shape: RoundedRectangleBorder(
         borderRadius: .circular(20),

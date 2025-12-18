@@ -47,8 +47,6 @@ class LocationListView extends HookConsumerWidget {
       backgroundColor: context.colors.backgroundPrimary,
       appBar: AppBar(
         title: const Text('Ubicaciones'),
-        foregroundColor: Colors.white,
-        backgroundColor: context.colors.backgroundPrimary,
       ),
       body: SafeArea(
         child: Column(

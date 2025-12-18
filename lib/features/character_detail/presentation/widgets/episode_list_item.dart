@@ -13,7 +13,7 @@ class EpisodeListItem extends StatelessWidget {
     return ListTile(
       onTap: onTap,
       minTileHeight: 60,
-      textColor: Colors.white,
+      textColor: context.colors.textPrimary,
       tileColor: context.colors.backgroundCard,
       shape: RoundedRectangleBorder(borderRadius: .circular(8)),
       contentPadding: const .symmetric(vertical: 12, horizontal: 16),
@@ -25,9 +25,9 @@ class EpisodeListItem extends StatelessWidget {
         style: context.episodeTitle,
       ),
       subtitle: Text(episode.airDate, style: context.secondaryInfo),
-      trailing: const Icon(
+      trailing: Icon(
         Icons.play_circle_fill_rounded,
-        color: Color(0xFF9EA3AE),
+        color: context.colors.textTertiary,
       ),
     );
   }

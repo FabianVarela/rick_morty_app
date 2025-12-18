@@ -33,7 +33,9 @@ class ErrorContainer extends StatelessWidget {
         Text(
           error,
           textAlign: .center,
-          style: context.secondaryInfo.copyWith(color: Colors.white70),
+          style: context.secondaryInfo.copyWith(
+            color: context.colors.textSecondary,
+          ),
         ),
         Padding(
           padding: const .only(top: 8),

@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:rick_morty_app/core/theme/app_theme.dart';
 
 class Shimmer extends StatefulWidget {
   const Shimmer({
     required this.child,
-    this.baseColor = const Color(0xFF1E3A2F),
-    this.highlightColor = const Color(0xFF2D5A47),
+    this.baseColor,
+    this.highlightColor,
     this.duration = const Duration(milliseconds: 1500),
     super.key,
   });
 
   final Widget child;
-  final Color baseColor;
-  final Color highlightColor;
+  final Color? baseColor;
+  final Color? highlightColor;
   final Duration duration;
 
   @override
@@ -46,9 +47,9 @@ class _ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
             begin: .topLeft,
             end: .bottomRight,
             colors: <Color>[
-              widget.baseColor,
-              widget.highlightColor,
-              widget.baseColor,
+              widget.baseColor ?? context.colors.backgroundCard,
+              widget.highlightColor ?? context.colors.borderColor,
+              widget.baseColor ?? context.colors.backgroundCard,
             ],
             stops: <double>[value - .3, value, value + .3],
           ).createShader(bounds),
@@ -64,15 +65,15 @@ class ShimmerBox extends StatelessWidget {
   const ShimmerBox({
     this.size,
     this.borderRadius,
-    this.baseColor = const Color(0xFF1E3A2F),
-    this.highlightColor = const Color(0xFF2D5A47),
+    this.baseColor,
+    this.highlightColor,
     super.key,
   });
 
   final Size? size;
   final BorderRadius? borderRadius;
-  final Color baseColor;
-  final Color highlightColor;
+  final Color? baseColor;
+  final Color? highlightColor;
 
   @override
   Widget build(BuildContext context) {

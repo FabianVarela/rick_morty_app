@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rick_morty_app/core/theme/app_theme.dart';
 
 class NetworkImageWithState extends StatelessWidget {
   const NetworkImageWithState({
@@ -20,17 +21,21 @@ class NetworkImageWithState extends StatelessWidget {
       imageUrl,
       fit: fit,
       errorBuilder: (_, _, _) => ColoredBox(
-        color: Colors.grey.withValues(alpha: .8),
-        child: Icon(placeholderIcon, size: iconSize, color: Colors.white38),
+        color: context.colors.backgroundInfoCard,
+        child: Icon(
+          placeholderIcon,
+          size: iconSize,
+          color: context.colors.textTertiary,
+        ),
       ),
       loadingBuilder: (_, child, loadingProgress) {
         if (loadingProgress == null) return child;
         return ColoredBox(
-          color: Colors.grey.withValues(alpha: .8),
+          color: context.colors.backgroundInfoCard,
           child: Center(
             child: CircularProgressIndicator(
               strokeWidth: 2,
-              color: Colors.white38,
+              color: context.colors.primary,
               value: loadingProgress.expectedTotalBytes != null
                   ? loadingProgress.cumulativeBytesLoaded /
                         loadingProgress.expectedTotalBytes!
