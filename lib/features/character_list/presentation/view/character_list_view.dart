@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rick_morty_app/core/widgets/empty_container.dart';
 import 'package:rick_morty_app/core/widgets/error_container.dart';
 import 'package:rick_morty_app/core/widgets/keep_alive_wrapper.dart';
+import 'package:rick_morty_app/core/widgets/page_error_tile.dart';
 import 'package:rick_morty_app/features/character_list/presentation/notifier/character_list_notifier.dart';
 import 'package:rick_morty_app/features/character_list/presentation/widgets/character_card.dart';
 import 'package:rick_morty_app/features/character_list/presentation/widgets/character_card_shimmer.dart';
@@ -137,7 +138,10 @@ class _CharacterList extends ConsumerWidget {
                   },
                   loading: () => const CharacterCardShimmer(),
                   error: (_, _) => indexInPage == 0
-                      ? _ErrorTile(page: page, filter: filter)
+                      ? PageErrorTile(
+                          page: page,
+                          onRetry: () => _onRetryPage(ref, page),
+                        )
                       : const Offstage(),
                 );
               },
@@ -148,6 +152,13 @@ class _CharacterList extends ConsumerWidget {
     );
   }
 
+  Future<void> _onRetryPage(WidgetRef ref, int page) {
+    final param = (filter: filter, page: page);
+
+    ref.invalidate(characterListProvider(param));
+    return ref.read(characterListProvider(param).future);
+  }
+
   Future<void> _onRefresh(WidgetRef ref) async {
     try {
       ref.invalidate(characterListProvider);
@@ -155,35 +166,5 @@ class _CharacterList extends ConsumerWidget {
     } catch (_) {
       debugPrint('Error refreshing data');
     }
-  }
-}
-
-class _ErrorTile extends ConsumerWidget {
-  const _ErrorTile({required this.page, this.filter});
-
-  final int page;
-  final Map<String, String>? filter;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final param = (filter: filter, page: page);
-
-    return Padding(
-      padding: const .all(16),
-      child: Row(
-        spacing: 8,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          Text('Error loading page: $page'),
-          ElevatedButton(
-            onPressed: () {
-              ref.invalidate(characterListProvider(param));
-              return ref.read(characterListProvider(param).future);
-            },
-            child: const Text('Retry'),
-          ),
-        ],
-      ),
-    );
   }
 }
