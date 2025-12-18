@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rick_morty_app/core/theme/app_theme.dart';
 import 'package:rick_morty_app/core/widgets/error_container.dart';
+import 'package:rick_morty_app/core/widgets/network_image_with_state.dart';
 import 'package:rick_morty_app/features/character_detail/model/character_detail_model.dart';
 import 'package:rick_morty_app/features/character_detail/presentation/notifier/character_detail_notifier.dart';
 import 'package:rick_morty_app/features/character_detail/presentation/widgets/episode_list_item.dart';
@@ -69,7 +70,7 @@ class _DetailContent extends StatelessWidget {
             background: Stack(
               fit: .expand,
               children: <Widget>[
-                Image.network(character.image, fit: .cover),
+                NetworkImageWithState(imageUrl: character.image),
                 DecoratedBox(
                   decoration: BoxDecoration(
                     gradient: LinearGradient(

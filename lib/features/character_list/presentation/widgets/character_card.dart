@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rick_morty_app/core/theme/app_theme.dart';
+import 'package:rick_morty_app/core/widgets/network_image_with_state.dart';
 import 'package:rick_morty_app/features/character_list/model/character_list_model.dart';
 
 class CharacterCard extends StatelessWidget {
@@ -26,34 +27,7 @@ class CharacterCard extends StatelessWidget {
           children: <Widget>[
             SizedBox.square(
               dimension: 140,
-              child: Image.network(
-                character.image,
-                fit: .cover,
-                errorBuilder: (_, _, _) => ColoredBox(
-                  color: Colors.grey.withValues(alpha: .8),
-                  child: const Icon(
-                    Icons.person,
-                    size: 60,
-                    color: Colors.white38,
-                  ),
-                ),
-                loadingBuilder: (_, child, loadingProgress) {
-                  if (loadingProgress == null) return child;
-                  return ColoredBox(
-                    color: Colors.grey.withValues(alpha: .8),
-                    child: Center(
-                      child: CircularProgressIndicator(
-                        value: loadingProgress.expectedTotalBytes != null
-                            ? loadingProgress.cumulativeBytesLoaded /
-                                  loadingProgress.expectedTotalBytes!
-                            : null,
-                        strokeWidth: 2,
-                        color: Colors.white38,
-                      ),
-                    ),
-                  );
-                },
-              ),
+              child: NetworkImageWithState(imageUrl: character.image),
             ),
             Expanded(
               child: Padding(
