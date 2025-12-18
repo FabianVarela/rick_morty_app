@@ -2,6 +2,7 @@ import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:rick_morty_app/core/gen/assets.gen.dart';
+import 'package:rick_morty_app/core/theme/app_theme.dart';
 import 'package:rick_morty_app/l10n/l10n.dart';
 import 'package:vector_graphics/vector_graphics.dart';
 
@@ -13,6 +14,7 @@ class NavigationScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+    final colors = context.colors;
     final currentIndex = navigationShell.currentIndex;
 
     final menuItems = <({String title, String iconPath})>[
@@ -24,9 +26,9 @@ class NavigationScaffold extends StatelessWidget {
     return Scaffold(
       body: HeroMode(child: navigationShell),
       bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white30,
-        backgroundColor: const Color(0xFF4EADC7),
+        selectedItemColor: colors.primary,
+        unselectedItemColor: colors.textTertiary,
+        backgroundColor: colors.backgroundCard,
         items: menuItems.mapIndexed((index, item) {
           return BottomNavigationBarItem(
             label: item.title,
@@ -35,7 +37,7 @@ class NavigationScaffold extends StatelessWidget {
               child: VectorGraphic(
                 loader: AssetBytesLoader(item.iconPath),
                 colorFilter: .mode(
-                  currentIndex == index ? Colors.white : Colors.white30,
+                  currentIndex == index ? colors.primary : colors.textTertiary,
                   .srcIn,
                 ),
               ),
