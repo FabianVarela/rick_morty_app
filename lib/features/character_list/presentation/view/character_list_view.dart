@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:rick_morty_app/core/notifier/theme_notifier.dart';
 import 'package:rick_morty_app/core/theme/app_theme.dart';
 import 'package:rick_morty_app/core/widgets/empty_container.dart';
 import 'package:rick_morty_app/core/widgets/error_container.dart';
@@ -82,6 +83,18 @@ class CharacterListView extends HookConsumerWidget {
               ),
             ),
           ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: context.colors.primary,
+        onPressed: () {
+          ref.read(themeCurrentModeProvider.notifier).toggleTheme();
+        },
+        child: Icon(
+          ref.watch(themeCurrentModeProvider) == .light
+              ? Icons.dark_mode_outlined
+              : Icons.light_mode_outlined,
+          color: context.colors.textOnPrimary,
         ),
       ),
     );
