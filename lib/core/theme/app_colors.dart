@@ -13,7 +13,7 @@ class AppColors extends ThemeExtension<AppColors> {
     required this.textPrimary,
     required this.textSecondary,
     required this.textTertiary,
-    required this.appBarBackground,
+    required this.textOnPrimary,
   });
 
   final Color primary;
@@ -27,7 +27,22 @@ class AppColors extends ThemeExtension<AppColors> {
   final Color textPrimary;
   final Color textSecondary;
   final Color textTertiary;
-  final Color appBarBackground;
+  final Color textOnPrimary;
+
+  static const AppColors light = AppColors(
+    primary: Color(0xFF4EADC7),
+    backgroundPrimary: Color(0xFFF5F5F5),
+    backgroundCard: Colors.white,
+    backgroundInfoCard: Color(0xFFF0F0F0),
+    borderColor: Color(0xFFE0E0E0),
+    statusAlive: Color(0xFF4CAF50),
+    statusDead: Color(0xFFE53935),
+    statusUnknown: Color(0xFF9E9E9E),
+    textPrimary: Color(0xFF212121),
+    textSecondary: Color(0xFF757575),
+    textTertiary: Color(0xFF9E9E9E),
+    textOnPrimary: Color(0xFF000000),
+  );
 
   static const AppColors dark = AppColors(
     primary: Color(0xFF4EAD7F),
@@ -41,7 +56,7 @@ class AppColors extends ThemeExtension<AppColors> {
     textPrimary: Colors.white,
     textSecondary: Colors.white70,
     textTertiary: Colors.white54,
-    appBarBackground: Color(0xFF13B9FF),
+    textOnPrimary: Color(0xFF000000),
   );
 
   @override
@@ -57,7 +72,7 @@ class AppColors extends ThemeExtension<AppColors> {
     Color? textPrimary,
     Color? textSecondary,
     Color? textTertiary,
-    Color? appBarBackground,
+    Color? textOnPrimary,
   }) {
     return AppColors(
       primary: primary ?? this.primary,
@@ -71,7 +86,7 @@ class AppColors extends ThemeExtension<AppColors> {
       textPrimary: textPrimary ?? this.textPrimary,
       textSecondary: textSecondary ?? this.textSecondary,
       textTertiary: textTertiary ?? this.textTertiary,
-      appBarBackground: appBarBackground ?? this.appBarBackground,
+      textOnPrimary: textOnPrimary ?? this.textOnPrimary,
     );
   }
 
@@ -102,11 +117,7 @@ class AppColors extends ThemeExtension<AppColors> {
       textPrimary: Color.lerp(textPrimary, other.textPrimary, t)!,
       textSecondary: Color.lerp(textSecondary, other.textSecondary, t)!,
       textTertiary: Color.lerp(textTertiary, other.textTertiary, t)!,
-      appBarBackground: Color.lerp(
-        appBarBackground,
-        other.appBarBackground,
-        t,
-      )!,
+      textOnPrimary: Color.lerp(textOnPrimary, other.textOnPrimary, t)!,
     );
   }
 }

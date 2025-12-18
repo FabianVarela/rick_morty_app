@@ -5,27 +5,34 @@ part 'app_colors.dart';
 part 'app_text_theme.dart';
 
 class AppTheme {
-  static ThemeData get theme {
-    const appColors = AppColors.dark;
+  static ThemeData get lightTheme =>
+      _buildTheme(AppColors.light, Brightness.light);
 
+  static ThemeData get darkTheme =>
+      _buildTheme(AppColors.dark, Brightness.dark);
+
+  static ThemeData get theme => darkTheme;
+
+  static ThemeData _buildTheme(AppColors appColors, Brightness brightness) {
     return ThemeData(
-      brightness: .dark,
+      brightness: brightness,
       colorScheme:
           ColorScheme.fromSwatch(
-            brightness: .dark,
+            brightness: brightness,
             accentColor: appColors.primary,
           ).copyWith(
             primary: appColors.primary,
             surface: appColors.backgroundPrimary,
           ),
       scaffoldBackgroundColor: appColors.backgroundPrimary,
-      appBarTheme: AppBarTheme(
-        backgroundColor: appColors.appBarBackground,
+      appBarTheme: const AppBarTheme(
         elevation: 0,
         centerTitle: true,
+        foregroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.white),
       ),
       textTheme: AppTextTheme.textTheme,
-      extensions: const <ThemeExtension<dynamic>>[appColors],
+      extensions: <ThemeExtension<dynamic>>[appColors],
       cardTheme: CardThemeData(
         color: appColors.backgroundCard,
         elevation: 4,
