@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rick_morty_app/core/theme/app_theme.dart';
 import 'package:rick_morty_app/core/widgets/empty_container.dart';
@@ -177,9 +178,7 @@ class _LocationList extends ConsumerWidget {
                     return KeepAliveWrapper(
                       child: LocationCard(
                         location: location,
-                        onTap: () {
-                          // TODO(FV): Navigate to location detail
-                        },
+                        onTap: () => context.push('/location/${location.id}'),
                       ),
                     );
                   },

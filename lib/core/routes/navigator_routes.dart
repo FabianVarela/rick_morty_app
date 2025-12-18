@@ -7,6 +7,7 @@ import 'package:rick_morty_app/features/character_detail/presentation/view/chara
 import 'package:rick_morty_app/features/character_list/presentation/view/character_list_view.dart';
 import 'package:rick_morty_app/features/episode_detail/presentation/view/episode_detail_view.dart';
 import 'package:rick_morty_app/features/episode_list/presentation/view/episode_list_view.dart';
+import 'package:rick_morty_app/features/location_detail/presentation/view/location_detail_view.dart';
 import 'package:rick_morty_app/features/location_list/presentation/view/location_list_view.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
@@ -52,6 +53,17 @@ final rickMortyRouter = GoRouter(
                 key: state.pageKey,
                 child: const LocationListView(),
               ),
+              routes: <GoRoute>[
+                GoRoute(
+                  path: ':id',
+                  pageBuilder: (_, state) => ScreenPage<dynamic>(
+                    key: state.pageKey,
+                    child: LocationDetailView(
+                      id: int.parse(state.pathParameters['id']!),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),
