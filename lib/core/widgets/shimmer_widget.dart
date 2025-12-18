@@ -43,8 +43,8 @@ class _ShimmerState extends State<Shimmer> with SingleTickerProviderStateMixin {
         return ShaderMask(
           blendMode: .srcATop,
           shaderCallback: (bounds) => LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
+            begin: .topLeft,
+            end: .bottomRight,
             colors: <Color>[
               widget.baseColor,
               widget.highlightColor,

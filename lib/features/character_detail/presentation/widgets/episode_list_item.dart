@@ -24,10 +24,7 @@ class EpisodeListItem extends StatelessWidget {
         overflow: .ellipsis,
         style: context.episodeTitle,
       ),
-      subtitle: Text(
-        episode.airDate,
-        style: context.secondaryInfo,
-      ),
+      subtitle: Text(episode.airDate, style: context.secondaryInfo),
       trailing: const Icon(
         Icons.play_circle_fill_rounded,
         color: Color(0xFF9EA3AE),
@@ -53,7 +50,7 @@ class _EpisodeText extends StatelessWidget {
         child: Padding(
           padding: const .symmetric(horizontal: 4),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: .center,
             children: <Widget>[
               Text(_extractSeason, style: context.smallLabel),
               Text(_extractEpisode, style: context.episodeNumber),

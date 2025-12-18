@@ -34,7 +34,7 @@ class NavigationScaffold extends StatelessWidget {
               dimension: 24,
               child: VectorGraphic(
                 loader: AssetBytesLoader(item.iconPath),
-                colorFilter: ColorFilter.mode(
+                colorFilter: .mode(
                   currentIndex == index ? Colors.white : Colors.white30,
                   .srcIn,
                 ),

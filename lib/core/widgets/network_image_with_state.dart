@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class NetworkImageWithState extends StatelessWidget {
   const NetworkImageWithState({
     required this.imageUrl,
-    this.fit = BoxFit.cover,
+    this.fit = .cover,
     this.placeholderIcon = Icons.person,
     this.iconSize = 60,
     super.key,

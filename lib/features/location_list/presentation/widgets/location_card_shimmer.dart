@@ -15,7 +15,7 @@ class LocationCardShimmer extends StatelessWidget {
         minTileHeight: 60,
         contentPadding: .symmetric(horizontal: 16, vertical: 12),
         leading: ShimmerBox(
-          size: Size.square(56),
+          size: .square(56),
           borderRadius: .all(.circular(12)),
         ),
         title: Padding(
@@ -29,7 +29,7 @@ class LocationCardShimmer extends StatelessWidget {
           spacing: 6,
           children: <Widget>[
             ShimmerBox(
-              size: Size.square(8),
+              size: .square(8),
               borderRadius: .all(.circular(4)),
             ),
             ShimmerBox(
@@ -39,7 +39,7 @@ class LocationCardShimmer extends StatelessWidget {
           ],
         ),
         trailing: ShimmerBox(
-          size: Size(24, 24),
+          size: .square(24),
           borderRadius: .all(.circular(4)),
         ),
       ),

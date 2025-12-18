@@ -44,12 +44,8 @@ class InfoCard extends StatelessWidget {
         child: Padding(
           padding: const .all(16),
           child: switch (position) {
-            InfoCardPosition.row => Row(
-              spacing: 16,
-              mainAxisSize: .min,
-              children: children,
-            ),
-            InfoCardPosition.column => Column(
+            .row => Row(spacing: 16, mainAxisSize: .min, children: children),
+            .column => Column(
               spacing: 16,
               mainAxisSize: .min,
               crossAxisAlignment: .start,

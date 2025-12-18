@@ -128,16 +128,10 @@ class LocationListView extends HookConsumerWidget {
   }
 
   Map<String, String>? _buildFilter({required String query, String? type}) {
-    final filter = <String, String>{};
-
-    if (query.isNotEmpty) {
-      filter['name'] = query;
-    }
-
-    if (type != null) {
-      filter['type'] = type;
-    }
-
+    final filter = <String, String>{
+      if (query.isNotEmpty) 'name': query,
+      if (type != null) 'type': type,
+    };
     return filter.isEmpty ? null : filter;
   }
 }

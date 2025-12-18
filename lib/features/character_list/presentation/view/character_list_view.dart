@@ -88,10 +88,10 @@ class CharacterListView extends HookConsumerWidget {
 
   Map<String, String>? _buildFilter(CharacterFilter filter) {
     return switch (filter) {
-      CharacterFilter.all => null,
-      CharacterFilter.alive => {'status': 'alive'},
-      CharacterFilter.dead => {'status': 'dead'},
-      CharacterFilter.unknown => {'status': 'unknown'},
+      .all => null,
+      .alive => {'status': 'alive'},
+      .dead => {'status': 'dead'},
+      .unknown => {'status': 'unknown'},
     };
   }
 }

@@ -14,7 +14,7 @@ class CharacterCardShimmer extends StatelessWidget {
       child: const Row(
         crossAxisAlignment: .start,
         children: <Widget>[
-          ShimmerBox(borderRadius: .zero, size: Size.square(140)),
+          ShimmerBox(borderRadius: .zero, size: .square(140)),
           Expanded(
             child: Padding(
               padding: .all(16),
@@ -31,7 +31,7 @@ class CharacterCardShimmer extends StatelessWidget {
                     spacing: 6,
                     children: <Widget>[
                       ShimmerBox(
-                        size: Size.square(8),
+                        size: .square(8),
                         borderRadius: .all(.circular(4)),
                       ),
                       ShimmerBox(
