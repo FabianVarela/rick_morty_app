@@ -109,14 +109,6 @@ class AppColors extends ThemeExtension<AppColors> {
       )!,
     );
   }
-
-  Color getStatusColor(String status) {
-    return switch (status.toLowerCase()) {
-      'alive' => statusAlive,
-      'dead' => statusDead,
-      _ => statusUnknown,
-    };
-  }
 }
 
 extension AppColorsExtension on BuildContext {
