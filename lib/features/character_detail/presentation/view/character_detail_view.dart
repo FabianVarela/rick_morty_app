@@ -114,7 +114,12 @@ class _DetailContent extends StatelessWidget {
               spacing: 12,
               crossAxisAlignment: .start,
               children: <Widget>[
-                Text(character.name, style: context.characterTitle),
+                Text(
+                  character.name,
+                  style: context.characterTitle.copyWith(
+                    color: context.colors.textPrimary,
+                  ),
+                ),
                 Row(
                   spacing: 8,
                   children: <Widget>[
@@ -125,7 +130,12 @@ class _DetailContent extends StatelessWidget {
                         .unknown => .unknown,
                       },
                     ),
-                    Text('• ${character.species}', style: context.subtitle),
+                    Text(
+                      '• ${character.species}',
+                      style: context.subtitle.copyWith(
+                        color: context.colors.textSecondary,
+                      ),
+                    ),
                   ],
                 ),
               ],
@@ -189,7 +199,12 @@ class _DetailContent extends StatelessWidget {
             padding: const .symmetric(horizontal: 24, vertical: 16),
             child: Row(
               children: <Widget>[
-                Text('Episodes', style: context.sectionTitle),
+                Text(
+                  'Episodes',
+                  style: context.sectionTitle.copyWith(
+                    color: context.colors.textPrimary,
+                  ),
+                ),
                 const Spacer(),
                 Text(
                   '${character.episode.length} total',
@@ -225,7 +240,12 @@ class _DetailContent extends StatelessWidget {
                   side: BorderSide(color: context.colors.borderColor),
                   shape: RoundedRectangleBorder(borderRadius: .circular(8)),
                 ),
-                child: Text('View all episodes', style: context.buttonText),
+                child: Text(
+                  'View all episodes',
+                  style: context.buttonText.copyWith(
+                    color: context.colors.textPrimary,
+                  ),
+                ),
               ),
             ),
           )

@@ -56,7 +56,12 @@ class _DetailContent extends StatelessWidget {
               crossAxisAlignment: .start,
               children: <Widget>[
                 InfoChip(label: _formattedEpisodeCode, style: .filled),
-                Text(episode.name, style: context.characterTitle),
+                Text(
+                  episode.name,
+                  style: context.characterTitle.copyWith(
+                    color: context.colors.textPrimary,
+                  ),
+                ),
                 Row(
                   spacing: 8,
                   children: <Widget>[
@@ -80,7 +85,12 @@ class _DetailContent extends StatelessWidget {
         SliverToBoxAdapter(
           child: Padding(
             padding: const .fromLTRB(24, 8, 24, 0),
-            child: Text('Personajes', style: context.sectionTitle),
+            child: Text(
+              'Personajes',
+              style: context.sectionTitle.copyWith(
+                color: context.colors.textPrimary,
+              ),
+            ),
           ),
         ),
         SliverPadding(

@@ -41,7 +41,9 @@ class CharacterCard extends StatelessWidget {
                       character.name,
                       maxLines: 1,
                       overflow: .ellipsis,
-                      style: context.cardTitle,
+                      style: context.cardTitle.copyWith(
+                        color: context.colors.textPrimary,
+                      ),
                     ),
                     Row(
                       spacing: 6,
@@ -64,7 +66,9 @@ class CharacterCard extends StatelessWidget {
                             '$_statusText • ${character.species}',
                             maxLines: 1,
                             overflow: .ellipsis,
-                            style: context.secondarySubtitle,
+                            style: context.secondarySubtitle.copyWith(
+                              color: context.colors.textSecondary,
+                            ),
                           ),
                         ),
                       ],
@@ -73,16 +77,20 @@ class CharacterCard extends StatelessWidget {
                       Text.rich(
                         TextSpan(
                           text: 'Last location:',
+                          style: context.secondaryInfo.copyWith(
+                            color: context.colors.textTertiary,
+                          ),
                           children: <InlineSpan>[
                             const TextSpan(text: '\n\t'),
                             TextSpan(
                               text: character.location?.name ?? 'Unknown',
-                              style: context.secondarySubtitle,
+                              style: context.secondarySubtitle.copyWith(
+                                color: context.colors.textSecondary,
+                              ),
                             ),
                           ],
                         ),
                         overflow: .ellipsis,
-                        style: context.secondaryInfo,
                       ),
                   ],
                 ),

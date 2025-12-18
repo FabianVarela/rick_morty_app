@@ -42,7 +42,9 @@ class CharacterGridItem extends StatelessWidget {
                     character.name,
                     maxLines: 1,
                     overflow: .ellipsis,
-                    style: context.episodeTitle,
+                    style: context.episodeTitle.copyWith(
+                      color: context.colors.textPrimary,
+                    ),
                   ),
                   Row(
                     spacing: 6,
@@ -69,7 +71,9 @@ class CharacterGridItem extends StatelessWidget {
                           },
                           maxLines: 1,
                           overflow: .ellipsis,
-                          style: context.secondarySubtitle,
+                          style: context.secondarySubtitle.copyWith(
+                            color: context.colors.textSecondary,
+                          ),
                         ),
                       ),
                     ],

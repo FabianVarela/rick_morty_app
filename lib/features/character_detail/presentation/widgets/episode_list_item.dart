@@ -22,9 +22,14 @@ class EpisodeListItem extends StatelessWidget {
         episode.name,
         maxLines: 1,
         overflow: .ellipsis,
-        style: context.episodeTitle,
+        style: context.episodeTitle.copyWith(color: context.colors.textPrimary),
       ),
-      subtitle: Text(episode.airDate, style: context.secondaryInfo),
+      subtitle: Text(
+        episode.airDate,
+        style: context.secondaryInfo.copyWith(
+          color: context.colors.textSecondary,
+        ),
+      ),
       trailing: Icon(
         Icons.play_circle_fill_rounded,
         color: context.colors.textTertiary,
@@ -52,8 +57,18 @@ class _EpisodeText extends StatelessWidget {
           child: Column(
             mainAxisAlignment: .center,
             children: <Widget>[
-              Text(_extractSeason, style: context.smallLabel),
-              Text(_extractEpisode, style: context.episodeNumber),
+              Text(
+                _extractSeason,
+                style: context.smallLabel.copyWith(
+                  color: context.colors.textTertiary,
+                ),
+              ),
+              Text(
+                _extractEpisode,
+                style: context.episodeNumber.copyWith(
+                  color: context.colors.textPrimary,
+                ),
+              ),
             ],
           ),
         ),

@@ -71,12 +71,15 @@ class _TitleSubtitle extends StatelessWidget {
       mainAxisSize: .min,
       crossAxisAlignment: .start,
       children: <Widget>[
-        Text(title.toUpperCase(), style: context.label),
+        Text(
+          title.toUpperCase(),
+          style: context.label.copyWith(color: context.colors.textTertiary),
+        ),
         Text(
           subtitle,
           maxLines: 2,
           overflow: .ellipsis,
-          style: context.buttonText,
+          style: context.buttonText.copyWith(color: context.colors.textPrimary),
         ),
       ],
     );

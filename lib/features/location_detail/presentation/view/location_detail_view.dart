@@ -86,7 +86,9 @@ class _DetailContent extends StatelessWidget {
                 Text(
                   location.name,
                   textAlign: .center,
-                  style: context.characterTitle,
+                  style: context.characterTitle.copyWith(
+                    color: context.colors.textPrimary,
+                  ),
                 ),
                 Wrap(
                   spacing: 8,
@@ -106,7 +108,9 @@ class _DetailContent extends StatelessWidget {
             padding: const .all(24),
             child: Text(
               'Residentes (${location.residents.length})',
-              style: context.sectionTitle,
+              style: context.sectionTitle.copyWith(
+                color: context.colors.textPrimary,
+              ),
             ),
           ),
         ),
