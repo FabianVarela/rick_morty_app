@@ -11,7 +11,7 @@ class AppTheme {
   static ThemeData get darkTheme =>
       _buildTheme(AppColors.dark, Brightness.dark);
 
-  static ThemeData get theme => darkTheme;
+  static ThemeData get theme => lightTheme;
 
   static ThemeData _buildTheme(AppColors appColors, Brightness brightness) {
     return ThemeData(
@@ -25,11 +25,11 @@ class AppTheme {
             surface: appColors.backgroundPrimary,
           ),
       scaffoldBackgroundColor: appColors.backgroundPrimary,
-      appBarTheme: const AppBarTheme(
+      appBarTheme: AppBarTheme(
         elevation: 0,
         centerTitle: true,
-        foregroundColor: Colors.white,
-        iconTheme: IconThemeData(color: Colors.white),
+        foregroundColor: appColors.textPrimary,
+        iconTheme: IconThemeData(color: appColors.textPrimary),
       ),
       textTheme: AppTextTheme.textTheme,
       extensions: <ThemeExtension<dynamic>>[appColors],

@@ -3,54 +3,28 @@ part of 'app_theme.dart';
 class AppTextTheme {
   static TextTheme get textTheme {
     return const TextTheme(
-      displayLarge: TextStyle(
-        fontSize: 32,
-        fontWeight: .bold,
-        color: Colors.white,
-      ),
-      displayMedium: TextStyle(
-        fontSize: 24,
-        fontWeight: .bold,
-        color: Colors.white,
-      ),
-      displaySmall: TextStyle(
-        fontSize: 18,
-        fontWeight: .bold,
-        color: Colors.white,
-      ),
-      headlineMedium: TextStyle(
-        fontSize: 16,
-        fontWeight: .w600,
-        color: Colors.white,
-      ),
-      headlineSmall: TextStyle(fontSize: 16, color: Colors.white70),
+      displayLarge: TextStyle(fontSize: 32, fontWeight: .bold),
+      displayMedium: TextStyle(fontSize: 24, fontWeight: .bold),
+      displaySmall: TextStyle(fontSize: 18, fontWeight: .bold),
+      headlineMedium: TextStyle(fontSize: 16, fontWeight: .w600),
+      headlineSmall: TextStyle(fontSize: 16),
       titleLarge: TextStyle(fontSize: 14, fontWeight: .w600),
-      titleMedium: TextStyle(fontSize: 14, color: Colors.white70),
+      titleMedium: TextStyle(fontSize: 14),
       titleSmall: TextStyle(fontSize: 14),
       bodyLarge: TextStyle(
         fontSize: 12,
         fontWeight: .bold,
         letterSpacing: 1.2,
-        color: Colors.white,
       ),
-      bodyMedium: TextStyle(fontSize: 12, color: Colors.white54),
-      bodySmall: TextStyle(
-        fontSize: 12,
-        fontWeight: .bold,
-        color: Colors.white,
-      ),
+      bodyMedium: TextStyle(fontSize: 12),
+      bodySmall: TextStyle(fontSize: 12, fontWeight: .bold),
       labelLarge: TextStyle(
         fontSize: 10,
         fontWeight: .w600,
         letterSpacing: 1.2,
-        color: Colors.white54,
       ),
-      labelMedium: TextStyle(
-        fontSize: 10,
-        fontWeight: .w600,
-        color: Colors.white54,
-      ),
-      labelSmall: TextStyle(fontSize: 10, color: Colors.white54),
+      labelMedium: TextStyle(fontSize: 10, fontWeight: .w600),
+      labelSmall: TextStyle(fontSize: 10),
     );
   }
 }

@@ -33,15 +33,15 @@ class AppColors extends ThemeExtension<AppColors> {
     primary: Color(0xFF4EADC7),
     backgroundPrimary: Color(0xFFF5F5F5),
     backgroundCard: Colors.white,
-    backgroundInfoCard: Color(0xFFF0F0F0),
-    borderColor: Color(0xFFE0E0E0),
+    backgroundInfoCard: Color(0xFFE8E8E8),
+    borderColor: Color(0xFFBDBDBD),
     statusAlive: Color(0xFF4CAF50),
     statusDead: Color(0xFFE53935),
-    statusUnknown: Color(0xFF9E9E9E),
+    statusUnknown: Color(0xFF757575),
     textPrimary: Color(0xFF212121),
-    textSecondary: Color(0xFF757575),
-    textTertiary: Color(0xFF9E9E9E),
-    textOnPrimary: Color(0xFF000000),
+    textSecondary: Color(0xFF616161),
+    textTertiary: Color(0xFF757575),
+    textOnPrimary: Colors.white,
   );
 
   static const AppColors dark = AppColors(
