@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rick_morty_app/core/theme/app_theme.dart';
 import 'package:rick_morty_app/core/widgets/error_container.dart';
+import 'package:rick_morty_app/core/widgets/info_chip.dart';
 import 'package:rick_morty_app/features/location_detail/model/location_detail_model.dart';
 import 'package:rick_morty_app/features/location_detail/presentation/notifier/location_detail_notifier.dart';
 import 'package:rick_morty_app/features/location_detail/presentation/widgets/resident_grid_item.dart';
@@ -66,7 +67,7 @@ class _DetailContent extends StatelessWidget {
                   decoration: BoxDecoration(
                     shape: .circle,
                     color: context.colors.backgroundCard,
-                    border: Border.all(color: context.colors.primary, width: 2),
+                    border: .all(color: context.colors.primary, width: 2),
                   ),
                   child: Icon(
                     _locationIcon,
@@ -92,10 +93,10 @@ class _DetailContent extends StatelessWidget {
                 Wrap(
                   spacing: 8,
                   runSpacing: 8,
-                  alignment: WrapAlignment.center,
+                  alignment: .center,
                   children: <Widget>[
                     for (final item in locationInfo)
-                      _InfoChip(icon: item.icon, label: item.label),
+                      InfoChip(icon: item.icon, label: item.label),
                   ],
                 ),
               ],
@@ -149,38 +150,5 @@ class _DetailContent extends StatelessWidget {
       return Icons.hub;
     }
     return Icons.location_on;
-  }
-}
-
-class _InfoChip extends StatelessWidget {
-  const _InfoChip({required this.icon, required this.label});
-
-  final IconData icon;
-  final String label;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const .symmetric(horizontal: 12, vertical: 8),
-      decoration: BoxDecoration(
-        borderRadius: .circular(20),
-        color: context.colors.primary.withValues(alpha: .1),
-        border: .all(color: context.colors.primary, width: 1.5),
-      ),
-      child: Row(
-        spacing: 6,
-        mainAxisSize: .min,
-        children: <Widget>[
-          Icon(icon, size: 16, color: context.colors.primary),
-          Text(
-            label,
-            style: context.episodeTitle.copyWith(
-              color: context.colors.primary,
-              fontWeight: .w600,
-            ),
-          ),
-        ],
-      ),
-    );
   }
 }

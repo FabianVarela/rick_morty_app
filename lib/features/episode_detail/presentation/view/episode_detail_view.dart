@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rick_morty_app/core/theme/app_theme.dart';
 import 'package:rick_morty_app/core/widgets/error_container.dart';
+import 'package:rick_morty_app/core/widgets/info_chip.dart';
 import 'package:rick_morty_app/features/episode_detail/model/episode_detail_model.dart';
 import 'package:rick_morty_app/features/episode_detail/presentation/notifier/episode_detail_notifier.dart';
 import 'package:rick_morty_app/features/episode_detail/presentation/widgets/character_grid_item.dart';
@@ -56,19 +57,7 @@ class _DetailContent extends StatelessWidget {
               spacing: 12,
               crossAxisAlignment: .start,
               children: <Widget>[
-                Container(
-                  padding: const .symmetric(horizontal: 12, vertical: 6),
-                  decoration: BoxDecoration(
-                    borderRadius: .circular(20),
-                    color: context.colors.backgroundCard,
-                  ),
-                  child: Text(
-                    _formattedEpisodeCode,
-                    style: context.badge.copyWith(
-                      color: context.colors.primary,
-                    ),
-                  ),
-                ),
+                InfoChip(label: _formattedEpisodeCode, style: .filled),
                 Text(episode.name, style: context.characterTitle),
                 Row(
                   spacing: 8,

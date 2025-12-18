@@ -3,6 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:rick_morty_app/core/theme/app_theme.dart';
 import 'package:rick_morty_app/core/widgets/error_container.dart';
 import 'package:rick_morty_app/core/widgets/network_image_with_state.dart';
+import 'package:rick_morty_app/core/widgets/status_badge.dart';
 import 'package:rick_morty_app/features/character_detail/model/character_detail_model.dart';
 import 'package:rick_morty_app/features/character_detail/presentation/notifier/character_detail_notifier.dart';
 import 'package:rick_morty_app/features/character_detail/presentation/widgets/episode_list_item.dart';
@@ -86,7 +87,7 @@ class _DetailContent extends StatelessWidget {
                   ),
                 ),
                 Align(
-                  alignment: Alignment.bottomRight,
+                  alignment: .bottomRight,
                   child: Padding(
                     padding: const .only(right: 16, bottom: 16),
                     child: FilledButton.icon(
@@ -115,31 +116,12 @@ class _DetailContent extends StatelessWidget {
                 Row(
                   spacing: 8,
                   children: <Widget>[
-                    Container(
-                      padding: const .symmetric(horizontal: 8, vertical: 4),
-                      decoration: BoxDecoration(
-                        borderRadius: .circular(16),
-                        color: switch (character.status) {
-                          .alive => context.colors.statusAlive,
-                          .dead => context.colors.statusDead,
-                          .unknown => context.colors.statusUnknown,
-                        },
-                      ),
-                      child: Row(
-                        spacing: 6,
-                        children: <Widget>[
-                          const SizedBox.square(
-                            dimension: 8,
-                            child: DecoratedBox(
-                              decoration: BoxDecoration(
-                                shape: .circle,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                          Text(_statusText.toUpperCase(), style: context.badge),
-                        ],
-                      ),
+                    StatusBadge(
+                      status: switch (character.status) {
+                        .alive => .alive,
+                        .dead => .dead,
+                        .unknown => .unknown,
+                      },
                     ),
                     Text('• ${character.species}', style: context.subtitle),
                   ],
@@ -162,7 +144,7 @@ class _DetailContent extends StatelessWidget {
                         icon: Icons.science_outlined,
                         label: 'Species',
                         value: character.species,
-                        position: InfoCardPosition.column,
+                        position: .column,
                       ),
                     ),
                     Expanded(
@@ -179,7 +161,7 @@ class _DetailContent extends StatelessWidget {
                           .genderless => 'Genderless',
                           .unknown => 'Unknown',
                         },
-                        position: InfoCardPosition.column,
+                        position: .column,
                       ),
                     ),
                   ],
@@ -188,13 +170,13 @@ class _DetailContent extends StatelessWidget {
                   icon: Icons.public,
                   label: 'Origin',
                   value: character.origin.name ?? 'Unknown',
-                  position: InfoCardPosition.row,
+                  position: .row,
                 ),
                 InfoCard(
                   icon: Icons.location_on_outlined,
                   label: 'Last known location',
                   value: character.location.name ?? 'Unknown',
-                  position: InfoCardPosition.row,
+                  position: .row,
                 ),
               ],
             ),
@@ -249,13 +231,5 @@ class _DetailContent extends StatelessWidget {
           const SliverToBoxAdapter(child: SizedBox(height: 24)),
       ],
     );
-  }
-
-  String get _statusText {
-    return switch (character.status) {
-      .alive => 'Alive',
-      .dead => 'Dead',
-      .unknown => 'Unknown',
-    };
   }
 }
