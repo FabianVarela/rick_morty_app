@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rick_morty_app/core/theme/app_theme.dart';
-import 'package:rick_morty_app/core/widgets/custom_filter_chip.dart';
+import 'package:rick_morty_app/core/widgets/horizontal_filter_chips.dart';
 
 enum CharacterFilter { all, alive, dead, unknown }
 
@@ -16,45 +16,37 @@ class FilterTabs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 80,
-      child: SingleChildScrollView(
-        scrollDirection: .horizontal,
-        padding: const .symmetric(horizontal: 16, vertical: 12),
-        child: Row(
-          spacing: 8,
-          children: CharacterFilter.values.map((filter) {
-            final isSelected = filter == selectedFilter;
-            return CustomFilterChip(
-              label: switch (filter) {
-                .all => 'Todos',
-                .alive => 'Vivo',
-                .dead => 'Muerto',
-                .unknown => 'Desconocido',
-              },
-              isSelected: isSelected,
-              onSelected: () => onFilterChanged(filter),
-              avatar: switch (filter) {
-                .all => null,
-                _ => SizedBox.square(
-                  dimension: 10,
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      shape: .circle,
-                      color: switch (filter) {
-                        .alive => context.colors.statusAlive,
-                        .dead => context.colors.statusDead,
-                        .unknown => context.colors.statusUnknown,
-                        _ => Colors.transparent,
-                      },
-                    ),
-                  ),
+    return HorizontalFilterChips<CharacterFilter>(
+      options: CharacterFilter.values.map((filter) {
+        return FilterOption<CharacterFilter>(
+          value: filter,
+          label: switch (filter) {
+            .all => 'Todos',
+            .alive => 'Vivo',
+            .dead => 'Muerto',
+            .unknown => 'Desconocido',
+          },
+          avatar: switch (filter) {
+            .all => null,
+            _ => SizedBox.square(
+              dimension: 10,
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  shape: .circle,
+                  color: switch (filter) {
+                    .alive => context.colors.statusAlive,
+                    .dead => context.colors.statusDead,
+                    .unknown => context.colors.statusUnknown,
+                    _ => Colors.transparent,
+                  },
                 ),
-              },
-            );
-          }).toList(),
-        ),
-      ),
+              ),
+            ),
+          },
+        );
+      }).toList(),
+      selectedValue: selectedFilter,
+      onChanged: onFilterChanged,
     );
   }
 }
