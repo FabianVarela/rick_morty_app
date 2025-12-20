@@ -151,12 +151,13 @@ class _CharacterList extends ConsumerWidget {
                     );
                   },
                   loading: () => const CharacterCardShimmer(),
-                  error: (_, _) => indexInPage == 0
-                      ? PageErrorTile(
-                          page: page,
-                          onRetry: () => _onRetryPage(ref, page),
-                        )
-                      : const Offstage(),
+                  error: (_, _) => Offstage(
+                    offstage: indexInPage != 0,
+                    child: PageErrorTile(
+                      page: page,
+                      onRetry: () => _onRetryPage(ref, page),
+                    ),
+                  ),
                 );
               },
             ),
