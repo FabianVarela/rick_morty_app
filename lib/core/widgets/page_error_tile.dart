@@ -15,11 +15,6 @@ class PageErrorTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final retryButon = ElevatedButton(
-      onPressed: onRetry,
-      child: const Text('Retry'),
-    );
-
     return Padding(
       padding: const .all(16),
       child: switch (isGrid) {
@@ -34,7 +29,7 @@ class PageErrorTile extends StatelessWidget {
                 color: context.colors.textSecondary,
               ),
             ),
-            retryButon,
+            _RetryButton(onRetry: onRetry),
           ],
         ),
         false => Row(
@@ -47,10 +42,24 @@ class PageErrorTile extends StatelessWidget {
                 color: context.colors.textSecondary,
               ),
             ),
-            retryButon,
+            _RetryButton(onRetry: onRetry),
           ],
         ),
       },
+    );
+  }
+}
+
+class _RetryButton extends StatelessWidget {
+  const _RetryButton({required this.onRetry});
+
+  final VoidCallback onRetry;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: onRetry,
+      child: const Text('Retry'),
     );
   }
 }
