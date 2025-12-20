@@ -7,11 +7,13 @@ class CharacterCard extends StatelessWidget {
   const CharacterCard({
     required this.character,
     required this.onTap,
+    this.isGrid = false,
     super.key,
   });
 
   final RickMortyListResult character;
   final VoidCallback onTap;
+  final bool isGrid;
 
   @override
   Widget build(BuildContext context) {
@@ -22,82 +24,108 @@ class CharacterCard extends StatelessWidget {
         color: context.colors.backgroundCard,
         clipBehavior: .antiAliasWithSaveLayer,
         shape: RoundedRectangleBorder(borderRadius: .circular(16)),
-        child: Row(
-          crossAxisAlignment: .start,
-          children: <Widget>[
-            SizedBox.square(
-              dimension: 140,
-              child: NetworkImageWithState(imageUrl: character.image),
-            ),
-            Expanded(
-              child: Padding(
-                padding: const .all(16),
-                child: Column(
-                  spacing: 10,
-                  mainAxisSize: .min,
-                  crossAxisAlignment: .start,
-                  children: <Widget>[
-                    Text(
-                      character.name,
-                      maxLines: 1,
-                      overflow: .ellipsis,
-                      style: context.cardTitle.copyWith(
-                        color: context.colors.textPrimary,
-                      ),
-                    ),
-                    Row(
-                      spacing: 6,
-                      children: <Widget>[
-                        SizedBox.square(
-                          dimension: 8,
-                          child: DecoratedBox(
-                            decoration: BoxDecoration(
-                              shape: .circle,
-                              color: switch (character.status) {
-                                .alive => context.colors.statusAlive,
-                                .dead => context.colors.statusDead,
-                                .unknown => context.colors.statusUnknown,
-                              },
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Text(
-                            '$_statusText • ${character.species}',
-                            maxLines: 1,
-                            overflow: .ellipsis,
-                            style: context.secondarySubtitle.copyWith(
-                              color: context.colors.textSecondary,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    if (character.location != null)
-                      Text.rich(
-                        TextSpan(
-                          text: 'Last location:',
-                          style: context.secondaryInfo.copyWith(
-                            color: context.colors.textTertiary,
-                          ),
-                          children: <InlineSpan>[
-                            const TextSpan(text: '\n\t'),
-                            TextSpan(
-                              text: character.location?.name ?? 'Unknown',
-                              style: context.secondarySubtitle.copyWith(
-                                color: context.colors.textSecondary,
-                              ),
-                            ),
-                          ],
-                        ),
-                        overflow: .ellipsis,
-                      ),
-                  ],
+        child: switch (isGrid) {
+          true => Column(
+            crossAxisAlignment: .stretch,
+            children: <Widget>[
+              Expanded(
+                child: AspectRatio(
+                  aspectRatio: 1,
+                  child: NetworkImageWithState(imageUrl: character.image),
                 ),
               ),
+              _CharacterBody(character: character, isGrid: true),
+            ],
+          ),
+          false => Row(
+            crossAxisAlignment: .start,
+            children: <Widget>[
+              SizedBox.square(
+                dimension: 140,
+                child: NetworkImageWithState(imageUrl: character.image),
+              ),
+              Expanded(
+                child: _CharacterBody(character: character, isGrid: false),
+              ),
+            ],
+          ),
+        },
+      ),
+    );
+  }
+}
+
+class _CharacterBody extends StatelessWidget {
+  const _CharacterBody({required this.character, required this.isGrid});
+
+  final RickMortyListResult character;
+  final bool isGrid;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: .all(isGrid ? 12 : 16),
+      child: Column(
+        spacing: isGrid ? 6 : 10,
+        mainAxisSize: .min,
+        crossAxisAlignment: .start,
+        children: <Widget>[
+          Text(
+            character.name,
+            maxLines: 1,
+            overflow: .ellipsis,
+            style: context.cardTitle.copyWith(
+              color: context.colors.textPrimary,
             ),
-          ],
-        ),
+          ),
+          Row(
+            spacing: 6,
+            children: <Widget>[
+              SizedBox.square(
+                dimension: 8,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    shape: .circle,
+                    color: switch (character.status) {
+                      .alive => context.colors.statusAlive,
+                      .dead => context.colors.statusDead,
+                      .unknown => context.colors.statusUnknown,
+                    },
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Text(
+                  '$_statusText • ${character.species}',
+                  maxLines: 1,
+                  overflow: .ellipsis,
+                  style: context.secondarySubtitle.copyWith(
+                    color: context.colors.textSecondary,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          if (character.location != null)
+            Text.rich(
+              TextSpan(
+                text: 'Last location:',
+                style: context.secondaryInfo.copyWith(
+                  color: context.colors.textTertiary,
+                ),
+                children: <InlineSpan>[
+                  const TextSpan(text: '\n\t'),
+                  TextSpan(
+                    text: character.location?.name ?? 'Unknown',
+                    style: context.secondarySubtitle.copyWith(
+                      color: context.colors.textSecondary,
+                    ),
+                  ),
+                ],
+              ),
+              overflow: .ellipsis,
+            ),
+        ],
       ),
     );
   }
