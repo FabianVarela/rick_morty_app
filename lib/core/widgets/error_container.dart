@@ -20,7 +20,7 @@ class ErrorContainer extends StatelessWidget {
 
     return Column(
       spacing: 12,
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: .center,
       children: <Widget>[
         Padding(
           padding: const .only(bottom: 12),

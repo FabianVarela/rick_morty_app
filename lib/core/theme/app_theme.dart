@@ -5,11 +5,9 @@ part 'app_colors.dart';
 part 'app_text_theme.dart';
 
 class AppTheme {
-  static ThemeData get lightTheme =>
-      _buildTheme(AppColors.light, Brightness.light);
+  static ThemeData get lightTheme => _buildTheme(AppColors.light, .light);
 
-  static ThemeData get darkTheme =>
-      _buildTheme(AppColors.dark, Brightness.dark);
+  static ThemeData get darkTheme => _buildTheme(AppColors.dark, .dark);
 
   static ThemeData get theme => lightTheme;
 

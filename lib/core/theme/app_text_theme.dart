@@ -11,11 +11,7 @@ class AppTextTheme {
       titleLarge: TextStyle(fontSize: 14, fontWeight: .w600),
       titleMedium: TextStyle(fontSize: 14),
       titleSmall: TextStyle(fontSize: 14),
-      bodyLarge: TextStyle(
-        fontSize: 12,
-        fontWeight: .bold,
-        letterSpacing: 1.2,
-      ),
+      bodyLarge: TextStyle(fontSize: 12, fontWeight: .bold, letterSpacing: 1.2),
       bodyMedium: TextStyle(fontSize: 12),
       bodySmall: TextStyle(fontSize: 12, fontWeight: .bold),
       labelLarge: TextStyle(

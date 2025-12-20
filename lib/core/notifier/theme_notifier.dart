@@ -7,7 +7,7 @@ enum ThemeModeType { light, dark }
 @riverpod
 class ThemeCurrentMode extends _$ThemeCurrentMode {
   @override
-  ThemeModeType build() => ThemeModeType.light;
+  ThemeModeType build() => .light;
 
   void toggleTheme() {
     state = state == .light ? .dark : .light;
