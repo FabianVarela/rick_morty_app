@@ -2,12 +2,12 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'theme_notifier.g.dart';
 
-enum ThemeModeType { light, dark }
+enum ThemeModeType { light, dark, system }
 
 @riverpod
 class ThemeCurrentMode extends _$ThemeCurrentMode {
   @override
-  ThemeModeType build() => .light;
+  ThemeModeType build() => .system;
 
   void toggleTheme() {
     state = state == .light ? .dark : .light;

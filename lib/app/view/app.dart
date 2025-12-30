@@ -10,12 +10,14 @@ class App extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeCurrentMode = ref.watch(themeCurrentModeProvider);
-
     return MaterialApp.router(
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode: themeCurrentMode == .light ? .light : .dark,
+      themeMode: switch (ref.watch(themeCurrentModeProvider)) {
+        .light => .light,
+        .dark => .dark,
+        .system => .system,
+      },
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       routerConfig: rickMortyRouter,
