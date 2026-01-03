@@ -17,9 +17,9 @@ dependencies:
   go_router: ^17.0.1
   gql: ^1.0.1
   graphql: ^5.2.3
-  hooks_riverpod: ^3.0.3
+  hooks_riverpod: ^3.1.0
   intl: ^0.20.2
-  riverpod_annotation: ^3.0.3
+  riverpod_annotation: ^4.0.0
   vector_graphics: ^1.1.19
 
 dev_dependencies:
@@ -33,7 +33,7 @@ dev_dependencies:
   json_serializable: ^6.11.2
   mocktail: ^1.0.4
   remove_from_coverage: ^2.0.0
-  riverpod_generator: ^3.0.3
+  riverpod_generator: ^4.0.0+1
   vector_graphics_compiler: ^1.1.19
   very_good_analysis: ^10.0.0
 
