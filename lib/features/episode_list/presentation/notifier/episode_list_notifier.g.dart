@@ -10,11 +10,11 @@ part of 'episode_list_notifier.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(EpisodeList)
-const episodeListProvider = EpisodeListFamily._();
+final episodeListProvider = EpisodeListFamily._();
 
 final class EpisodeListProvider
     extends $AsyncNotifierProvider<EpisodeList, RickMortyEpisodeListData> {
-  const EpisodeListProvider._({
+  EpisodeListProvider._({
     required EpisodeListFamily super.from,
     required Map<String, String> super.argument,
   }) : super(
@@ -61,7 +61,7 @@ final class EpisodeListFamily extends $Family
           FutureOr<RickMortyEpisodeListData>,
           Map<String, String>
         > {
-  const EpisodeListFamily._()
+  EpisodeListFamily._()
     : super(
         retry: null,
         name: r'episodeListProvider',
@@ -85,7 +85,6 @@ abstract class _$EpisodeList extends $AsyncNotifier<RickMortyEpisodeListData> {
   @$mustCallSuper
   @override
   void runBuild() {
-    final created = build(_$args);
     final ref =
         this.ref
             as $Ref<
@@ -103,16 +102,16 @@ abstract class _$EpisodeList extends $AsyncNotifier<RickMortyEpisodeListData> {
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    element.handleCreate(ref, () => build(_$args));
   }
 }
 
 @ProviderFor(EpisodeFilterQuery)
-const episodeFilterQueryProvider = EpisodeFilterQueryProvider._();
+final episodeFilterQueryProvider = EpisodeFilterQueryProvider._();
 
 final class EpisodeFilterQueryProvider
     extends $NotifierProvider<EpisodeFilterQuery, Map<String, String>> {
-  const EpisodeFilterQueryProvider._()
+  EpisodeFilterQueryProvider._()
     : super(
         from: null,
         argument: null,
@@ -147,7 +146,6 @@ abstract class _$EpisodeFilterQuery extends $Notifier<Map<String, String>> {
   @$mustCallSuper
   @override
   void runBuild() {
-    final created = build();
     final ref = this.ref as $Ref<Map<String, String>, Map<String, String>>;
     final element =
         ref.element
@@ -157,6 +155,6 @@ abstract class _$EpisodeFilterQuery extends $Notifier<Map<String, String>> {
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    element.handleCreate(ref, build);
   }
 }

@@ -10,7 +10,7 @@ part of 'location_detail_repository.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(rickMortyLocationDetailRepo)
-const rickMortyLocationDetailRepoProvider =
+final rickMortyLocationDetailRepoProvider =
     RickMortyLocationDetailRepoProvider._();
 
 final class RickMortyLocationDetailRepoProvider
@@ -21,7 +21,7 @@ final class RickMortyLocationDetailRepoProvider
           RickMortyLocationDetailRepository
         >
     with $Provider<RickMortyLocationDetailRepository> {
-  const RickMortyLocationDetailRepoProvider._()
+  RickMortyLocationDetailRepoProvider._()
     : super(
         from: null,
         argument: null,

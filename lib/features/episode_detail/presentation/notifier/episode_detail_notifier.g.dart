@@ -10,7 +10,7 @@ part of 'episode_detail_notifier.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(RickMortyEpisodeDetail)
-const rickMortyEpisodeDetailProvider = RickMortyEpisodeDetailFamily._();
+final rickMortyEpisodeDetailProvider = RickMortyEpisodeDetailFamily._();
 
 final class RickMortyEpisodeDetailProvider
     extends
@@ -18,7 +18,7 @@ final class RickMortyEpisodeDetailProvider
           RickMortyEpisodeDetail,
           RickMortyEpisodeDetailResult
         > {
-  const RickMortyEpisodeDetailProvider._({
+  RickMortyEpisodeDetailProvider._({
     required RickMortyEpisodeDetailFamily super.from,
     required int super.argument,
   }) : super(
@@ -67,7 +67,7 @@ final class RickMortyEpisodeDetailFamily extends $Family
           FutureOr<RickMortyEpisodeDetailResult>,
           int
         > {
-  const RickMortyEpisodeDetailFamily._()
+  RickMortyEpisodeDetailFamily._()
     : super(
         retry: null,
         name: r'rickMortyEpisodeDetailProvider',
@@ -92,7 +92,6 @@ abstract class _$RickMortyEpisodeDetail
   @$mustCallSuper
   @override
   void runBuild() {
-    final created = build(_$args);
     final ref =
         this.ref
             as $Ref<
@@ -110,6 +109,6 @@ abstract class _$RickMortyEpisodeDetail
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    element.handleCreate(ref, () => build(_$args));
   }
 }

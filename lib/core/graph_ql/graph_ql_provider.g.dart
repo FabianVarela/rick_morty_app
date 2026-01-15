@@ -10,12 +10,12 @@ part of 'graph_ql_provider.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(graphQlClient)
-const graphQlClientProvider = GraphQlClientProvider._();
+final graphQlClientProvider = GraphQlClientProvider._();
 
 final class GraphQlClientProvider
     extends $FunctionalProvider<GraphQLClient, GraphQLClient, GraphQLClient>
     with $Provider<GraphQLClient> {
-  const GraphQlClientProvider._()
+  GraphQlClientProvider._()
     : super(
         from: null,
         argument: null,

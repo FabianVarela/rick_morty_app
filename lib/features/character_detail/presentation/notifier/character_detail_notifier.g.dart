@@ -10,11 +10,11 @@ part of 'character_detail_notifier.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(RickMortyDetail)
-const rickMortyDetailProvider = RickMortyDetailFamily._();
+final rickMortyDetailProvider = RickMortyDetailFamily._();
 
 final class RickMortyDetailProvider
     extends $AsyncNotifierProvider<RickMortyDetail, RickMortyDetailResult> {
-  const RickMortyDetailProvider._({
+  RickMortyDetailProvider._({
     required RickMortyDetailFamily super.from,
     required int super.argument,
   }) : super(
@@ -61,7 +61,7 @@ final class RickMortyDetailFamily extends $Family
           FutureOr<RickMortyDetailResult>,
           int
         > {
-  const RickMortyDetailFamily._()
+  RickMortyDetailFamily._()
     : super(
         retry: null,
         name: r'rickMortyDetailProvider',
@@ -85,7 +85,6 @@ abstract class _$RickMortyDetail extends $AsyncNotifier<RickMortyDetailResult> {
   @$mustCallSuper
   @override
   void runBuild() {
-    final created = build(_$args);
     final ref =
         this.ref
             as $Ref<AsyncValue<RickMortyDetailResult>, RickMortyDetailResult>;
@@ -100,6 +99,6 @@ abstract class _$RickMortyDetail extends $AsyncNotifier<RickMortyDetailResult> {
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    element.handleCreate(ref, () => build(_$args));
   }
 }

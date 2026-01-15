@@ -10,11 +10,11 @@ part of 'character_list_notifier.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(CharacterList)
-const characterListProvider = CharacterListFamily._();
+final characterListProvider = CharacterListFamily._();
 
 final class CharacterListProvider
     extends $AsyncNotifierProvider<CharacterList, RickMortyListData> {
-  const CharacterListProvider._({
+  CharacterListProvider._({
     required CharacterListFamily super.from,
     required FilterData<Map<String, String>?> super.argument,
   }) : super(
@@ -61,7 +61,7 @@ final class CharacterListFamily extends $Family
           FutureOr<RickMortyListData>,
           FilterData<Map<String, String>?>
         > {
-  const CharacterListFamily._()
+  CharacterListFamily._()
     : super(
         retry: null,
         name: r'characterListProvider',
@@ -85,7 +85,6 @@ abstract class _$CharacterList extends $AsyncNotifier<RickMortyListData> {
   @$mustCallSuper
   @override
   void runBuild() {
-    final created = build(_$args);
     final ref =
         this.ref as $Ref<AsyncValue<RickMortyListData>, RickMortyListData>;
     final element =
@@ -96,16 +95,16 @@ abstract class _$CharacterList extends $AsyncNotifier<RickMortyListData> {
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    element.handleCreate(ref, () => build(_$args));
   }
 }
 
 @ProviderFor(CharacterFilterQuery)
-const characterFilterQueryProvider = CharacterFilterQueryProvider._();
+final characterFilterQueryProvider = CharacterFilterQueryProvider._();
 
 final class CharacterFilterQueryProvider
     extends $NotifierProvider<CharacterFilterQuery, Map<String, String>?> {
-  const CharacterFilterQueryProvider._()
+  CharacterFilterQueryProvider._()
     : super(
         from: null,
         argument: null,
@@ -140,7 +139,6 @@ abstract class _$CharacterFilterQuery extends $Notifier<Map<String, String>?> {
   @$mustCallSuper
   @override
   void runBuild() {
-    final created = build();
     final ref = this.ref as $Ref<Map<String, String>?, Map<String, String>?>;
     final element =
         ref.element
@@ -150,6 +148,6 @@ abstract class _$CharacterFilterQuery extends $Notifier<Map<String, String>?> {
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    element.handleCreate(ref, build);
   }
 }

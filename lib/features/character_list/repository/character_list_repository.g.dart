@@ -10,7 +10,7 @@ part of 'character_list_repository.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(rickMortyListRepo)
-const rickMortyListRepoProvider = RickMortyListRepoProvider._();
+final rickMortyListRepoProvider = RickMortyListRepoProvider._();
 
 final class RickMortyListRepoProvider
     extends
@@ -20,7 +20,7 @@ final class RickMortyListRepoProvider
           RickMortyListRepository
         >
     with $Provider<RickMortyListRepository> {
-  const RickMortyListRepoProvider._()
+  RickMortyListRepoProvider._()
     : super(
         from: null,
         argument: null,

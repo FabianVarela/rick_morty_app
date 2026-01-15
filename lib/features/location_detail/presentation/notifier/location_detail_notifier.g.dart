@@ -10,7 +10,7 @@ part of 'location_detail_notifier.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(RickMortyLocationDetail)
-const rickMortyLocationDetailProvider = RickMortyLocationDetailFamily._();
+final rickMortyLocationDetailProvider = RickMortyLocationDetailFamily._();
 
 final class RickMortyLocationDetailProvider
     extends
@@ -18,7 +18,7 @@ final class RickMortyLocationDetailProvider
           RickMortyLocationDetail,
           RickMortyLocationDetailResult
         > {
-  const RickMortyLocationDetailProvider._({
+  RickMortyLocationDetailProvider._({
     required RickMortyLocationDetailFamily super.from,
     required int super.argument,
   }) : super(
@@ -67,7 +67,7 @@ final class RickMortyLocationDetailFamily extends $Family
           FutureOr<RickMortyLocationDetailResult>,
           int
         > {
-  const RickMortyLocationDetailFamily._()
+  RickMortyLocationDetailFamily._()
     : super(
         retry: null,
         name: r'rickMortyLocationDetailProvider',
@@ -92,7 +92,6 @@ abstract class _$RickMortyLocationDetail
   @$mustCallSuper
   @override
   void runBuild() {
-    final created = build(_$args);
     final ref =
         this.ref
             as $Ref<
@@ -110,6 +109,6 @@ abstract class _$RickMortyLocationDetail
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    element.handleCreate(ref, () => build(_$args));
   }
 }

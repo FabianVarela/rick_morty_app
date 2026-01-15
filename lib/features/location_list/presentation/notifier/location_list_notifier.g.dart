@@ -10,11 +10,11 @@ part of 'location_list_notifier.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(LocationList)
-const locationListProvider = LocationListFamily._();
+final locationListProvider = LocationListFamily._();
 
 final class LocationListProvider
     extends $AsyncNotifierProvider<LocationList, RickMortyLocationListData> {
-  const LocationListProvider._({
+  LocationListProvider._({
     required LocationListFamily super.from,
     required FilterData<Map<String, String>?> super.argument,
   }) : super(
@@ -61,7 +61,7 @@ final class LocationListFamily extends $Family
           FutureOr<RickMortyLocationListData>,
           FilterData<Map<String, String>?>
         > {
-  const LocationListFamily._()
+  LocationListFamily._()
     : super(
         retry: null,
         name: r'locationListProvider',
@@ -88,7 +88,6 @@ abstract class _$LocationList
   @$mustCallSuper
   @override
   void runBuild() {
-    final created = build(_$args);
     final ref =
         this.ref
             as $Ref<
@@ -106,16 +105,16 @@ abstract class _$LocationList
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    element.handleCreate(ref, () => build(_$args));
   }
 }
 
 @ProviderFor(LocationFilterQuery)
-const locationFilterQueryProvider = LocationFilterQueryProvider._();
+final locationFilterQueryProvider = LocationFilterQueryProvider._();
 
 final class LocationFilterQueryProvider
     extends $NotifierProvider<LocationFilterQuery, Map<String, String>?> {
-  const LocationFilterQueryProvider._()
+  LocationFilterQueryProvider._()
     : super(
         from: null,
         argument: null,
@@ -150,7 +149,6 @@ abstract class _$LocationFilterQuery extends $Notifier<Map<String, String>?> {
   @$mustCallSuper
   @override
   void runBuild() {
-    final created = build();
     final ref = this.ref as $Ref<Map<String, String>?, Map<String, String>?>;
     final element =
         ref.element
@@ -160,6 +158,6 @@ abstract class _$LocationFilterQuery extends $Notifier<Map<String, String>?> {
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    element.handleCreate(ref, build);
   }
 }

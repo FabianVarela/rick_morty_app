@@ -10,11 +10,11 @@ part of 'theme_notifier.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(ThemeCurrentMode)
-const themeCurrentModeProvider = ThemeCurrentModeProvider._();
+final themeCurrentModeProvider = ThemeCurrentModeProvider._();
 
 final class ThemeCurrentModeProvider
     extends $NotifierProvider<ThemeCurrentMode, ThemeModeType> {
-  const ThemeCurrentModeProvider._()
+  ThemeCurrentModeProvider._()
     : super(
         from: null,
         argument: null,
@@ -41,14 +41,13 @@ final class ThemeCurrentModeProvider
   }
 }
 
-String _$themeCurrentModeHash() => r'c3a14a43abe4a3f9798d03dac26dfe9013f04ead';
+String _$themeCurrentModeHash() => r'476325e0b95d2d437f38c9d192260cb08f0c60df';
 
 abstract class _$ThemeCurrentMode extends $Notifier<ThemeModeType> {
   ThemeModeType build();
   @$mustCallSuper
   @override
   void runBuild() {
-    final created = build();
     final ref = this.ref as $Ref<ThemeModeType, ThemeModeType>;
     final element =
         ref.element
@@ -58,6 +57,6 @@ abstract class _$ThemeCurrentMode extends $Notifier<ThemeModeType> {
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    element.handleCreate(ref, build);
   }
 }
