@@ -29,7 +29,7 @@ dev_dependencies:
   flutter_native_splash: ^2.4.7
   flutter_test:
     sdk: flutter
-  freezed: ^3.2.3
+  freezed: ^3.2.5
   json_serializable: ^6.11.2
   mocktail: ^1.0.4
   remove_from_coverage: ^2.0.0
