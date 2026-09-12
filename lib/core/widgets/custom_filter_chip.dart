@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:rick_morty_app/core/theme/app_theme.dart';
 
 class CustomFilterChip extends StatelessWidget {

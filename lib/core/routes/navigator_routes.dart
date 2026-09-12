@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:rick_morty_app/core/routes/page_routes.dart';
 import 'package:rick_morty_app/core/widgets/navigation_scaffold.dart';
 import 'package:rick_morty_app/features/character_detail/presentation/view/character_detail_view.dart';

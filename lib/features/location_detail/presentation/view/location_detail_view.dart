@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:rick_morty_app/core/theme/app_theme.dart';
 import 'package:rick_morty_app/core/widgets/error_container.dart';
 import 'package:rick_morty_app/core/widgets/info_chip.dart';

@@ -84,7 +84,7 @@ abstract class _$RickMortyDetail extends $AsyncNotifier<RickMortyDetailResult> {
   FutureOr<RickMortyDetailResult> build(int id);
   @$mustCallSuper
   @override
-  void runBuild() {
+  WhenComplete runBuild() {
     final ref =
         this.ref
             as $Ref<AsyncValue<RickMortyDetailResult>, RickMortyDetailResult>;
@@ -99,6 +99,6 @@ abstract class _$RickMortyDetail extends $AsyncNotifier<RickMortyDetailResult> {
               Object?,
               Object?
             >;
-    element.handleCreate(ref, () => build(_$args));
+    return element.handleCreate(ref, () => build(_$args));
   }
 }

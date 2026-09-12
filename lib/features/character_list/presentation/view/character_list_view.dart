@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:rick_morty_app/core/notifier/theme_notifier.dart';
 import 'package:rick_morty_app/core/theme/app_theme.dart';
 import 'package:rick_morty_app/core/widgets/empty_container.dart';
@@ -180,7 +180,9 @@ class _CharacterList extends ConsumerWidget {
   Future<void> _onRefresh(WidgetRef ref) async {
     try {
       ref.invalidate(characterListProvider);
-      return ref.read(characterListProvider((filter: filter, page: 1)).future);
+      return await ref.read(
+        characterListProvider((filter: filter, page: 1)).future,
+      );
     } catch (_) {
       debugPrint('Error refreshing data');
     }

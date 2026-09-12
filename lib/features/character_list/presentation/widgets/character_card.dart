@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:rick_morty_app/core/theme/app_theme.dart';
 import 'package:rick_morty_app/core/widgets/network_image_with_state.dart';
 import 'package:rick_morty_app/features/character_list/model/character_list_model.dart';

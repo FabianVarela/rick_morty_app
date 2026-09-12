@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'location_list_model.dart';
@@ -9,6 +9,7 @@ part of 'location_list_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
@@ -26,16 +27,21 @@ $RickMortyLocationListDataCopyWith<RickMortyLocationListData> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyLocationListData&&(identical(other.info, info) || other.info == info)&&const DeepCollectionEquality().equals(other.results, results));
+  final _this = this as RickMortyLocationListData;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyLocationListData&&(identical(other.info, _this.info) || other.info == _this.info)&&const DeepCollectionEquality().equals(other.results, _this.results));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,info,const DeepCollectionEquality().hash(results));
+int get hashCode {
+  final _this = this as RickMortyLocationListData;
+  return Object.hash(runtimeType,_this.info,const DeepCollectionEquality().hash(_this.results));
+}
 
 @override
 String toString() {
-  return 'RickMortyLocationListData(info: $info, results: $results)';
+  final _this = this as RickMortyLocationListData;
+  return 'RickMortyLocationListData(info: ${_this.info}, results: ${_this.results})';
 }
 
 
@@ -64,7 +70,7 @@ class _$RickMortyLocationListDataCopyWithImpl<$Res>
 /// Create a copy of RickMortyLocationListData
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? info = null,Object? results = null,}) {
-  return _then(_self.copyWith(
+  return _then(RickMortyLocationListData(
 info: null == info ? _self.info : info // ignore: cast_nullable_to_non_nullable
 as RickMortyLocationListInfo,results: null == results ? _self.results : results // ignore: cast_nullable_to_non_nullable
 as List<RickMortyLocationListResult>,
@@ -217,7 +223,7 @@ return $default(_that.info,_that.results);case _:
 
 @JsonSerializable(createToJson: false)
 class _RickMortyLocationListData implements RickMortyLocationListData {
-   _RickMortyLocationListData({required this.info, required final  List<RickMortyLocationListResult> results}): _results = results;
+   _RickMortyLocationListData({required this.info, required  List<RickMortyLocationListResult> results}): _results = results;
   factory _RickMortyLocationListData.fromJson(Map<String, dynamic> json) => _$RickMortyLocationListDataFromJson(json);
 
 @override final  RickMortyLocationListInfo info;
@@ -239,16 +245,18 @@ _$RickMortyLocationListDataCopyWith<_RickMortyLocationListData> get copyWith => 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyLocationListData&&(identical(other.info, info) || other.info == info)&&const DeepCollectionEquality().equals(other._results, _results));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyLocationListData&&(identical(other.info, info) || other.info == info)&&const DeepCollectionEquality().equals(other.results, _results));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,info,const DeepCollectionEquality().hash(_results));
+int get hashCode {
+    return Object.hash(runtimeType,info,const DeepCollectionEquality().hash(_results));
+}
 
 @override
 String toString() {
-  return 'RickMortyLocationListData(info: $info, results: $results)';
+    return 'RickMortyLocationListData(info: $info, results: $results)';
 }
 
 
@@ -311,16 +319,21 @@ $RickMortyLocationListInfoCopyWith<RickMortyLocationListInfo> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyLocationListInfo&&(identical(other.count, count) || other.count == count)&&(identical(other.pages, pages) || other.pages == pages));
+  final _this = this as RickMortyLocationListInfo;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyLocationListInfo&&(identical(other.count, _this.count) || other.count == _this.count)&&(identical(other.pages, _this.pages) || other.pages == _this.pages));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,count,pages);
+int get hashCode {
+  final _this = this as RickMortyLocationListInfo;
+  return Object.hash(runtimeType,_this.count,_this.pages);
+}
 
 @override
 String toString() {
-  return 'RickMortyLocationListInfo(count: $count, pages: $pages)';
+  final _this = this as RickMortyLocationListInfo;
+  return 'RickMortyLocationListInfo(count: ${_this.count}, pages: ${_this.pages})';
 }
 
 
@@ -349,7 +362,7 @@ class _$RickMortyLocationListInfoCopyWithImpl<$Res>
 /// Create a copy of RickMortyLocationListInfo
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? count = null,Object? pages = null,}) {
-  return _then(_self.copyWith(
+  return _then(RickMortyLocationListInfo(
 count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
 as int,pages: null == pages ? _self.pages : pages // ignore: cast_nullable_to_non_nullable
 as int,
@@ -509,16 +522,18 @@ _$RickMortyLocationListInfoCopyWith<_RickMortyLocationListInfo> get copyWith => 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyLocationListInfo&&(identical(other.count, count) || other.count == count)&&(identical(other.pages, pages) || other.pages == pages));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyLocationListInfo&&(identical(other.count, count) || other.count == count)&&(identical(other.pages, pages) || other.pages == pages));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,count,pages);
+int get hashCode {
+    return Object.hash(runtimeType,count,pages);
+}
 
 @override
 String toString() {
-  return 'RickMortyLocationListInfo(count: $count, pages: $pages)';
+    return 'RickMortyLocationListInfo(count: $count, pages: $pages)';
 }
 
 
@@ -572,16 +587,21 @@ $RickMortyLocationListResultCopyWith<RickMortyLocationListResult> get copyWith =
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyLocationListResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&(identical(other.dimension, dimension) || other.dimension == dimension));
+  final _this = this as RickMortyLocationListResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyLocationListResult&&(identical(other.id, _this.id) || other.id == _this.id)&&(identical(other.name, _this.name) || other.name == _this.name)&&(identical(other.type, _this.type) || other.type == _this.type)&&(identical(other.dimension, _this.dimension) || other.dimension == _this.dimension));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,type,dimension);
+int get hashCode {
+  final _this = this as RickMortyLocationListResult;
+  return Object.hash(runtimeType,_this.id,_this.name,_this.type,_this.dimension);
+}
 
 @override
 String toString() {
-  return 'RickMortyLocationListResult(id: $id, name: $name, type: $type, dimension: $dimension)';
+  final _this = this as RickMortyLocationListResult;
+  return 'RickMortyLocationListResult(id: ${_this.id}, name: ${_this.name}, type: ${_this.type}, dimension: ${_this.dimension})';
 }
 
 
@@ -610,7 +630,7 @@ class _$RickMortyLocationListResultCopyWithImpl<$Res>
 /// Create a copy of RickMortyLocationListResult
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? type = null,Object? dimension = null,}) {
-  return _then(_self.copyWith(
+  return _then(RickMortyLocationListResult(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
@@ -774,16 +794,18 @@ _$RickMortyLocationListResultCopyWith<_RickMortyLocationListResult> get copyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyLocationListResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&(identical(other.dimension, dimension) || other.dimension == dimension));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyLocationListResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&(identical(other.dimension, dimension) || other.dimension == dimension));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,type,dimension);
+int get hashCode {
+    return Object.hash(runtimeType,id,name,type,dimension);
+}
 
 @override
 String toString() {
-  return 'RickMortyLocationListResult(id: $id, name: $name, type: $type, dimension: $dimension)';
+    return 'RickMortyLocationListResult(id: $id, name: $name, type: $type, dimension: $dimension)';
 }
 
 

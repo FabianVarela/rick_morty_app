@@ -84,7 +84,7 @@ abstract class _$CharacterList extends $AsyncNotifier<RickMortyListData> {
   FutureOr<RickMortyListData> build(FilterData<Map<String, String>?> data);
   @$mustCallSuper
   @override
-  void runBuild() {
+  WhenComplete runBuild() {
     final ref =
         this.ref as $Ref<AsyncValue<RickMortyListData>, RickMortyListData>;
     final element =
@@ -95,7 +95,7 @@ abstract class _$CharacterList extends $AsyncNotifier<RickMortyListData> {
               Object?,
               Object?
             >;
-    element.handleCreate(ref, () => build(_$args));
+    return element.handleCreate(ref, () => build(_$args));
   }
 }
 
@@ -138,7 +138,7 @@ abstract class _$CharacterFilterQuery extends $Notifier<Map<String, String>?> {
   Map<String, String>? build();
   @$mustCallSuper
   @override
-  void runBuild() {
+  WhenComplete runBuild() {
     final ref = this.ref as $Ref<Map<String, String>?, Map<String, String>?>;
     final element =
         ref.element
@@ -148,6 +148,6 @@ abstract class _$CharacterFilterQuery extends $Notifier<Map<String, String>?> {
               Object?,
               Object?
             >;
-    element.handleCreate(ref, build);
+    return element.handleCreate(ref, build);
   }
 }

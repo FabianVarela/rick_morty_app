@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'location_detail_model.dart';
@@ -9,6 +9,7 @@ part of 'location_detail_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
@@ -26,16 +27,21 @@ $RickMortyLocationDetailResultCopyWith<RickMortyLocationDetailResult> get copyWi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyLocationDetailResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&(identical(other.dimension, dimension) || other.dimension == dimension)&&const DeepCollectionEquality().equals(other.residents, residents));
+  final _this = this as RickMortyLocationDetailResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyLocationDetailResult&&(identical(other.id, _this.id) || other.id == _this.id)&&(identical(other.name, _this.name) || other.name == _this.name)&&(identical(other.type, _this.type) || other.type == _this.type)&&(identical(other.dimension, _this.dimension) || other.dimension == _this.dimension)&&const DeepCollectionEquality().equals(other.residents, _this.residents));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,type,dimension,const DeepCollectionEquality().hash(residents));
+int get hashCode {
+  final _this = this as RickMortyLocationDetailResult;
+  return Object.hash(runtimeType,_this.id,_this.name,_this.type,_this.dimension,const DeepCollectionEquality().hash(_this.residents));
+}
 
 @override
 String toString() {
-  return 'RickMortyLocationDetailResult(id: $id, name: $name, type: $type, dimension: $dimension, residents: $residents)';
+  final _this = this as RickMortyLocationDetailResult;
+  return 'RickMortyLocationDetailResult(id: ${_this.id}, name: ${_this.name}, type: ${_this.type}, dimension: ${_this.dimension}, residents: ${_this.residents})';
 }
 
 
@@ -64,7 +70,7 @@ class _$RickMortyLocationDetailResultCopyWithImpl<$Res>
 /// Create a copy of RickMortyLocationDetailResult
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? type = null,Object? dimension = null,Object? residents = null,}) {
-  return _then(_self.copyWith(
+  return _then(RickMortyLocationDetailResult(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
@@ -211,7 +217,7 @@ return $default(_that.id,_that.name,_that.type,_that.dimension,_that.residents);
 
 @JsonSerializable(createToJson: false)
 class _RickMortyLocationDetailResult implements RickMortyLocationDetailResult {
-   _RickMortyLocationDetailResult({required this.id, required this.name, required this.type, required this.dimension, final  List<RickMortyLocationDetailResident> residents = const []}): _residents = residents;
+   _RickMortyLocationDetailResult({required this.id, required this.name, required this.type, required this.dimension,  List<RickMortyLocationDetailResident> residents = const []}): _residents = residents;
   factory _RickMortyLocationDetailResult.fromJson(Map<String, dynamic> json) => _$RickMortyLocationDetailResultFromJson(json);
 
 @override final  String id;
@@ -236,16 +242,18 @@ _$RickMortyLocationDetailResultCopyWith<_RickMortyLocationDetailResult> get copy
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyLocationDetailResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&(identical(other.dimension, dimension) || other.dimension == dimension)&&const DeepCollectionEquality().equals(other._residents, _residents));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyLocationDetailResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.type, type) || other.type == type)&&(identical(other.dimension, dimension) || other.dimension == dimension)&&const DeepCollectionEquality().equals(other.residents, _residents));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,type,dimension,const DeepCollectionEquality().hash(_residents));
+int get hashCode {
+    return Object.hash(runtimeType,id,name,type,dimension,const DeepCollectionEquality().hash(_residents));
+}
 
 @override
 String toString() {
-  return 'RickMortyLocationDetailResult(id: $id, name: $name, type: $type, dimension: $dimension, residents: $residents)';
+    return 'RickMortyLocationDetailResult(id: $id, name: $name, type: $type, dimension: $dimension, residents: $residents)';
 }
 
 
@@ -302,16 +310,21 @@ $RickMortyLocationDetailResidentCopyWith<RickMortyLocationDetailResident> get co
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyLocationDetailResident&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.status, status) || other.status == status)&&(identical(other.image, image) || other.image == image));
+  final _this = this as RickMortyLocationDetailResident;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyLocationDetailResident&&(identical(other.id, _this.id) || other.id == _this.id)&&(identical(other.name, _this.name) || other.name == _this.name)&&(identical(other.status, _this.status) || other.status == _this.status)&&(identical(other.image, _this.image) || other.image == _this.image));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,status,image);
+int get hashCode {
+  final _this = this as RickMortyLocationDetailResident;
+  return Object.hash(runtimeType,_this.id,_this.name,_this.status,_this.image);
+}
 
 @override
 String toString() {
-  return 'RickMortyLocationDetailResident(id: $id, name: $name, status: $status, image: $image)';
+  final _this = this as RickMortyLocationDetailResident;
+  return 'RickMortyLocationDetailResident(id: ${_this.id}, name: ${_this.name}, status: ${_this.status}, image: ${_this.image})';
 }
 
 
@@ -340,7 +353,7 @@ class _$RickMortyLocationDetailResidentCopyWithImpl<$Res>
 /// Create a copy of RickMortyLocationDetailResident
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? status = null,Object? image = null,}) {
-  return _then(_self.copyWith(
+  return _then(RickMortyLocationDetailResident(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
@@ -504,16 +517,18 @@ _$RickMortyLocationDetailResidentCopyWith<_RickMortyLocationDetailResident> get 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyLocationDetailResident&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.status, status) || other.status == status)&&(identical(other.image, image) || other.image == image));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyLocationDetailResident&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.status, status) || other.status == status)&&(identical(other.image, image) || other.image == image));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,status,image);
+int get hashCode {
+    return Object.hash(runtimeType,id,name,status,image);
+}
 
 @override
 String toString() {
-  return 'RickMortyLocationDetailResident(id: $id, name: $name, status: $status, image: $image)';
+    return 'RickMortyLocationDetailResident(id: $id, name: $name, status: $status, image: $image)';
 }
 
 

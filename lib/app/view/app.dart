@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:rick_morty_app/core/notifier/theme_notifier.dart';
 import 'package:rick_morty_app/core/routes/navigator_routes.dart';
 import 'package:rick_morty_app/core/theme/app_theme.dart';
@@ -18,7 +18,10 @@ class App extends ConsumerWidget {
         .dark => .dark,
         .system => .system,
       },
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      localizationsDelegates: const [
+        ...AppLocalizations.localizationsDelegates,
+        ...GlobalMaterialLocalizations.delegates,
+      ],
       supportedLocales: AppLocalizations.supportedLocales,
       routerConfig: rickMortyRouter,
     );

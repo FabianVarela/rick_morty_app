@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'character_list_model.dart';
@@ -9,6 +9,7 @@ part of 'character_list_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
@@ -25,23 +26,29 @@ $RickMortyListDataCopyWith<RickMortyListData> get copyWith => _$RickMortyListDat
 
 @override
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+  final _this = this as RickMortyListData;
   properties
     ..add(DiagnosticsProperty('type', 'RickMortyListData'))
-    ..add(DiagnosticsProperty('info', info))..add(DiagnosticsProperty('results', results));
+    ..add(DiagnosticsProperty('info', _this.info))..add(DiagnosticsProperty('results', _this.results));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyListData&&(identical(other.info, info) || other.info == info)&&const DeepCollectionEquality().equals(other.results, results));
+  final _this = this as RickMortyListData;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyListData&&(identical(other.info, _this.info) || other.info == _this.info)&&const DeepCollectionEquality().equals(other.results, _this.results));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,info,const DeepCollectionEquality().hash(results));
+int get hashCode {
+  final _this = this as RickMortyListData;
+  return Object.hash(runtimeType,_this.info,const DeepCollectionEquality().hash(_this.results));
+}
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'RickMortyListData(info: $info, results: $results)';
+  final _this = this as RickMortyListData;
+  return 'RickMortyListData(info: ${_this.info}, results: ${_this.results})';
 }
 
 
@@ -70,7 +77,7 @@ class _$RickMortyListDataCopyWithImpl<$Res>
 /// Create a copy of RickMortyListData
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? info = null,Object? results = null,}) {
-  return _then(_self.copyWith(
+  return _then(RickMortyListData(
 info: null == info ? _self.info : info // ignore: cast_nullable_to_non_nullable
 as RickMortyListInfo,results: null == results ? _self.results : results // ignore: cast_nullable_to_non_nullable
 as List<RickMortyListResult>,
@@ -223,7 +230,7 @@ return $default(_that.info,_that.results);case _:
 
 @JsonSerializable(createToJson: false)
 class _RickMortyListData with DiagnosticableTreeMixin implements RickMortyListData {
-   _RickMortyListData({required this.info, required final  List<RickMortyListResult> results}): _results = results;
+   _RickMortyListData({required this.info, required  List<RickMortyListResult> results}): _results = results;
   factory _RickMortyListData.fromJson(Map<String, dynamic> json) => _$RickMortyListDataFromJson(json);
 
 @override final  RickMortyListInfo info;
@@ -244,23 +251,25 @@ _$RickMortyListDataCopyWith<_RickMortyListData> get copyWith => __$RickMortyList
 
 @override
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-  properties
+    properties
     ..add(DiagnosticsProperty('type', 'RickMortyListData'))
     ..add(DiagnosticsProperty('info', info))..add(DiagnosticsProperty('results', results));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyListData&&(identical(other.info, info) || other.info == info)&&const DeepCollectionEquality().equals(other._results, _results));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyListData&&(identical(other.info, info) || other.info == info)&&const DeepCollectionEquality().equals(other.results, _results));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,info,const DeepCollectionEquality().hash(_results));
+int get hashCode {
+    return Object.hash(runtimeType,info,const DeepCollectionEquality().hash(_results));
+}
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'RickMortyListData(info: $info, results: $results)';
+    return 'RickMortyListData(info: $info, results: $results)';
 }
 
 
@@ -322,23 +331,29 @@ $RickMortyListInfoCopyWith<RickMortyListInfo> get copyWith => _$RickMortyListInf
 
 @override
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+  final _this = this as RickMortyListInfo;
   properties
     ..add(DiagnosticsProperty('type', 'RickMortyListInfo'))
-    ..add(DiagnosticsProperty('count', count))..add(DiagnosticsProperty('pages', pages));
+    ..add(DiagnosticsProperty('count', _this.count))..add(DiagnosticsProperty('pages', _this.pages));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyListInfo&&(identical(other.count, count) || other.count == count)&&(identical(other.pages, pages) || other.pages == pages));
+  final _this = this as RickMortyListInfo;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyListInfo&&(identical(other.count, _this.count) || other.count == _this.count)&&(identical(other.pages, _this.pages) || other.pages == _this.pages));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,count,pages);
+int get hashCode {
+  final _this = this as RickMortyListInfo;
+  return Object.hash(runtimeType,_this.count,_this.pages);
+}
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'RickMortyListInfo(count: $count, pages: $pages)';
+  final _this = this as RickMortyListInfo;
+  return 'RickMortyListInfo(count: ${_this.count}, pages: ${_this.pages})';
 }
 
 
@@ -367,7 +382,7 @@ class _$RickMortyListInfoCopyWithImpl<$Res>
 /// Create a copy of RickMortyListInfo
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? count = null,Object? pages = null,}) {
-  return _then(_self.copyWith(
+  return _then(RickMortyListInfo(
 count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
 as int,pages: null == pages ? _self.pages : pages // ignore: cast_nullable_to_non_nullable
 as int,
@@ -526,23 +541,25 @@ _$RickMortyListInfoCopyWith<_RickMortyListInfo> get copyWith => __$RickMortyList
 
 @override
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-  properties
+    properties
     ..add(DiagnosticsProperty('type', 'RickMortyListInfo'))
     ..add(DiagnosticsProperty('count', count))..add(DiagnosticsProperty('pages', pages));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyListInfo&&(identical(other.count, count) || other.count == count)&&(identical(other.pages, pages) || other.pages == pages));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyListInfo&&(identical(other.count, count) || other.count == count)&&(identical(other.pages, pages) || other.pages == pages));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,count,pages);
+int get hashCode {
+    return Object.hash(runtimeType,count,pages);
+}
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'RickMortyListInfo(count: $count, pages: $pages)';
+    return 'RickMortyListInfo(count: $count, pages: $pages)';
 }
 
 
@@ -595,23 +612,29 @@ $RickMortyListResultCopyWith<RickMortyListResult> get copyWith => _$RickMortyLis
 
 @override
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+  final _this = this as RickMortyListResult;
   properties
     ..add(DiagnosticsProperty('type', 'RickMortyListResult'))
-    ..add(DiagnosticsProperty('id', id))..add(DiagnosticsProperty('name', name))..add(DiagnosticsProperty('image', image))..add(DiagnosticsProperty('status', status))..add(DiagnosticsProperty('gender', gender))..add(DiagnosticsProperty('species', species))..add(DiagnosticsProperty('location', location));
+    ..add(DiagnosticsProperty('id', _this.id))..add(DiagnosticsProperty('name', _this.name))..add(DiagnosticsProperty('image', _this.image))..add(DiagnosticsProperty('status', _this.status))..add(DiagnosticsProperty('gender', _this.gender))..add(DiagnosticsProperty('species', _this.species))..add(DiagnosticsProperty('location', _this.location));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyListResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.image, image) || other.image == image)&&(identical(other.status, status) || other.status == status)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.species, species) || other.species == species)&&(identical(other.location, location) || other.location == location));
+  final _this = this as RickMortyListResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyListResult&&(identical(other.id, _this.id) || other.id == _this.id)&&(identical(other.name, _this.name) || other.name == _this.name)&&(identical(other.image, _this.image) || other.image == _this.image)&&(identical(other.status, _this.status) || other.status == _this.status)&&(identical(other.gender, _this.gender) || other.gender == _this.gender)&&(identical(other.species, _this.species) || other.species == _this.species)&&(identical(other.location, _this.location) || other.location == _this.location));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,image,status,gender,species,location);
+int get hashCode {
+  final _this = this as RickMortyListResult;
+  return Object.hash(runtimeType,_this.id,_this.name,_this.image,_this.status,_this.gender,_this.species,_this.location);
+}
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'RickMortyListResult(id: $id, name: $name, image: $image, status: $status, gender: $gender, species: $species, location: $location)';
+  final _this = this as RickMortyListResult;
+  return 'RickMortyListResult(id: ${_this.id}, name: ${_this.name}, image: ${_this.image}, status: ${_this.status}, gender: ${_this.gender}, species: ${_this.species}, location: ${_this.location})';
 }
 
 
@@ -640,7 +663,7 @@ class _$RickMortyListResultCopyWithImpl<$Res>
 /// Create a copy of RickMortyListResult
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? image = null,Object? status = null,Object? gender = null,Object? species = null,Object? location = freezed,}) {
-  return _then(_self.copyWith(
+  return _then(RickMortyListResult(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,image: null == image ? _self.image : image // ignore: cast_nullable_to_non_nullable
@@ -821,23 +844,25 @@ _$RickMortyListResultCopyWith<_RickMortyListResult> get copyWith => __$RickMorty
 
 @override
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-  properties
+    properties
     ..add(DiagnosticsProperty('type', 'RickMortyListResult'))
     ..add(DiagnosticsProperty('id', id))..add(DiagnosticsProperty('name', name))..add(DiagnosticsProperty('image', image))..add(DiagnosticsProperty('status', status))..add(DiagnosticsProperty('gender', gender))..add(DiagnosticsProperty('species', species))..add(DiagnosticsProperty('location', location));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyListResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.image, image) || other.image == image)&&(identical(other.status, status) || other.status == status)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.species, species) || other.species == species)&&(identical(other.location, location) || other.location == location));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyListResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.image, image) || other.image == image)&&(identical(other.status, status) || other.status == status)&&(identical(other.gender, gender) || other.gender == gender)&&(identical(other.species, species) || other.species == species)&&(identical(other.location, location) || other.location == location));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,image,status,gender,species,location);
+int get hashCode {
+    return Object.hash(runtimeType,id,name,image,status,gender,species,location);
+}
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'RickMortyListResult(id: $id, name: $name, image: $image, status: $status, gender: $gender, species: $species, location: $location)';
+    return 'RickMortyListResult(id: $id, name: $name, image: $image, status: $status, gender: $gender, species: $species, location: $location)';
 }
 
 
@@ -907,23 +932,29 @@ $RickMortyListLocationCopyWith<RickMortyListLocation> get copyWith => _$RickMort
 
 @override
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+  final _this = this as RickMortyListLocation;
   properties
     ..add(DiagnosticsProperty('type', 'RickMortyListLocation'))
-    ..add(DiagnosticsProperty('name', name));
+    ..add(DiagnosticsProperty('name', _this.name));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyListLocation&&(identical(other.name, name) || other.name == name));
+  final _this = this as RickMortyListLocation;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyListLocation&&(identical(other.name, _this.name) || other.name == _this.name));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,name);
+int get hashCode {
+  final _this = this as RickMortyListLocation;
+  return Object.hash(runtimeType,_this.name);
+}
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'RickMortyListLocation(name: $name)';
+  final _this = this as RickMortyListLocation;
+  return 'RickMortyListLocation(name: ${_this.name})';
 }
 
 
@@ -952,7 +983,7 @@ class _$RickMortyListLocationCopyWithImpl<$Res>
 /// Create a copy of RickMortyListLocation
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? name = freezed,}) {
-  return _then(_self.copyWith(
+  return _then(RickMortyListLocation(
 name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
@@ -1109,23 +1140,25 @@ _$RickMortyListLocationCopyWith<_RickMortyListLocation> get copyWith => __$RickM
 
 @override
 void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-  properties
+    properties
     ..add(DiagnosticsProperty('type', 'RickMortyListLocation'))
     ..add(DiagnosticsProperty('name', name));
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyListLocation&&(identical(other.name, name) || other.name == name));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyListLocation&&(identical(other.name, name) || other.name == name));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,name);
+int get hashCode {
+    return Object.hash(runtimeType,name);
+}
 
 @override
 String toString({ DiagnosticLevel minLevel = DiagnosticLevel.info }) {
-  return 'RickMortyListLocation(name: $name)';
+    return 'RickMortyListLocation(name: $name)';
 }
 
 

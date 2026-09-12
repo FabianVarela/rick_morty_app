@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:rick_morty_app/core/widgets/horizontal_filter_chips.dart';
 
 class SeasonTabs extends StatelessWidget {

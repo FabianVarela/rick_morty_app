@@ -84,7 +84,7 @@ abstract class _$EpisodeList extends $AsyncNotifier<RickMortyEpisodeListData> {
   FutureOr<RickMortyEpisodeListData> build(Map<String, String> filter);
   @$mustCallSuper
   @override
-  void runBuild() {
+  WhenComplete runBuild() {
     final ref =
         this.ref
             as $Ref<
@@ -102,7 +102,7 @@ abstract class _$EpisodeList extends $AsyncNotifier<RickMortyEpisodeListData> {
               Object?,
               Object?
             >;
-    element.handleCreate(ref, () => build(_$args));
+    return element.handleCreate(ref, () => build(_$args));
   }
 }
 
@@ -145,7 +145,7 @@ abstract class _$EpisodeFilterQuery extends $Notifier<Map<String, String>> {
   Map<String, String> build();
   @$mustCallSuper
   @override
-  void runBuild() {
+  WhenComplete runBuild() {
     final ref = this.ref as $Ref<Map<String, String>, Map<String, String>>;
     final element =
         ref.element
@@ -155,6 +155,6 @@ abstract class _$EpisodeFilterQuery extends $Notifier<Map<String, String>> {
               Object?,
               Object?
             >;
-    element.handleCreate(ref, build);
+    return element.handleCreate(ref, build);
   }
 }

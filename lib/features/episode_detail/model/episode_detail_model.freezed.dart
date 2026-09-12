@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // coverage:ignore-file
-// ignore_for_file: type=lint
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'episode_detail_model.dart';
@@ -9,6 +9,7 @@ part of 'episode_detail_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
 // dart format off
 T _$identity<T>(T value) => value;
 
@@ -26,16 +27,21 @@ $RickMortyEpisodeDetailResultCopyWith<RickMortyEpisodeDetailResult> get copyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyEpisodeDetailResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.episode, episode) || other.episode == episode)&&(identical(other.airDate, airDate) || other.airDate == airDate)&&const DeepCollectionEquality().equals(other.characters, characters));
+  final _this = this as RickMortyEpisodeDetailResult;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyEpisodeDetailResult&&(identical(other.id, _this.id) || other.id == _this.id)&&(identical(other.name, _this.name) || other.name == _this.name)&&(identical(other.episode, _this.episode) || other.episode == _this.episode)&&(identical(other.airDate, _this.airDate) || other.airDate == _this.airDate)&&const DeepCollectionEquality().equals(other.characters, _this.characters));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,episode,airDate,const DeepCollectionEquality().hash(characters));
+int get hashCode {
+  final _this = this as RickMortyEpisodeDetailResult;
+  return Object.hash(runtimeType,_this.id,_this.name,_this.episode,_this.airDate,const DeepCollectionEquality().hash(_this.characters));
+}
 
 @override
 String toString() {
-  return 'RickMortyEpisodeDetailResult(id: $id, name: $name, episode: $episode, airDate: $airDate, characters: $characters)';
+  final _this = this as RickMortyEpisodeDetailResult;
+  return 'RickMortyEpisodeDetailResult(id: ${_this.id}, name: ${_this.name}, episode: ${_this.episode}, airDate: ${_this.airDate}, characters: ${_this.characters})';
 }
 
 
@@ -64,7 +70,7 @@ class _$RickMortyEpisodeDetailResultCopyWithImpl<$Res>
 /// Create a copy of RickMortyEpisodeDetailResult
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? episode = null,Object? airDate = null,Object? characters = null,}) {
-  return _then(_self.copyWith(
+  return _then(RickMortyEpisodeDetailResult(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,episode: null == episode ? _self.episode : episode // ignore: cast_nullable_to_non_nullable
@@ -211,7 +217,7 @@ return $default(_that.id,_that.name,_that.episode,_that.airDate,_that.characters
 
 @JsonSerializable(createToJson: false, fieldRename: FieldRename.snake)
 class _RickMortyEpisodeDetailResult implements RickMortyEpisodeDetailResult {
-   _RickMortyEpisodeDetailResult({required this.id, required this.name, required this.episode, required this.airDate, final  List<RickMortyEpisodeDetailCharacter> characters = const []}): _characters = characters;
+   _RickMortyEpisodeDetailResult({required this.id, required this.name, required this.episode, required this.airDate,  List<RickMortyEpisodeDetailCharacter> characters = const []}): _characters = characters;
   factory _RickMortyEpisodeDetailResult.fromJson(Map<String, dynamic> json) => _$RickMortyEpisodeDetailResultFromJson(json);
 
 @override final  String id;
@@ -236,16 +242,18 @@ _$RickMortyEpisodeDetailResultCopyWith<_RickMortyEpisodeDetailResult> get copyWi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyEpisodeDetailResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.episode, episode) || other.episode == episode)&&(identical(other.airDate, airDate) || other.airDate == airDate)&&const DeepCollectionEquality().equals(other._characters, _characters));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyEpisodeDetailResult&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.episode, episode) || other.episode == episode)&&(identical(other.airDate, airDate) || other.airDate == airDate)&&const DeepCollectionEquality().equals(other.characters, _characters));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,episode,airDate,const DeepCollectionEquality().hash(_characters));
+int get hashCode {
+    return Object.hash(runtimeType,id,name,episode,airDate,const DeepCollectionEquality().hash(_characters));
+}
 
 @override
 String toString() {
-  return 'RickMortyEpisodeDetailResult(id: $id, name: $name, episode: $episode, airDate: $airDate, characters: $characters)';
+    return 'RickMortyEpisodeDetailResult(id: $id, name: $name, episode: $episode, airDate: $airDate, characters: $characters)';
 }
 
 
@@ -302,16 +310,21 @@ $RickMortyEpisodeDetailCharacterCopyWith<RickMortyEpisodeDetailCharacter> get co
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyEpisodeDetailCharacter&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.status, status) || other.status == status)&&(identical(other.image, image) || other.image == image));
+  final _this = this as RickMortyEpisodeDetailCharacter;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is RickMortyEpisodeDetailCharacter&&(identical(other.id, _this.id) || other.id == _this.id)&&(identical(other.name, _this.name) || other.name == _this.name)&&(identical(other.status, _this.status) || other.status == _this.status)&&(identical(other.image, _this.image) || other.image == _this.image));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,status,image);
+int get hashCode {
+  final _this = this as RickMortyEpisodeDetailCharacter;
+  return Object.hash(runtimeType,_this.id,_this.name,_this.status,_this.image);
+}
 
 @override
 String toString() {
-  return 'RickMortyEpisodeDetailCharacter(id: $id, name: $name, status: $status, image: $image)';
+  final _this = this as RickMortyEpisodeDetailCharacter;
+  return 'RickMortyEpisodeDetailCharacter(id: ${_this.id}, name: ${_this.name}, status: ${_this.status}, image: ${_this.image})';
 }
 
 
@@ -340,7 +353,7 @@ class _$RickMortyEpisodeDetailCharacterCopyWithImpl<$Res>
 /// Create a copy of RickMortyEpisodeDetailCharacter
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? status = null,Object? image = null,}) {
-  return _then(_self.copyWith(
+  return _then(RickMortyEpisodeDetailCharacter(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
@@ -504,16 +517,18 @@ _$RickMortyEpisodeDetailCharacterCopyWith<_RickMortyEpisodeDetailCharacter> get 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyEpisodeDetailCharacter&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.status, status) || other.status == status)&&(identical(other.image, image) || other.image == image));
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _RickMortyEpisodeDetailCharacter&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.status, status) || other.status == status)&&(identical(other.image, image) || other.image == image));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,status,image);
+int get hashCode {
+    return Object.hash(runtimeType,id,name,status,image);
+}
 
 @override
 String toString() {
-  return 'RickMortyEpisodeDetailCharacter(id: $id, name: $name, status: $status, image: $image)';
+    return 'RickMortyEpisodeDetailCharacter(id: $id, name: $name, status: $status, image: $image)';
 }
 
 
