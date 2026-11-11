@@ -337,10 +337,10 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: "5a44b0bd6131888bda5f770be5db2e08a59063724c6fa534ea4ec7c9fc3f841b"
+      sha256: d4105f50c438c37d0d1372b1fbf1617fe9be398b559fa29d2067756ebbd42b69
       url: "https://pub.dev"
     source: hosted
-    version: "18.1.3"
+    version: "18.1.4"
   gql:
     dependency: "direct main"
     description:
@@ -425,10 +425,10 @@ packages:
     dependency: transitive
     description:
       name: hive_ce
-      sha256: eb6740651a639cd0c45219c2103ed775830312a90494623a8899e422fb827ce3
+      sha256: c2692c07b780d5eaec78c4f9317e9bfbb952700ef60bfdbca9e52c496300b967
       url: "https://pub.dev"
     source: hosted
-    version: "2.23.1"
+    version: "2.23.3"
   hooks_riverpod:
     dependency: "direct main"
     description:
@@ -585,10 +585,10 @@ packages:
     dependency: "direct main"
     description:
       name: material_ui
-      sha256: a30f5d0625b6b83770f53ca3f7aafd6fd9d147cb3853f54a70668541046fe5d6
+      sha256: "474c135fd46b56ff1d35ca982155e8863d28fbc6464d1192acf4ee53a738680e"
       url: "https://pub.dev"
     source: hosted
-    version: "1.10.0"
+    version: "1.11.0"
   meta:
     dependency: transitive
     description:
@@ -878,10 +878,10 @@ packages:
     dependency: transitive
     description:
       name: vector_graphics_codec
-      sha256: "99fd9fbd34d9f9a32efd7b6a6aae14125d8237b10403b422a6a6dfeac2806146"
+      sha256: "023f3afd1b08d040406e7ccc324f5173c04762a59e374f29d04cef00a4940742"
       url: "https://pub.dev"
     source: hosted
-    version: "1.1.13"
+    version: "1.2.0"
   vector_graphics_compiler:
     dependency: "direct dev"
     description:
