@@ -22,7 +22,7 @@ dependencies:
   hooks_riverpod: ^3.5.0
   intl: ^0.20.3
   json_annotation: ^4.12.0
-  material_ui: ^1.11.0
+  material_ui: ^1.11.1
   riverpod_annotation: ^4.0.8
   vector_graphics: ^1.3.1
 
